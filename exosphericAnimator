@@ -135,12 +135,12 @@ function dumbWingAnimator:setupWingAnim(lwing1,lwing2,lwing3,rwing1,rwing2,rwing
 		end
 
 		if globalid == 3 then
-			rwing1.C0 = rwing1.C0:lerp(cf(cos(sine / 140),0,0) * angles(0,0,rad(-5))--[[ * angles(0,0,-sin(usine / 25))]], 0.2)
-			rwing2.C0 = rwing2.C0:lerp(cf(cos(sine / 120),0,0) * angles(0,0,rad(-10))--[[* angles(0,0,-sin(usine / 25))]], 0.25)
-			rwing3.C0 = rwing3.C0:lerp(cf(cos(sine / 90),0,0) * angles(0,0,rad(-15))--[[* angles(0,0,-sin(usine / 25))]], 0.3)
-			lwing1.C0 = lwing1.C0:lerp(cf(cos(sine / 140),0,0) * angles(0,0,-rad(-5))--[[ * angles(0,0,sin(usine / 25))]], 0.2)
-			lwing2.C0 = lwing2.C0:lerp(cf(cos(sine / 120),0,0) * angles(0,0,-rad(-10))--[[ * angles(0,0,sin(usine / 25))]], 0.25)
-			lwing3.C0 = lwing3.C0:lerp(cf(cos(sine / 90),0,0) * angles(0,0,-rad(-15))--[[ * angles(0,0,sin(usine / 25))]], 0.3)
+			rwing1.C0 = rwing1.C0:lerp(cf(cos(sine / 140),0,0) * angles(0,0,rad(-5))--[[ * angles(0,0,-sin(sine / 25))]], 0.2)
+			rwing2.C0 = rwing2.C0:lerp(cf(cos(sine / 120),0,0) * angles(0,0,rad(-10))--[[* angles(0,0,-sin(sine / 25))]], 0.25)
+			rwing3.C0 = rwing3.C0:lerp(cf(cos(sine / 90),0,0) * angles(0,0,rad(-15))--[[* angles(0,0,-sin(sine / 25))]], 0.3)
+			lwing1.C0 = lwing1.C0:lerp(cf(cos(sine / 140),0,0) * angles(0,0,-rad(-5))--[[ * angles(0,0,sin(sine / 25))]], 0.2)
+			lwing2.C0 = lwing2.C0:lerp(cf(cos(sine / 120),0,0) * angles(0,0,-rad(-10))--[[ * angles(0,0,sin(sine / 25))]], 0.25)
+			lwing3.C0 = lwing3.C0:lerp(cf(cos(sine / 90),0,0) * angles(0,0,-rad(-15))--[[ * angles(0,0,sin(sine / 25))]], 0.3)
 			TWELD.C0 = origTWC0 * cf(0,6,0)
 		end
 	end)
@@ -237,12 +237,12 @@ function dumbWingAnimator:setupWingAnim(lwing1,lwing2,lwing3,rwing1,rwing2,rwing
 		end
 
 		if globalid == 3 then
-			rwing1.C0 = rwing1.C0:lerp(cf(cos(sine / 120),0,0) * angles(0,0,rad(-5))--[[ * angles(0,0,-sin(usine / 25))]], 0.2)
-			rwing2.C0 = rwing2.C0:lerp(cf(cos(sine / 110),0,0) * angles(0,0,rad(-10))--[[* angles(0,0,-sin(usine / 25))]], 0.25)
-			rwing3.C0 = rwing3.C0:lerp(cf(cos(sine / 100),0,0) * angles(0,0,rad(-15))--[[* angles(0,0,-sin(usine / 25))]], 0.3)
-			lwing1.C0 = lwing1.C0:lerp(cf(cos(sine / 120),0,0) * angles(0,0,-rad(-5))--[[ * angles(0,0,sin(usine / 25))]], 0.2)
-			lwing2.C0 = lwing2.C0:lerp(cf(cos(sine / 110),0,0) * angles(0,0,-rad(-10))--[[ * angles(0,0,sin(usine / 25))]], 0.25)
-			lwing3.C0 = lwing3.C0:lerp(cf(cos(sine / 100),0,0) * angles(0,0,-rad(-15))--[[ * angles(0,0,sin(usine / 25))]], 0.3)
+			rwing1.C0 = rwing1.C0:lerp(cf(cos(sine / 120),0,0) * angles(0,0,rad(-5))--[[ * angles(0,0,-sin(sine / 25))]], 0.2)
+			rwing2.C0 = rwing2.C0:lerp(cf(cos(sine / 110),0,0) * angles(0,0,rad(-10))--[[* angles(0,0,-sin(sine / 25))]], 0.25)
+			rwing3.C0 = rwing3.C0:lerp(cf(cos(sine / 100),0,0) * angles(0,0,rad(-15))--[[* angles(0,0,-sin(sine / 25))]], 0.3)
+			lwing1.C0 = lwing1.C0:lerp(cf(cos(sine / 120),0,0) * angles(0,0,-rad(-5))--[[ * angles(0,0,sin(sine / 25))]], 0.2)
+			lwing2.C0 = lwing2.C0:lerp(cf(cos(sine / 110),0,0) * angles(0,0,-rad(-10))--[[ * angles(0,0,sin(sine / 25))]], 0.25)
+			lwing3.C0 = lwing3.C0:lerp(cf(cos(sine / 100),0,0) * angles(0,0,-rad(-15))--[[ * angles(0,0,sin(sine / 25))]], 0.3)
 			TWELD.C0 = origTWC0 * cf(0,6,0)
 		end
 	end)
