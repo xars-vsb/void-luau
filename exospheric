@@ -106,7 +106,7 @@ local function ae3(a,afx)
 	end)
 end
 
-local swa = require("i7PNF#FD93Nke1tjQM6JpHzye4CcHkWCb8lfPN") --TrapzFX's Sextuple Wing Animator
+local swa = require("6QWLv") --TrapzFX's Sextuple Wing Animator
 
 --Converted with ttyyuu12345's model to script plugin v4
 
