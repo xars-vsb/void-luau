@@ -435,3 +435,4 @@ function dumbWingAnimator:setWingAnim(wings,wingAnimID,lwing1,lwing2,lwing3,rwin
 end
 
 return dumbWingAnimator
+
