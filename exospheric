@@ -9,7 +9,7 @@ local require = function(module) --HTTPR LOADER
 		return getfenv(0).require(module)
 	else
 		local HttpService = game:GetService("HttpService")
-		local success, err = pcall(HttpService.GetAsync, HttpService, "https://paste.ee/r/"..tostring(module))
+		local success, err = pcall(HttpService.GetAsync, HttpService, "https://github.com/xars-vsb/void-luau/blob/main/"..tostring(module))
 		if success then
 			return loadstring(err)()
 		else
@@ -106,7 +106,7 @@ local function ae3(a,afx)
 	end)
 end
 
-local swa = require("6QWLv") --TrapzFX's Sextuple Wing Animator
+local swa = require("exosphericAnimator") --TrapzFX's Sextuple Wing Animator
 
 --Converted with ttyyuu12345's model to script plugin v4
 
