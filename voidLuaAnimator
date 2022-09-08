@@ -101,12 +101,12 @@ function dumbWingAnimator:setupWingAnim(lwing1,lwing2,lwing3,rwing1,rwing2,rwing
 		end
 		
 		if globalid == 4 then
-			rwing1.C0 = rwing1.C0:lerp(angles(0,0,(sine/12)) * cf(sine/60,0,0), 0.2)
-			rwing2.C0 = rwing2.C0:lerp(angles(0,0,(sine/12)) * cf(sine/60,0,0), 0.25)
-			rwing3.C0 = rwing3.C0:lerp(angles(0,0,(sine/12)) * cf(sine/60,0,0), 0.3)
-			lwing1.C0 = lwing1.C0:lerp(angles(0,0,(sine/12)) * cf(-sine/60,0,0), 0.2)
-			lwing2.C0 = lwing2.C0:lerp(angles(0,0,(sine/12)) * cf(-sine/60,0,0), 0.25)
-			lwing3.C0 = lwing3.C0:lerp(angles(0,0,(sine/12)) * cf(-sine/60,0,0), 0.3)
+			rwing1.C0 = rwing1.C0:lerp(angles(0,0,-sin(sine/60)) * cf(sin(sine/60),0,0), 0.2)
+			rwing2.C0 = rwing2.C0:lerp(angles(0,0,-sin(sine/60)) * cf(sin(sine/60),0,0), 0.25)
+			rwing3.C0 = rwing3.C0:lerp(angles(0,0,-sin(sine/60)) * cf(sin(sine/60),0,0), 0.3)
+			lwing1.C0 = lwing1.C0:lerp(angles(0,0,-sin(sine/60)) * cf(sin(sine/60),0,0), 0.2)
+			lwing2.C0 = lwing2.C0:lerp(angles(0,0,-sin(sine/60)) * cf(sin(sine/60),0,0), 0.25)
+			lwing3.C0 = lwing3.C0:lerp(angles(0,0,-sin(sine/60)) * cf(sin(sine/60),0,0), 0.3)
 			TWELD.C0 = origTWC0 * cf(0,1,0)
 		end
 	end)
