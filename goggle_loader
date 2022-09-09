@@ -1,0 +1,193 @@
+local LEDGoggles = Instance.new("Accessory")
+LEDGoggles.Name = "LEDGoggles"
+LEDGoggles.AttachmentPos = Vector3.new(0.000186920166015625, 0.3700690269470215, 0.0598602294921875)
+LEDGoggles.AttachmentUp = Vector3.new(7.871375551360416e-09, 1, 4.1444255377034967e-16)
+LEDGoggles.AttachmentPoint = CFrame.new(0.000186920166015625, 0.3700690269470215, 0.0598602294921875, 1, 7.871375551360416e-09, 3.029981271446139e-15, -7.871375551360416e-09, 1, -4.1444258024012927e-16, -3.029981271446139e-15, 4.1444255377034967e-16, 1)
+LEDGoggles.AttachmentRight = Vector3.new(1, -7.871375551360416e-09, -3.029981271446139e-15)
+LEDGoggles.AttachmentForward = Vector3.new(-3.029981271446139e-15, 4.1444258024012927e-16, -1)
+
+local Handle = Instance.new("Part")
+Handle.Name = "Handle"
+Handle.BottomSurface = Enum.SurfaceType.Smooth
+Handle.TopSurface = Enum.SurfaceType.Smooth
+Handle.Massless = true
+Handle.Size = Vector3.new(1.25, 0.800000011920929, 1.25)
+Handle.CFrame = CFrame.new(-141.83700561523438, 15.866999626159668, -237.51800537109375, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+Handle.Parent = LEDGoggles
+
+local SpecialMesh = Instance.new("SpecialMesh")
+SpecialMesh.Name = "SpecialMesh"
+SpecialMesh.MeshId = "rbxassetid://4787550709"
+SpecialMesh.TextureId = "rbxassetid://4805099960"
+SpecialMesh.MeshType = Enum.MeshType.FileMesh
+SpecialMesh.Parent = Handle
+
+local AvatarPartScaleType = Instance.new("StringValue")
+AvatarPartScaleType.Name = "AvatarPartScaleType"
+AvatarPartScaleType.Value = "Classic"
+AvatarPartScaleType.Parent = Handle
+
+local HatAttachment = Instance.new("Attachment")
+HatAttachment.Name = "HatAttachment"
+HatAttachment.WorldSecondaryAxis = Vector3.new(-7.871375551360416e-09, 1, -4.1444255377034967e-16)
+HatAttachment.WorldOrientation = Vector3.new(2.374580973475357e-14, -180, -4.5099656631464313e-07)
+HatAttachment.CFrame = CFrame.new(0.000186920166015625, 0.3700690269470215, 0.0598602294921875, 1, 7.871375551360416e-09, 3.029981271446139e-15, -7.871375551360416e-09, 1, -4.1444258024012927e-16, -3.029981271446139e-15, 4.1444255377034967e-16, 1)
+HatAttachment.WorldPosition = Vector3.new(-141.83718872070312, 16.23706817626953, -237.57786560058594)
+HatAttachment.Axis = Vector3.new(1, -7.871375551360416e-09, -3.029981271446139e-15)
+HatAttachment.Rotation = Vector3.new(2.374580973475357e-14, 1.7360513525875587e-13, -4.5099656631464313e-07)
+HatAttachment.WorldCFrame = CFrame.new(-141.83718872070312, 16.23706817626953, -237.57786560058594, -1, -7.871375551360416e-09, -3.029981271446139e-15, -7.871375551360416e-09, 1, -4.1444258024012927e-16, 3.029981271446139e-15, -4.1444255377034967e-16, -1)
+HatAttachment.SecondaryAxis = Vector3.new(7.871375551360416e-09, 1, 4.1444255377034967e-16)
+HatAttachment.Position = Vector3.new(0.000186920166015625, 0.3700690269470215, 0.0598602294921875)
+HatAttachment.Orientation = Vector3.new(2.374580973475357e-14, 1.7360513525875587e-13, -4.5099656631464313e-07)
+HatAttachment.WorldAxis = Vector3.new(-1, -7.871375551360416e-09, 3.029981271446139e-15)
+HatAttachment.Parent = Handle
+
+local screen = Instance.new("Part")
+screen.Name = "screen"
+screen.BottomSurface = Enum.SurfaceType.Smooth
+screen.TopSurface = Enum.SurfaceType.Smooth
+screen.Color = Color3.fromRGB(17, 17, 17)
+screen.Massless = true
+screen.Material = Enum.Material.Neon
+screen.Size = Vector3.new(0.02499997615814209, 0.30000001192092896, 0.6749999523162842)
+screen.CFrame = CFrame.new(-141.83700561523438, 15.866999626159668, -236.88050842285156, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+screen.Parent = Handle
+
+local SurfaceGui = Instance.new("SurfaceGui")
+SurfaceGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+SurfaceGui.Face = Enum.NormalId.Right
+SurfaceGui.ClipsDescendants = true
+SurfaceGui.SizingMode = Enum.SurfaceGuiSizingMode.PixelsPerStud
+SurfaceGui.PixelsPerStud = 300
+SurfaceGui.Brightness = 5
+SurfaceGui.Parent = screen
+
+local t2 = Instance.new("TextLabel")
+t2.Name = "t2"
+t2.Size = UDim2.new(0.3, 0, 1, 0)
+t2.BackgroundTransparency = 1
+t2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+t2.FontSize = Enum.FontSize.Size14
+t2.TextSize = 14
+t2.RichText = true
+t2.TextColor3 = Color3.fromRGB(255, 255, 255)
+t2.Text = "O"
+t2.TextWrapped = true
+t2.Font = Enum.Font.Code
+t2.TextWrap = true
+t2.TextScaled = true
+t2.Parent = SurfaceGui
+
+local UITextSizeConstraint = Instance.new("UITextSizeConstraint")
+UITextSizeConstraint.MaxTextSize = 90
+UITextSizeConstraint.Parent = t2
+
+local t1 = Instance.new("TextLabel")
+t1.Name = "t1"
+t1.Size = UDim2.new(0.3, 0, 1, 0)
+t1.BackgroundTransparency = 1
+t1.Position = UDim2.new(0.7, 0, 0, 0)
+t1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+t1.FontSize = Enum.FontSize.Size14
+t1.TextSize = 14
+t1.RichText = true
+t1.TextColor3 = Color3.fromRGB(255, 255, 255)
+t1.Text = "O"
+t1.TextWrapped = true
+t1.Font = Enum.Font.Code
+t1.TextWrap = true
+t1.TextScaled = true
+t1.Parent = SurfaceGui
+
+local UITextSizeConstraint1 = Instance.new("UITextSizeConstraint")
+UITextSizeConstraint1.MaxTextSize = 90
+UITextSizeConstraint1.Parent = t1
+
+local screenside = Instance.new("Part")
+screenside.Name = "screenside"
+screenside.BottomSurface = Enum.SurfaceType.Smooth
+screenside.TopSurface = Enum.SurfaceType.Smooth
+screenside.Color = Color3.fromRGB(17, 17, 17)
+screenside.Massless = true
+screenside.Material = Enum.Material.Neon
+screenside.Size = Vector3.new(0.02499997615814209, 0.30000001192092896, 0.2999999523162842)
+screenside.CFrame = CFrame.new(-141.49949645996094, 15.866999626159668, -236.88050842285156, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+screenside.Shape = Enum.PartType.Cylinder
+screenside.Parent = screen
+
+local screenside1 = Instance.new("Part")
+screenside1.Name = "screenside"
+screenside1.BottomSurface = Enum.SurfaceType.Smooth
+screenside1.TopSurface = Enum.SurfaceType.Smooth
+screenside1.Color = Color3.fromRGB(17, 17, 17)
+screenside1.Massless = true
+screenside1.Material = Enum.Material.Neon
+screenside1.Size = Vector3.new(0.02499997615814209, 0.30000001192092896, 0.2999999523162842)
+screenside1.CFrame = CFrame.new(-142.17449951171875, 15.866999626159668, -236.88050842285156, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+screenside1.Shape = Enum.PartType.Cylinder
+screenside1.Parent = screen
+
+local screen1 = Instance.new("Motor6D")
+screen1.Name = "screen"
+screen1.C0 = CFrame.new(0, 0, -0.6374969482421875, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+screen1.Parent = Handle
+
+local screenside2 = Instance.new("Motor6D")
+screenside2.Name = "screenside"
+screenside2.C0 = CFrame.new(-0.3375091552734375, 0, -0.6374969482421875, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+screenside2.Parent = Handle
+
+local screenside3 = Instance.new("Motor6D")
+screenside3.Name = "screenside"
+screenside3.C0 = CFrame.new(0.337493896484375, 0, -0.6374969482421875, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+screenside3.Parent = Handle
+
+local txt = Instance.new("BillboardGui")
+txt.Name = "txt"
+txt.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+txt.Active = true
+txt.LightInfluence = 1
+txt.Size = UDim2.new(7, 0, 0.5, 0)
+txt.ClipsDescendants = true
+txt.StudsOffset = Vector3.new(0, 2, 0)
+txt.Parent = Handle
+
+local txt1 = Instance.new("TextBox")
+txt1.Name = "txt"
+txt1.Size = UDim2.new(1, 0, 1, 0)
+txt1.BackgroundTransparency = 1
+txt1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+txt1.FontSize = Enum.FontSize.Size14
+txt1.TextStrokeTransparency = 0
+txt1.TextWrapped = true
+txt1.TextSize = 14
+txt1.TextWrap = true
+txt1.TextColor3 = Color3.fromRGB(255, 255, 255)
+txt1.Text = ""
+txt1.Font = Enum.Font.GothamMedium
+txt1.TextScaled = true
+txt1.Parent = txt
+
+local Sound = Instance.new("Sound")
+Sound.RollOffMaxDistance = 100
+Sound.Volume = 1
+Sound.MaxDistance = 100
+Sound.SoundId = "rbxassetid://9126106189"
+Sound.Parent = Handle
+
+local PitchShiftSoundEffect = Instance.new("PitchShiftSoundEffect")
+PitchShiftSoundEffect.Octave = 1
+PitchShiftSoundEffect.Parent = Sound
+
+screen1.Part1 = screen
+screen1.Part0 = Handle
+
+screenside2.Part1 = screenside
+screenside2.Part0 = Handle
+
+screenside3.Part1 = screenside1
+screenside3.Part0 = Handle
+
+LEDGoggles.Parent = workspace
+
+return LEDGoggles
