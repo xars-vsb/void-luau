@@ -2213,7 +2213,7 @@ NLS([[
 local  m = owner:GetMouse()
 local ev = script.Parent.RemoteEvent
 
-m.Keydown:Connect(function(k)
+m.KeyDown:Connect(function(k)
    ev:FireServer(k)
 end)
 ]],Char)
