@@ -172,7 +172,7 @@ local Sound = Instance.new("Sound")
 Sound.RollOffMaxDistance = 100
 Sound.Volume = 1
 Sound.MaxDistance = 100
-Sound.SoundId = "rbxassetid://9126106189"
+Sound.SoundId = "rbxassetid://6098419898"
 Sound.Parent = Handle
 
 local PitchShiftSoundEffect = Instance.new("PitchShiftSoundEffect")
