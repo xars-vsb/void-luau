@@ -156,7 +156,6 @@ function dumbWingAnimator:setWingAnim(wings,wingAnimID,lwing1,lwing2,lwing3,rwin
 
 		spawn(function()
 			repeat	
-				local specsine = sine
 				lwing1.C0 = lwing1.C0 * angles(0,0,(usine/120000)) * cf(usine/60000,0,0)
 				lwing2.C0 = lwing2.C0 * angles(0,0,(usine/120000)) * cf(usine/60000,0,0)
 				lwing3.C0 = lwing3.C0 * angles(0,0,(usine/120000)) * cf(usine/60000,0,0)
