@@ -1,8 +1,24 @@
---local owner = game.Players:WaitForChild("TrapzFX")
+--local Player = game.Players:WaitForChild("TrapzFX")
 local accessoryfx = ""
 local currentcr = Color3.fromRGB(255,255,255)
 
+local moder = 1
+
 if not owner.Character then owner.CharacterAdded:Wait() end
+
+local Player = owner
+local Char = Player.Character
+local Hum = Char:WaitForChild("Humanoid")
+local RootPart = Char:WaitForChild("HumanoidRootPart")
+local Torso = Char:WaitForChild("Torso")
+local Head = Char:WaitForChild("Head")
+local RA = Char:WaitForChild("Right Arm")
+local LA = Char:WaitForChild("Left Arm")
+local RL = Char:WaitForChild("Right Leg")
+local LL = Char:WaitForChild("Left Leg")
+local RunningAnims = {}
+local Animating = {}
+local PauseAnims = {}
 
 local require = function(module) --HTTPR LOADER
 	if typeof(module) == "Instance" then
@@ -17,6 +33,245 @@ local require = function(module) --HTTPR LOADER
 		end
 	end
 end
+
+local function tick()
+	return os.clock()
+end
+
+local function wait(Num)
+	local CurrentTick = tick()
+	repeat
+		game:GetService("RunService").Stepped:Wait()
+	until tick() >= CurrentTick + (Num or 0)
+end
+
+local function spawn(Func)
+	coroutine.wrap(Func)()
+end
+
+function CreateWeld(PropertyTable)
+	local Weld = Instance.new("Weld")
+	Weld.Parent = PropertyTable.Parent
+	Weld.Part0 = PropertyTable.Part0
+	Weld.Part1 = PropertyTable.Part1
+	Weld.C0 = PropertyTable.C0 or CFrame.new()
+	return Weld
+end
+
+function SetTween(Instance,PropertyTable,Style,Direction,Time)
+	Style = Enum.EasingStyle[Style]
+	Direction = Enum.EasingDirection[Direction]
+	local Info = TweenInfo.new(
+		Time,
+		Style,
+		Direction,
+		0,
+		false,
+		0
+	)
+	local TweenAnim = game:GetService("TweenService"):Create(Instance,Info,PropertyTable)
+	TweenAnim:Play()
+	return TweenAnim
+end
+
+-- Keyframe Order: Time Position, RJ, Neck, RS, LS, RH, LH
+
+function PlayAnimation(AnimationTable,Priority,TweenTime,Looped,Speed,WaitUntilFinish,FunctionsAfterTime)
+	local function Start()
+		Priority = Priority or 1
+		Speed = Speed or 1
+		local Joints = {RJ,Neck,RS,LS,RH,LH,Grip} -- Don't change the first 6 elements. Any tool welds can be added afterward, like "Grip".
+		local Id = tick().."/"..tostring(Looped).."|"..Priority
+		table.insert(RunningAnims,Id)
+		local PausedAnimIDs = {}
+		local WaitForAnim
+		local Delete = {}
+		for v, Anim in pairs(RunningAnims) do
+			if Anim ~= Id then
+				for i = 2, #AnimationTable[1] do
+					if AnimationTable[1][i] and table.find(Animating,tostring(Joints[i - 1].Part1)..Anim) and not table.find(PauseAnims,tostring(Joints[i - 1].Part1)..Anim) then
+						if tonumber(string.sub(Anim,string.find(Anim,"|") + 1)) > Priority then
+							table.insert(PauseAnims,tostring(Joints[i - 1].Part1)..Id)
+							if string.sub(Anim,string.find(Anim,"/") + 1,string.find(Anim,"|") - 1) ~= "true" then
+								WaitForAnim = Anim
+							end
+						elseif tonumber(string.sub(Anim,string.find(Anim,"|") + 1)) <= Priority then
+							table.insert(PauseAnims,tostring(Joints[i - 1].Part1)..Anim)
+							if not table.find(PausedAnimIDs,Anim) then
+								table.insert(PausedAnimIDs,Anim)
+							end
+						end
+					end
+				end
+				local AnimatingNum = 0
+				local PausedNum = 0
+				for _, Joint in pairs(Joints) do
+					if table.find(Animating,tostring(Joint.Part1)..Anim) then
+						AnimatingNum += 1
+					end
+					if table.find(PauseAnims,tostring(Joint.Part1)..Anim) then
+						PausedNum += 1
+					end
+				end
+				if table.find(RunningAnims,Anim) and (PausedNum == AnimatingNum or string.sub(Anim,string.find(Anim,"/") + 1,string.find(Anim,"|") - 1) == "true") then
+					table.insert(Delete,Anim)
+					if table.find(PausedAnimIDs,Anim) then
+						table.remove(PausedAnimIDs,table.find(PausedAnimIDs,Anim))
+					end
+				end
+			end
+		end
+		for _, Anim in pairs(Delete) do
+			table.remove(RunningAnims,table.find(RunningAnims,Anim))
+		end
+		local Loops = 0
+		local TablesCompleted = {}
+		repeat
+			local Tween
+			local CurrentTimePos = AnimationTable[1][1]
+			local TweenTime = TweenTime or .1
+			for v, Keyframe in pairs(AnimationTable) do
+				for i = 2, #Keyframe do
+					if Keyframe[i] and table.find(RunningAnims,Id) then
+						if not table.find(PauseAnims,tostring(Joints[i - 1].Part1)..Id) then
+							if typeof(Keyframe[i]) == "CFrame" then
+								if v == 1 then
+									if Loops < 1 then
+										Tween = SetTween(Joints[i - 1],{C0 = Keyframe[i]},"Linear","In",TweenTime)
+									else
+										Tween = SetTween(Joints[i - 1],{C0 = Keyframe[i]},"Linear","In",.05 / Speed)
+									end
+								else
+									Tween = SetTween(Joints[i - 1],{C0 = Keyframe[i]},"Linear","In",(Keyframe[1] - CurrentTimePos) / Speed)
+								end
+							else
+								Joints[i - 1].Part0 = Keyframe[i][1]
+								if v == 1 then
+									if Loops < 1 then
+										SetTween(Joints[i - 1],{C0 = Keyframe[i][2]},"Linear","In",0)
+									else
+										Tween = SetTween(Joints[i - 1],{C0 = Keyframe[i][2]},"Linear","In",.05 / Speed)
+									end
+								else
+									Tween = SetTween(Joints[i - 1],{C0 = Keyframe[i][2]},"Linear","In",(Keyframe[1] - CurrentTimePos) / Speed)
+								end
+							end
+						end
+						if not table.find(Animating,tostring(Joints[i - 1].Part1)..Id) then
+							table.insert(Animating,tostring(Joints[i - 1].Part1)..Id)
+						end
+					end
+				end
+				while Tween and Tween.PlaybackState ~= Enum.PlaybackState.Completed do
+					if WaitForAnim and not table.find(RunningAnims,WaitForAnim) then
+						WaitForAnim = nil
+						for _, Joint in pairs(Joints) do
+							if table.find(PauseAnims,tostring(Joint.Part1)..Id) then
+								table.remove(PauseAnims,table.find(PauseAnims,tostring(Joint.Part1)..Id))
+							end
+						end
+					end
+					local AnimatingNum = 0
+					local PausedNum = 0
+					for _, Joint in pairs(Joints) do
+						if table.find(Animating,tostring(Joint.Part1)..Id) then
+							AnimatingNum += 1
+						end
+						if table.find(PauseAnims,tostring(Joint.Part1)..Id) then
+							PausedNum += 1
+						end
+					end
+					if PausedNum == AnimatingNum and table.find(RunningAnims,Id) then
+						table.remove(RunningAnims,table.find(RunningAnims,Id))
+					end
+					if not table.find(RunningAnims,Id) then
+						break
+					end
+					wait()
+				end
+				if FunctionsAfterTime and #FunctionsAfterTime > 0 then
+					for _, Table in pairs(FunctionsAfterTime) do
+						if Keyframe[1] >= Table[1] and not table.find(TablesCompleted,Table) then
+							spawn(Table[2])
+							table.insert(TablesCompleted,Table)
+						end
+					end
+				end
+				for i = 2, #Keyframe do
+					if Keyframe[i] and AnimationTable[v + 1] and AnimationTable[v + 1][i] == false and table.find(RunningAnims,Id) then
+						local LaterKeyframe
+						local LaterTimePos
+						for _, Keyframe in pairs({table.unpack(AnimationTable,v + 2)}) do
+							if Keyframe[i] then
+								LaterKeyframe = Keyframe
+								LaterTimePos = Keyframe[1]
+								break
+							end
+						end
+						if LaterTimePos then
+							if not table.find(PauseAnims,tostring(Joints[i - 1].Part1)..Id) then
+								if typeof(Keyframe[i]) == "CFrame" then
+									SetTween(Joints[i - 1],{C0 = LaterKeyframe[i]},"Linear","In",(LaterTimePos - Keyframe[1]) / Speed)
+								else
+									Joints[i - 1].Part0 = Keyframe[i][1]
+									SetTween(Joints[i - 1],{C0 = LaterKeyframe[i][2]},"Linear","In",(LaterTimePos - Keyframe[1]) / Speed)
+								end
+							end
+							if not table.find(Animating,tostring(Joints[i - 1].Part1)..Id) then
+								table.insert(Animating,tostring(Joints[i - 1].Part1)..Id)
+							end
+						end
+					end
+				end
+				CurrentTimePos = Keyframe[1]
+			end
+			Loops += 1
+			if not Tween then
+				wait()
+			end
+		until not Looped or not table.find(RunningAnims,Id)
+		for _, OtherId in pairs(PausedAnimIDs) do
+			for _, Joint in pairs(Joints) do
+				if table.find(Animating,tostring(Joint.Part1)..Id) and table.find(PauseAnims,tostring(Joint.Part1)..OtherId) then
+					table.remove(PauseAnims,table.find(PauseAnims,tostring(Joint.Part1)..OtherId))
+				end
+			end
+		end
+		for _, Joint in pairs(Joints) do
+			for i, Anim in pairs(Animating) do
+				if Anim == tostring(Joint.Part1)..Id then
+					table.remove(Animating,i)
+				end
+			end
+			for i, Anim in pairs(PauseAnims) do
+				if Anim == tostring(Joint.Part1)..Id then
+					table.remove(PauseAnims,i)
+				end
+			end
+		end
+		if table.find(RunningAnims,Id) then
+			table.remove(RunningAnims,table.find(RunningAnims,Id))
+		end
+	end
+	if WaitUntilFinish then
+		Start()
+	else
+		spawn(Start)
+	end
+end
+
+local Handle = Instance.new("Part",Char)
+Handle.CanCollide = false
+Handle.Size = Vector3.new(0.122, 0.182, 1.397)
+Handle.Color = Color3.fromRGB(40,40,40)
+
+RJ = CreateWeld({Part0 = RootPart,Part1 = Torso,Parent = RootPart})
+Neck = CreateWeld({Part0 = Torso,Part1 = Head,C0 = CFrame.new(0,1.5,0),Parent = RootPart})
+RS = CreateWeld({Part0 = Torso,Part1 = RA,C0 = CFrame.new(1.5,0,0),Parent = RootPart})
+LS = CreateWeld({Part0 = Torso,Part1 = LA,C0 = CFrame.new(-1.5,0,0),Parent = RootPart})
+RH = CreateWeld({Part0 = Torso,Part1 = RL,C0 = CFrame.new(.5,-2,0),Parent = RootPart})
+LH = CreateWeld({Part0 = Torso,Part1 = LL,C0 = CFrame.new(-.5,-2,0),Parent = RootPart})
+Grip = CreateWeld({Part0 = Torso,Part1 = Handle,C0 = CFrame.new(-2.95,1.79,.55) * CFrame.Angles(math.pi / 2,1.1,math.pi / 2),Parent = RootPart})
 
 local function ae1(a,afx)
 	spawn(function()
@@ -107,6 +362,7 @@ local function ae3(a,afx)
 end
 
 local swa = require("vlAnimatorv3") --TrapzFX's Sextuple Wing Animator
+local animations = require("voidAnimations") --Anim Table Return
 
 --Converted with ttyyuu12345's model to script plugin v4
 
@@ -1324,7 +1580,7 @@ local function setup_wing(wingtype)
 end
 
 wsm.Name = "Wings"
-wsm.Parent = owner.Character
+wsm.Parent = Char
 wsm.PrimaryPart = Part7
 Part1.Parent = wsm
 Part1.CFrame = CFrame.new(16.8643265, 1.62576914, -7.59785128, 1.00000238, -5.66244125e-07, 0, -4.76837158e-07, 1.00000024, 0, 0, 0, 1.00000286)
@@ -1538,12 +1794,12 @@ Part26.CanCollide = false
 Part26.Material = Enum.Material.Neon
 Part26.TopSurface = Enum.SurfaceType.Smooth
 
-torso.CFrame = owner.Character["Torso"].CFrame
+torso.CFrame = Char["Torso"].CFrame
 local wld = Instance.new("Weld")
-wld.Parent = owner.Character["Torso"]
-wld.Part0 = owner.Character["Torso"]
+wld.Parent = Char["Torso"]
+wld.Part0 = Char["Torso"]
 wld.Part1 = torso
-wld.C0 = owner.Character["Torso"].CFrame:ToObjectSpace(torso.CFrame)
+wld.C0 = Char["Torso"].CFrame:ToObjectSpace(torso.CFrame)
 
 -- Gui to Lua
 
@@ -1565,7 +1821,7 @@ local UIStroke = Instance.new("UIStroke")
 local UIStroke_2 = Instance.new("UIStroke")
 
 EXOSPHERIC.Name = "EXOSPHERIC"
-EXOSPHERIC.Parent = owner.PlayerGui
+EXOSPHERIC.Parent = Player.PlayerGui
 EXOSPHERIC.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 EXOSPHERIC.Enabled = false
 
@@ -1686,7 +1942,7 @@ btn3.Parent = holswe
 btn3.AAA.Text = "AccessoryEffect3"
 
 local efxatt = Instance.new("Attachment")
-efxatt.Parent = owner.Character:WaitForChild("Right Arm")
+efxatt.Parent = Char:WaitForChild("Right Arm")
 efxatt.Position = Vector3.new(0,-1,0)
 
 btn.AAA.MouseButton1Click:Connect(function()
@@ -1763,7 +2019,7 @@ UIGradient2.Color = ColorSequence.new{
 	ColorSequenceKeypoint.new(1,Color3.fromRGB(255,255,255)),
 }
 tag.Name = "bg"
-tag.Parent = owner.Character.Head
+tag.Parent = Char.Head
 tag.Size = UDim2.new(5, 0, 2, 0)
 tag.Active = true
 tag.ClipsDescendants = true
@@ -1874,6 +2130,11 @@ for i,v in pairs(wsm:GetDescendants()) do
 	end
 end
 
+function settag(t)
+	TextLabel5.Text = t
+	TextLabel7.Text = t
+end
+
 function setclr(m)
 	for i,v in pairs(wsm:GetDescendants()) do
 		if v.Name == "wing" and v:IsA("Model") then
@@ -1903,6 +2164,33 @@ function setclr(m)
 	end
 end
 
+function setmode(m)
+	if m == "m1" then
+		moder = 1
+		setclr("255:0:0")
+		settag("Primeval")
+		setup_wing(1)
+	end
+	if m == "m2" then
+		moder = 2
+		setclr("10:100:255")
+		settag("Caloric")
+		setup_wing(2)
+	end
+	if m == "m3" then
+		moder = 3
+		setclr("255:100:10")
+		settag("Caloric")
+		setup_wing(3)
+	end
+	if m == "m4" then
+		moder = 4
+		setclr("178:123:255")
+		settag("Nebula")
+		setup_wing(4)
+	end
+end
+
 spawn(function()
 	while true do
 		task.wait()
@@ -1919,27 +2207,27 @@ end)
 
 print("cmds")
 
-owner.Chatted:Connect(function(m)
-	print("sent")
-	local split = string.split(m,":")
-	if split[1]:lower() == "/wt" then
-		print("cmd detected")
-		if split[2]:lower() == "color" then
-			print("cmds")
-			setclr(m)
-		end
-		pcall(function()
-			if typeof(tonumber(split[2])) == "number" then
-				print("cmds")
-				setup_wing(split[2])
-			end
-		end)
-		if split[2]:lower() == "accessoryui" then
-			print("cmds")
-			EXOSPHERIC.Enabled = true
-		end
-	end 
-end)
+--Player.Chatted:Connect(function(m)
+--	print("sent")
+--	local split = string.split(m,":")
+--	if split[1]:lower() == "/wt" then
+--		print("cmd detected")
+--		if split[2]:lower() == "color" then
+--			print("cmds")
+--			setclr(m)
+--		end
+--		pcall(function()
+--			if typeof(tonumber(split[2])) == "number" then
+--				print("cmds")
+--				setup_wing(split[2])
+--			end
+--		end)
+--		if split[2]:lower() == "accessoryui" then
+--			print("cmds")
+--			EXOSPHERIC.Enabled = true
+--		end
+--	end 
+--end)
 
 
 for i = 1,6 do
@@ -1964,3 +2252,45 @@ for i = 1,6 do
 end
 
 swa:setupWingAnim(welder3.Part1,welder2.Part2,welder1.Part3,welder1.Part4,welder2.Part5,welder3.Part6,torso.Part,welder.mover1,welder.mover2,welder.mover3)
+
+local Floor
+local Anim = "None"
+
+game:GetService("RunService").Stepped:Connect(function()
+	Floor = Hum.FloorMaterial
+	if Floor == Enum.Material.Air then
+		Floor = nil
+	else
+		Floor = true
+	end
+	local RootVelocity = (RootPart.Velocity * Vector3.new(1,0,1)).Magnitude
+	if RootVelocity < 1 and Floor and Anim ~= "Idle" then
+		Anim = "Idle"
+		if moder == 1 then
+			PlayAnimation(animations["H1"],1,.1,true)
+		end
+		if moder == 2 then
+			PlayAnimation(animations["J1"],1,.1,true)
+		end
+		if moder == 3 then
+			PlayAnimation(animations["K1"],1,.1,true)
+		end
+		if moder == 4 then
+			PlayAnimation(animations["L1"],1,.1,true)
+		end
+	elseif RootVelocity > 1 and Floor and Anim ~= "Walk" then
+		Anim = "Walk"
+		if moder == 1 then
+			PlayAnimation(animations["H2"],1,.1,true)
+		end
+		if moder == 2 then
+			PlayAnimation(animations["J2"],1,.1,true)
+		end
+		if moder == 3 then
+			PlayAnimation(animations["K2"],1,.1,true)
+		end
+		if moder == 4 then
+			PlayAnimation(animations["L2"],1,.1,true)
+		end
+	end
+end)
