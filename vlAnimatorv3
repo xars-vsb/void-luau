@@ -1,0 +1,187 @@
+--$$$$$$$$\ $$$$$$$\   $$$$$$\  $$$$$$$\ $$$$$$$$\ $$$$$$$$\ $$\   $$\ 
+--\__$$  __|$$  __$$\ $$  __$$\ $$  __$$\\____$$  |$$  _____|$$ |  $$ |
+--   $$ |   $$ |  $$ |$$ /  $$ |$$ |  $$ |   $$  / $$ |      \$$\ $$  |
+--   $$ |   $$$$$$$  |$$$$$$$$ |$$$$$$$  |  $$  /  $$$$$\     \$$$$  / 
+--   $$ |   $$  __$$< $$  __$$ |$$  ____/  $$  /   $$  __|    $$  $$<  
+--   $$ |   $$ |  $$ |$$ |  $$ |$$ |      $$  /    $$ |      $$  /\$$\ 
+--   $$ |   $$ |  $$ |$$ |  $$ |$$ |     $$$$$$$$\ $$ |      $$ /  $$ |
+--   \__|   \__|  \__|\__|  \__|\__|     \________|\__|      \__|  \__|
+
+--//====================================\\--
+--|| TRAPZFX'S GLITCHER WING ANIMATOR!! ||--
+--\\====================================//--
+
+local dumbWingAnimator = {}
+
+local currentAnim = {
+	["mv1"] = nil,
+	["mv2"] = nil,
+	["mv3"] = nil,
+	["tw1"] = nil,
+	["lw1"] = nil,
+	["lw2"] = nil,
+	["lw3"] = nil,
+	["lw4"] = nil,
+	["lw5"] = nil,
+	["lw6"] = nil
+}
+
+local ts = game:GetService("TweenService")
+
+local sine = 0
+local usine = 0
+
+local currentsineMove = "minus"
+
+local globalid = 0
+
+local origl1C0
+local origl2C0
+local origl3C0
+local origr1C0
+local origr2C0
+local origr3C0
+local origTWC0
+local origM1C0
+local origM2C0
+local origM3C0
+
+local activated = ""
+
+local leftSideNames = {"Part1","Part2","Part3"}
+local rightSideNames = {"Part4","Part5","Part6"}
+
+local angles,cf,rad,cos,sin = CFrame.Angles,CFrame.new,math.rad,math.cos,math.sin
+
+local function cts(inst,tinf,goal)
+	return ts:Create(inst,tinf,goal)
+end
+
+function dumbWingAnimator:setupWingAnim(lwing1,lwing2,lwing3,rwing1,rwing2,rwing3,TWELD,mov1,mov2,mov3)
+	origl1C0 = lwing1.C0
+	origl2C0 = lwing2.C0
+	origl3C0 = lwing3.C0
+	origr1C0 = rwing1.C0
+	origr2C0 = rwing2.C0
+	origr3C0 = rwing3.C0
+	origTWC0 = TWELD.C0
+	origM1C0 = mov1.C0
+	origM2C0 = mov2.C0
+	origM3C0 = mov3.C0
+	game:GetService("RunService").Heartbeat:Connect(function()
+		sine = sine + 1
+		--usine = sine * 100
+
+		if globalid == 1 then
+			rwing1.C0 = rwing1.C0:lerp(cf(0,-cos(sine / 24),0) * angles(0,0,sin(sine / 24)) * angles(0,0,-rad(50)), 0.2)
+			rwing2.C0 = rwing2.C0:lerp(cf(0,-cos(sine / 24),0) * angles(0,0,sin(sine / 24)) * angles(0,0,-rad(50)), 0.2)
+			rwing3.C0 = rwing3.C0:lerp(cf(0,-cos(sine / 24),0) * angles(0,0,sin(sine / 24)) * angles(0,0,-rad(50)), 0.2)
+			lwing1.C0 = lwing1.C0:lerp(cf(0,cos(sine / 24),0) * angles(0,0,-sin(sine / 24)) * angles(0,0,rad(50)), 0.2)
+			lwing2.C0 = lwing2.C0:lerp(cf(0,cos(sine / 24),0) * angles(0,0,-sin(sine / 24)) * angles(0,0,rad(50)), 0.2)
+			lwing3.C0 = lwing3.C0:lerp(cf(0,cos(sine / 24),0) * angles(0,0,-sin(sine / 24)) * angles(0,0,rad(50)), 0.2)
+		end
+
+		if globalid == 2 then
+			rwing1.C0 = rwing1.C0:lerp(cf(0,-cos(sine / 48),0) * angles(0,0,sin(sine / 24)) * angles(0,0,-rad(80)), 0.2)
+			rwing2.C0 = rwing2.C0:lerp(cf(0,-cos(sine / 48),0) * angles(0,0,sin(sine / 24)) * angles(0,0,-rad(80)), 0.2)
+			rwing3.C0 = rwing3.C0:lerp(cf(0,-cos(sine / 48),0) * angles(0,0,sin(sine / 24)) * angles(0,0,-rad(80)), 0.2)
+			lwing1.C0 = lwing1.C0:lerp(cf(0,cos(sine / 48),0) * angles(0,0,-sin(sine / 24)) * angles(0,0,rad(80)), 0.2)
+			lwing2.C0 = lwing2.C0:lerp(cf(0,cos(sine / 48),0) * angles(0,0,-sin(sine / 24)) * angles(0,0,rad(80)), 0.2)
+			lwing3.C0 = lwing3.C0:lerp(cf(0,cos(sine / 48),0) * angles(0,0,-sin(sine / 24)) * angles(0,0,rad(80)), 0.2)
+		end
+
+		if globalid == 3 then
+			rwing1.C0 = rwing1.C0:lerp(cf(cos(sine / 120),0,0) * angles(0,0,rad(-5))--[[ * angles(0,0,-sin(sine / 25))]], 0.2)
+			rwing2.C0 = rwing2.C0:lerp(cf(cos(sine / 110),0,0) * angles(0,0,rad(-10))--[[* angles(0,0,-sin(sine / 25))]], 0.25)
+			rwing3.C0 = rwing3.C0:lerp(cf(cos(sine / 100),0,0) * angles(0,0,rad(-15))--[[* angles(0,0,-sin(sine / 25))]], 0.3)
+			lwing1.C0 = lwing1.C0:lerp(cf(cos(sine / 120),0,0) * angles(0,0,-rad(-5))--[[ * angles(0,0,sin(sine / 25))]], 0.2)
+			lwing2.C0 = lwing2.C0:lerp(cf(cos(sine / 110),0,0) * angles(0,0,-rad(-10))--[[ * angles(0,0,sin(sine / 25))]], 0.25)
+			lwing3.C0 = lwing3.C0:lerp(cf(cos(sine / 100),0,0) * angles(0,0,-rad(-15))--[[ * angles(0,0,sin(sine / 25))]], 0.3)
+			TWELD.C0 = origTWC0 * cf(0,6,0)
+		end
+	end)
+end
+
+function dumbWingAnimator:setWingAnim(wings,wingAnimID,lwing1,lwing2,lwing3,rwing1,rwing2,rwing3,TWELD,mov1,mov2,mov3,rightsidetransparency,leftsidetransparency)
+	--othr!!!
+	globalid = wingAnimID
+	if wingAnimID == 1 then
+		rwing2.C0 = origr2C0 
+		lwing2.C0 = origl2C0 
+		lwing3.C0 = origl3C0 
+		rwing3.C0 = origr3C0 
+		lwing1.C0 = origl1C0 
+		rwing1.C0 = origr1C0 
+		TWELD.C0 = origTWC0 * cf(0,1.5,0) * angles(0,0,rad(180))
+		mov1.C0 = origM1C0 * angles(0,0,rad(60))-- + Vector3.new(0,1,0)
+		mov2.C0 = origM2C0 * angles(0,0,rad(60))-- + Vector3.new(0,1,0)
+		mov3.C0 = origM3C0 * angles(0,0,rad(60))-- + Vector3.new(0,1,0) 
+	end
+	if wingAnimID == 2 then
+		rwing2.C0 = origr2C0 
+		lwing2.C0 = origl2C0 
+		lwing3.C0 = origl3C0 
+		rwing3.C0 = origr3C0 
+		lwing1.C0 = origl1C0 
+		rwing1.C0 = origr1C0 
+		TWELD.C0 = origTWC0 * cf(0,1,0)
+		mov1.C0 = origM1C0 * angles(0,0,rad(60))
+		mov2.C0 = origM2C0 * angles(0,0,rad(60))
+		mov3.C0 = origM3C0 * angles(0,0,rad(60))
+	end
+	if wingAnimID == 3 then
+		rwing2.C0 = origr2C0 
+		lwing2.C0 = origl2C0 
+		lwing3.C0 = origl3C0 
+		rwing3.C0 = origr3C0 
+		lwing1.C0 = origl1C0 
+		rwing1.C0 = origr1C0 
+		TWELD.C0 = origTWC0 * cf(0,3,0)
+		mov1.C0 = origM1C0 * angles(0,0,rad(60))
+		mov2.C0 = origM2C0 * angles(0,0,rad(60))
+		mov3.C0 = origM3C0 * angles(0,0,rad(60))
+	end
+	if wingAnimID == 4 then
+
+		TWELD.C0 = origTWC0 
+		rwing2.C0 = origr2C0 * cf(-2,0,0)
+		lwing2.C0 = origl2C0 * cf(2,0,0)
+		lwing3.C0 = origl3C0 * cf(2,0,0)
+		rwing3.C0 = origr3C0 * cf(-2,0,0)
+		lwing1.C0 = origl1C0 * cf(2,0,0)
+		rwing1.C0 = origr1C0 * cf(-2,0,0)
+
+		mov1.C0 = origM1C0 * angles(0,0,-10) 
+		mov3.C0 = origM3C0 * angles(0,0,10) 
+
+		spawn(function()
+			repeat	
+				local specsine = sine
+				lwing1.C0 = lwing1.C0 * angles(0,0,(usine/120000)) * cf(usine/60000,0,0)
+				lwing2.C0 = lwing2.C0 * angles(0,0,(usine/120000)) * cf(usine/60000,0,0)
+				lwing3.C0 = lwing3.C0 * angles(0,0,(usine/120000)) * cf(usine/60000,0,0)
+				rwing1.C0 = rwing1.C0 * angles(0,0,(usine/120000)) * cf(-usine/60000,0,0)
+				rwing2.C0 = rwing2.C0 * angles(0,0,(usine/120000)) * cf(-usine/60000,0,0)
+				rwing3.C0 = rwing3.C0 * angles(0,0,(usine/120000)) * cf(-usine/60000,0,0)
+				if currentsineMove == "add" then
+					usine = usine + 1
+				elseif currentsineMove == "minus" then
+					usine = usine - 1
+				end
+				if usine == -500 then
+					currentsineMove = "add"
+				elseif usine == 500 then
+					currentsineMove = "minus"
+				end
+				TWELD.C0 = TWELD.C0 * angles(0,0,rad(usine/32))
+				if globalid ~= 4 then
+					break
+				end
+				wait(0.001)
+			until globalid ~= 4
+		end)
+
+	end
+end
+
+return dumbWingAnimator
