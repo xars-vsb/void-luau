@@ -2218,27 +2218,27 @@ m.KeyDown:Connect(function(k)
 end)
 ]],Char)
 
---Player.Chatted:Connect(function(m)
---	print("sent")
---	local split = string.split(m,":")
---	if split[1]:lower() == "/wt" then
---		print("cmd detected")
---		if split[2]:lower() == "color" then
---			print("cmds")
---			setclr(m)
---		end
---		pcall(function()
---			if typeof(tonumber(split[2])) == "number" then
---				print("cmds")
---				setup_wing(split[2])
---			end
---		end)
---		if split[2]:lower() == "accessoryui" then
---			print("cmds")
---			EXOSPHERIC.Enabled = true
---		end
---	end 
---end)
+Player.Chatted:Connect(function(m)
+	print("sent")
+	local split = string.split(m,":")
+	if split[1]:lower() == "/wt" then
+		print("cmd detected")
+		if split[2]:lower() == "color" then
+			print("cmds")
+			setclr(m)
+		end
+		pcall(function()
+			if typeof(tonumber(split[2])) == "number" then
+				print("cmds")
+				setup_wing(split[2])
+			end
+		end)
+		if split[2]:lower() == "accessoryui" then
+			print("cmds")
+			EXOSPHERIC.Enabled = true
+		end
+	end 
+end)
 
 
 for i = 1,6 do
