@@ -2218,21 +2218,6 @@ m.KeyDown:Connect(function(k)
 end)
 ]],Char)
 
-ev.OnServerEvent:Connect(function(plr,key)
-	if key == "q" then
-		setmode("m1")
-	end
-	if key == "e" then
-		setmode("m2")
-	end
-	if key == "r" then
-		setmode("m3")
-	end
-	if key == "t" then
-		setmode("m4")
-	end
-end)
-
 --Player.Chatted:Connect(function(m)
 --	print("sent")
 --	local split = string.split(m,":")
@@ -2278,6 +2263,21 @@ for i = 1,6 do
 end
 
 swa:setupWingAnim(welder3.Part1,welder2.Part2,welder1.Part3,welder1.Part4,welder2.Part5,welder3.Part6,torso.Part,welder.mover1,welder.mover2,welder.mover3)
+
+ev.OnServerEvent:Connect(function(plr,key)
+	if key == "q" then
+		setmode("m1")
+	end
+	if key == "e" then
+		setmode("m2")
+	end
+	if key == "r" then
+		setmode("m3")
+	end
+	if key == "t" then
+		setmode("m4")
+	end
+end)
 
 local Floor
 local Anim = "None"
