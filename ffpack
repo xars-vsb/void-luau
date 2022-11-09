@@ -1,0 +1,514 @@
+local ForcefieldPack = Instance.new("Model")
+ForcefieldPack.Parent = owner.Character
+ForcefieldPack.Name = "ForcefieldPack"
+ForcefieldPack.WorldPivot = CFrame.new(108.625, 3, 86.33186340332031)
+
+local Main = Instance.new("Part")
+Main.Name = "Main"
+Main.BottomSurface = Enum.SurfaceType.Smooth
+Main.CanCollide = false
+Main.Transparency = 1
+Main.TopSurface = Enum.SurfaceType.Smooth
+Main.Size = Vector3.new(2, 2, 1)
+Main.CFrame = CFrame.new(108.625, 3, 86.125)
+Main.Parent = ForcefieldPack
+
+local Pack = Instance.new("Model")
+Pack.Name = "Pack"
+Pack.WorldPivot = CFrame.new(108.62501525878906, 3.4749996662139893, 86.33186340332031, -1, 0, 0, 0, 4.371138828673793e-08, -1, 0, -1, -4.371138828673793e-08)
+Pack.Parent = ForcefieldPack
+
+local Part = Instance.new("Part")
+Part.BottomSurface = Enum.SurfaceType.Smooth
+Part.TopSurface = Enum.SurfaceType.Smooth
+Part.Color = Color3.fromRGB(91, 93, 105)
+Part.Material = Enum.Material.Metal
+Part.Size = Vector3.new(0.04583338648080826, 0.8250017762184143, 0.41250088810920715)
+Part.CFrame = CFrame.new(109.22846984863281, 3.4250004291534424, 86.44374084472656, -1, 0, 0, 0, 1, 4.371138828673793e-08, 0, 4.371138828673793e-08, -1)
+Part.Parent = Pack
+
+local Part1 = Instance.new("Part")
+Part1.BottomSurface = Enum.SurfaceType.Smooth
+Part1.TopSurface = Enum.SurfaceType.Smooth
+Part1.Color = Color3.fromRGB(159, 161, 172)
+Part1.Material = Enum.Material.Metal
+Part1.Size = Vector3.new(0.32222479581832886, 0.7638905048370361, 0.7638905048370361)
+Part1.CFrame = CFrame.new(109.07500457763672, 3.4250001907348633, 86.64999389648438, -1, 0, 0, 0, 1, 4.371138828673793e-08, 0, 4.371138828673793e-08, -1)
+Part1.Shape = Enum.PartType.Cylinder
+Part1.Parent = Pack
+
+local Attachment0 = Instance.new("Attachment")
+Attachment0.Name = "Attachment0"
+Attachment0.WorldSecondaryAxis = Vector3.new(-1, 0, 4.371138828673793e-08)
+Attachment0.WorldOrientation = Vector3.new(-0, -179.99998474121094, -90)
+Attachment0.CFrame = CFrame.new(0.12522800266742706, -0.3819452226161957, -1.6695356208629164e-08, 0, 1, 4.371138828673793e-08, -1, 1.910685465164705e-15, -4.371138828673793e-08, -4.371138828673793e-08, -4.371138828673793e-08, 1)
+Attachment0.WorldPosition = Vector3.new(108.94977569580078, 3.0430550575256348, 86.64999389648438)
+Attachment0.Axis = Vector3.new(0, -1, -4.371138828673793e-08)
+Attachment0.Rotation = Vector3.new(0.000002504477834008867, 0.000002504477834008867, -90)
+Attachment0.WorldCFrame = CFrame.new(108.94977569580078, 3.0430550575256348, 86.64999389648438, -0, -1, -4.371138828673793e-08, -1, 0, 0, 0, 4.371138828673793e-08, -1)
+Attachment0.SecondaryAxis = Vector3.new(1, 1.910685465164705e-15, -4.371138828673793e-08)
+Attachment0.Position = Vector3.new(0.12522800266742706, -0.3819452226161957, -1.6695356208629164e-08)
+Attachment0.Orientation = Vector3.new(0.000002504477834008867, 0.000002504477834008867, -90)
+Attachment0.WorldAxis = Vector3.new(-0, -1, 0)
+Attachment0.Parent = Part1
+
+local RopeConstraint = Instance.new("RopeConstraint")
+RopeConstraint.Visible = true
+RopeConstraint.Color = BrickColor.new("Really black")
+RopeConstraint.Thickness = 0.05
+RopeConstraint.Length = 0.725
+RopeConstraint.Parent = Part1
+
+local Wedge = Instance.new("WedgePart")
+Wedge.BottomSurface = Enum.SurfaceType.Smooth
+Wedge.Color = Color3.fromRGB(159, 161, 172)
+Wedge.Material = Enum.Material.Metal
+Wedge.Size = Vector3.new(0.336111843585968, 0.12222247570753098, 0.07638901472091675)
+Wedge.CFrame = CFrame.new(109.17500305175781, 3.424999475479126, 87.02429962158203, 0, 1, 0, 1, 0, 4.371138828673793e-08, 4.371138828673793e-08, -0, -1)
+Wedge.Parent = Pack
+
+local Part2 = Instance.new("Part")
+Part2.BottomSurface = Enum.SurfaceType.Smooth
+Part2.TopSurface = Enum.SurfaceType.Smooth
+Part2.Color = Color3.fromRGB(91, 93, 105)
+Part2.Material = Enum.Material.Metal
+Part2.Size = Vector3.new(0.04583338648080826, 0.8250017762184143, 0.8250017762184143)
+Part2.CFrame = CFrame.new(109.22846984863281, 3.4250001907348633, 86.64999389648438, -1, 0, 0, 0, 1, 4.371138828673793e-08, 0, 4.371138828673793e-08, -1)
+Part2.Shape = Enum.PartType.Cylinder
+Part2.Parent = Pack
+
+local Part3 = Instance.new("Part")
+Part3.BottomSurface = Enum.SurfaceType.Smooth
+Part3.TopSurface = Enum.SurfaceType.Smooth
+Part3.Color = Color3.fromRGB(159, 161, 172)
+Part3.Material = Enum.Material.Metal
+Part3.Size = Vector3.new(0.061111241579055786, 0.33611181378364563, 0.6416680216789246)
+Part3.CFrame = CFrame.new(109.08332824707031, 3.4250001907348633, 86.74166107177734, 1, 0, 0, 0, -1, 4.371138828673793e-08, -0, -4.371138828673793e-08, -1)
+Part3.Parent = Pack
+
+local Part4 = Instance.new("Part")
+Part4.BottomSurface = Enum.SurfaceType.Smooth
+Part4.TopSurface = Enum.SurfaceType.Smooth
+Part4.Color = Color3.fromRGB(159, 161, 172)
+Part4.Material = Enum.Material.Metal
+Part4.Size = Vector3.new(0.061111241579055786, 0.33611181378364563, 0.6416680216789246)
+Part4.CFrame = CFrame.new(108.16666412353516, 3.4250001907348633, 86.74166107177734, -1, 0, 0, 0, 1, 4.371138828673793e-08, 0, 4.371138828673793e-08, -1)
+Part4.Parent = Pack
+
+local Part5 = Instance.new("Part")
+Part5.BottomSurface = Enum.SurfaceType.Smooth
+Part5.TopSurface = Enum.SurfaceType.Smooth
+Part5.Color = Color3.fromRGB(91, 93, 105)
+Part5.Material = Enum.Material.Metal
+Part5.Size = Vector3.new(0.04583338648080826, 0.8250017762184143, 0.8250017762184143)
+Part5.CFrame = CFrame.new(108.32499694824219, 3.424999713897705, 86.64999389648438, -1, 0, 0, 0, 1, 4.371138828673793e-08, 0, 4.371138828673793e-08, -1)
+Part5.Shape = Enum.PartType.Cylinder
+Part5.Parent = Pack
+
+local Attachment1 = Instance.new("Attachment")
+Attachment1.Name = "Attachment1"
+Attachment1.WorldSecondaryAxis = Vector3.new(-1, 0, 4.371138828673793e-08)
+Attachment1.WorldOrientation = Vector3.new(-0, -179.99998474121094, -90)
+Attachment1.CFrame = CFrame.new(0, -0.2916821837425232, -0.2916821837425232, 0, 1, 4.371138828673793e-08, -1, 1.910685465164705e-15, -4.371138828673793e-08, -4.371138828673793e-08, -4.371138828673793e-08, 1)
+Attachment1.WorldPosition = Vector3.new(108.32499694824219, 3.133317470550537, 86.9416732788086)
+Attachment1.Axis = Vector3.new(0, -1, -4.371138828673793e-08)
+Attachment1.Rotation = Vector3.new(0.000002504477834008867, 0.000002504477834008867, -90)
+Attachment1.WorldCFrame = CFrame.new(108.32499694824219, 3.133317470550537, 86.9416732788086, -0, -1, -4.371138828673793e-08, -1, 0, 0, 0, 4.371138828673793e-08, -1)
+Attachment1.SecondaryAxis = Vector3.new(1, 1.910685465164705e-15, -4.371138828673793e-08)
+Attachment1.Position = Vector3.new(0, -0.2916821837425232, -0.2916821837425232)
+Attachment1.Orientation = Vector3.new(0.000002504477834008867, 0.000002504477834008867, -90)
+Attachment1.WorldAxis = Vector3.new(-0, -1, 0)
+Attachment1.Parent = Part5
+
+local Part6 = Instance.new("Part")
+Part6.BottomSurface = Enum.SurfaceType.Smooth
+Part6.TopSurface = Enum.SurfaceType.Smooth
+Part6.Color = Color3.fromRGB(91, 93, 105)
+Part6.Material = Enum.Material.Metal
+Part6.Size = Vector3.new(1.176391363143921, 0.7944461703300476, 0.4277786910533905)
+Part6.CFrame = CFrame.new(108.625, 3.424999713897705, 86.46664428710938, -1, 0, 0, 0, 1, 4.371138828673793e-08, 0, 4.371138828673793e-08, -1)
+Part6.Parent = Pack
+
+local Part7 = Instance.new("Part")
+Part7.BottomSurface = Enum.SurfaceType.Smooth
+Part7.TopSurface = Enum.SurfaceType.Smooth
+Part7.Color = Color3.fromRGB(91, 93, 105)
+Part7.Material = Enum.Material.Metal
+Part7.Size = Vector3.new(1.176391363143921, 0.7944461703300476, 0.061111241579055786)
+Part7.CFrame = CFrame.new(108.625, 3.424999713897705, 86.64999389648438, -1, 0, 0, 0, 4.371138828673793e-08, -1, 0, -1, -4.371138828673793e-08)
+Part7.Parent = Pack
+
+local Part8 = Instance.new("Part")
+Part8.BottomSurface = Enum.SurfaceType.Smooth
+Part8.TopSurface = Enum.SurfaceType.Smooth
+Part8.Color = Color3.fromRGB(159, 161, 172)
+Part8.Material = Enum.Material.Metal
+Part8.Size = Vector3.new(0.855557382106781, 0.030555568635463715, 0.6416680216789246)
+Part8.CFrame = CFrame.new(108.62499237060547, 3.2722220420837402, 86.74166107177734, 1, 0, 0, 0, -1, 4.371138828673793e-08, -0, -4.371138828673793e-08, -1)
+Part8.Parent = Pack
+
+local Part9 = Instance.new("Part")
+Part9.BottomSurface = Enum.SurfaceType.Smooth
+Part9.TopSurface = Enum.SurfaceType.Smooth
+Part9.Color = Color3.fromRGB(159, 161, 172)
+Part9.Material = Enum.Material.Metal
+Part9.Size = Vector3.new(1.2222248315811157, 0.7638905048370361, 0.3666674494743347)
+Part9.CFrame = CFrame.new(108.625, 3.4250004291534424, 86.45137786865234, -1, 0, 0, 0, 1, 4.371138828673793e-08, 0, 4.371138828673793e-08, -1)
+Part9.Parent = Pack
+
+local Part10 = Instance.new("Part")
+Part10.BottomSurface = Enum.SurfaceType.Smooth
+Part10.TopSurface = Enum.SurfaceType.Smooth
+Part10.Color = Color3.fromRGB(159, 161, 172)
+Part10.Material = Enum.Material.Metal
+Part10.Size = Vector3.new(0.855557382106781, 0.030555568635463715, 0.6416680216789246)
+Part10.CFrame = CFrame.new(108.625, 3.5777783393859863, 86.74166107177734, -1, 0, 0, 0, 1, 4.371138828673793e-08, 0, 4.371138828673793e-08, -1)
+Part10.Parent = Pack
+
+local Part11 = Instance.new("Part")
+Part11.BottomSurface = Enum.SurfaceType.Smooth
+Part11.TopSurface = Enum.SurfaceType.Smooth
+Part11.Color = Color3.fromRGB(17, 17, 17)
+Part11.Material = Enum.Material.Neon
+Part11.Size = Vector3.new(0.855557382106781, 0.27500051259994507, 0.0305556058883667)
+Part11.CFrame = CFrame.new(108.625, 3.4250001907348633, 87.04721069335938, -1, 0, 0, 0, 1, 4.371138828673793e-08, 0, 4.371138828673793e-08, -1)
+Part11.Parent = Pack
+
+local SurfaceGui = Instance.new("SurfaceGui")
+SurfaceGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+SurfaceGui.ClipsDescendants = true
+SurfaceGui.SizingMode = Enum.SurfaceGuiSizingMode.PixelsPerStud
+SurfaceGui.Brightness = 5
+SurfaceGui.Parent = Part11
+
+local Frame = Instance.new("Frame")
+Frame.Size = UDim2.new(1, 0, 1, 0)
+Frame.BackgroundColor3 = Color3.fromRGB(255, 122, 55)
+Frame.Parent = SurfaceGui
+
+local Part12 = Instance.new("Part")
+Part12.BottomSurface = Enum.SurfaceType.Smooth
+Part12.TopSurface = Enum.SurfaceType.Smooth
+Part12.Color = Color3.fromRGB(159, 161, 172)
+Part12.Material = Enum.Material.Metal
+Part12.Size = Vector3.new(1.3763914108276367, 0.9444462656974792, 0.027778679504990578)
+Part12.CFrame = CFrame.new(108.625, 3.424999713897705, 86.64166259765625, -1, 0, 0, 0, 1, 4.371138828673793e-08, 0, 4.371138828673793e-08, -1)
+Part12.Parent = Pack
+
+local Part13 = Instance.new("Part")
+Part13.BottomSurface = Enum.SurfaceType.Smooth
+Part13.TopSurface = Enum.SurfaceType.Smooth
+Part13.Color = Color3.fromRGB(159, 161, 172)
+Part13.Material = Enum.Material.Metal
+Part13.Size = Vector3.new(0.32222479581832886, 0.7638905048370361, 0.7638905048370361)
+Part13.CFrame = CFrame.new(108.17499542236328, 3.4250001907348633, 86.64999389648438, -1, 0, 0, 0, 1, 4.371138828673793e-08, 0, 4.371138828673793e-08, -1)
+Part13.Shape = Enum.PartType.Cylinder
+Part13.Parent = Pack
+
+local Attachment01 = Instance.new("Attachment")
+Attachment01.Name = "Attachment0"
+Attachment01.WorldSecondaryAxis = Vector3.new(-1, 0, 4.371138828673793e-08)
+Attachment01.WorldOrientation = Vector3.new(-0, -179.99998474121094, -90)
+Attachment01.CFrame = CFrame.new(0.12522800266742706, -0.3819452226161957, -1.6695356208629164e-08, 0, 1, 4.371138828673793e-08, -1, 1.910685465164705e-15, -4.371138828673793e-08, -4.371138828673793e-08, -4.371138828673793e-08, 1)
+Attachment01.WorldPosition = Vector3.new(108.04976654052734, 3.0430550575256348, 86.64999389648438)
+Attachment01.Axis = Vector3.new(0, -1, -4.371138828673793e-08)
+Attachment01.Rotation = Vector3.new(0.000002504477834008867, 0.000002504477834008867, -90)
+Attachment01.WorldCFrame = CFrame.new(108.04976654052734, 3.0430550575256348, 86.64999389648438, -0, -1, -4.371138828673793e-08, -1, 0, 0, 0, 4.371138828673793e-08, -1)
+Attachment01.SecondaryAxis = Vector3.new(1, 1.910685465164705e-15, -4.371138828673793e-08)
+Attachment01.Position = Vector3.new(0.12522800266742706, -0.3819452226161957, -1.6695356208629164e-08)
+Attachment01.Orientation = Vector3.new(0.000002504477834008867, 0.000002504477834008867, -90)
+Attachment01.WorldAxis = Vector3.new(-0, -1, 0)
+Attachment01.Parent = Part13
+
+local RopeConstraint1 = Instance.new("RopeConstraint")
+RopeConstraint1.Visible = true
+RopeConstraint1.Color = BrickColor.new("Really black")
+RopeConstraint1.Thickness = 0.05
+RopeConstraint1.Length = 0.7669609
+RopeConstraint1.Parent = Part13
+
+local Part14 = Instance.new("Part")
+Part14.BottomSurface = Enum.SurfaceType.Smooth
+Part14.TopSurface = Enum.SurfaceType.Smooth
+Part14.Color = Color3.fromRGB(91, 93, 105)
+Part14.Material = Enum.Material.Metal
+Part14.Size = Vector3.new(0.04583338648080826, 0.8250017762184143, 0.8250017762184143)
+Part14.CFrame = CFrame.new(108.92499542236328, 3.424999713897705, 86.64999389648438, -1, 0, 0, 0, 1, 4.371138828673793e-08, 0, 4.371138828673793e-08, -1)
+Part14.Shape = Enum.PartType.Cylinder
+Part14.Parent = Pack
+
+local Attachment11 = Instance.new("Attachment")
+Attachment11.Name = "Attachment1"
+Attachment11.WorldSecondaryAxis = Vector3.new(-1, 0, 4.371138828673793e-08)
+Attachment11.WorldOrientation = Vector3.new(-0, -179.99998474121094, -90)
+Attachment11.CFrame = CFrame.new(0, -0.2916821837425232, -0.2916821837425232, 0, 1, 4.371138828673793e-08, -1, 1.910685465164705e-15, -4.371138828673793e-08, -4.371138828673793e-08, -4.371138828673793e-08, 1)
+Attachment11.WorldPosition = Vector3.new(108.92499542236328, 3.133317470550537, 86.9416732788086)
+Attachment11.Axis = Vector3.new(0, -1, -4.371138828673793e-08)
+Attachment11.Rotation = Vector3.new(0.000002504477834008867, 0.000002504477834008867, -90)
+Attachment11.WorldCFrame = CFrame.new(108.92499542236328, 3.133317470550537, 86.9416732788086, -0, -1, -4.371138828673793e-08, -1, 0, 0, 0, 4.371138828673793e-08, -1)
+Attachment11.SecondaryAxis = Vector3.new(1, 1.910685465164705e-15, -4.371138828673793e-08)
+Attachment11.Position = Vector3.new(0, -0.2916821837425232, -0.2916821837425232)
+Attachment11.Orientation = Vector3.new(0.000002504477834008867, 0.000002504477834008867, -90)
+Attachment11.WorldAxis = Vector3.new(-0, -1, 0)
+Attachment11.Parent = Part14
+
+local Part15 = Instance.new("Part")
+Part15.BottomSurface = Enum.SurfaceType.Smooth
+Part15.TopSurface = Enum.SurfaceType.Smooth
+Part15.Color = Color3.fromRGB(91, 93, 105)
+Part15.Material = Enum.Material.Metal
+Part15.Size = Vector3.new(0.576391339302063, 0.3944461941719055, 0.7527787089347839)
+Part15.CFrame = CFrame.new(108.625, 3.424999713897705, 86.629150390625, -1, 0, 0, 0, 1, 4.371138828673793e-08, 0, 4.371138828673793e-08, -1)
+Part15.Parent = Pack
+
+local Part16 = Instance.new("Part")
+Part16.BottomSurface = Enum.SurfaceType.Smooth
+Part16.TopSurface = Enum.SurfaceType.Smooth
+Part16.Color = Color3.fromRGB(82, 124, 174)
+Part16.Material = Enum.Material.Neon
+Part16.Size = Vector3.new(0.5958333611488342, 0.7749999761581421, 0.824999988079071)
+Part16.CFrame = CFrame.new(108.62496948242188, 3.424999713897705, 86.64999389648438, -1, 0, 0, 0, 1, 4.371138828673793e-08, 0, 4.371138828673793e-08, -1)
+Part16.Shape = Enum.PartType.Cylinder
+Part16.Parent = Pack
+
+local Attachment12 = Instance.new("Attachment")
+Attachment12.Name = "Attachment1"
+Attachment12.WorldSecondaryAxis = Vector3.new(-1, 0, 4.371138828673793e-08)
+Attachment12.WorldOrientation = Vector3.new(-0, -179.99998474121094, -90)
+Attachment12.CFrame = CFrame.new(0, -0.2740044891834259, -0.2916821837425232, 0, 1, 4.371138828673793e-08, -1, 1.910685465164705e-15, -4.371138828673793e-08, -4.371138828673793e-08, -4.371138828673793e-08, 1)
+Attachment12.WorldPosition = Vector3.new(108.62496948242188, 3.1509952545166016, 86.9416732788086)
+Attachment12.Axis = Vector3.new(0, -1, -4.371138828673793e-08)
+Attachment12.Rotation = Vector3.new(0.000002504477834008867, 0.000002504477834008867, -90)
+Attachment12.WorldCFrame = CFrame.new(108.62496948242188, 3.1509952545166016, 86.9416732788086, -0, -1, -4.371138828673793e-08, -1, 0, 0, 0, 4.371138828673793e-08, -1)
+Attachment12.SecondaryAxis = Vector3.new(1, 1.910685465164705e-15, -4.371138828673793e-08)
+Attachment12.Position = Vector3.new(0, -0.2740044891834259, -0.2916821837425232)
+Attachment12.Orientation = Vector3.new(0.000002504477834008867, 0.000002504477834008867, -90)
+Attachment12.WorldAxis = Vector3.new(-0, -1, 0)
+Attachment12.Parent = Part16
+
+local Part17 = Instance.new("Part")
+Part17.BottomSurface = Enum.SurfaceType.Smooth
+Part17.TopSurface = Enum.SurfaceType.Smooth
+Part17.Color = Color3.fromRGB(91, 93, 105)
+Part17.Material = Enum.Material.Metal
+Part17.Size = Vector3.new(0.02083338052034378, 0.824999988079071, 0.824999988079071)
+Part17.CFrame = CFrame.new(108.52497863769531, 3.424999713897705, 86.64999389648438, -1, 0, 0, 0, 1, 4.371138828673793e-08, 0, 4.371138828673793e-08, -1)
+Part17.Shape = Enum.PartType.Cylinder
+Part17.Parent = Pack
+
+local Attachment13 = Instance.new("Attachment")
+Attachment13.Name = "Attachment1"
+Attachment13.WorldSecondaryAxis = Vector3.new(-1, 0, 4.371138828673793e-08)
+Attachment13.WorldOrientation = Vector3.new(-0, -179.99998474121094, -90)
+Attachment13.CFrame = CFrame.new(0, -0.2916821837425232, -0.2916821837425232, 0, 1, 4.371138828673793e-08, -1, 1.910685465164705e-15, -4.371138828673793e-08, -4.371138828673793e-08, -4.371138828673793e-08, 1)
+Attachment13.WorldPosition = Vector3.new(108.52497863769531, 3.133317470550537, 86.9416732788086)
+Attachment13.Axis = Vector3.new(0, -1, -4.371138828673793e-08)
+Attachment13.Rotation = Vector3.new(0.000002504477834008867, 0.000002504477834008867, -90)
+Attachment13.WorldCFrame = CFrame.new(108.52497863769531, 3.133317470550537, 86.9416732788086, -0, -1, -4.371138828673793e-08, -1, 0, 0, 0, 4.371138828673793e-08, -1)
+Attachment13.SecondaryAxis = Vector3.new(1, 1.910685465164705e-15, -4.371138828673793e-08)
+Attachment13.Position = Vector3.new(0, -0.2916821837425232, -0.2916821837425232)
+Attachment13.Orientation = Vector3.new(0.000002504477834008867, 0.000002504477834008867, -90)
+Attachment13.WorldAxis = Vector3.new(-0, -1, 0)
+Attachment13.Parent = Part17
+
+local Part18 = Instance.new("Part")
+Part18.BottomSurface = Enum.SurfaceType.Smooth
+Part18.TopSurface = Enum.SurfaceType.Smooth
+Part18.Color = Color3.fromRGB(91, 93, 105)
+Part18.Material = Enum.Material.Metal
+Part18.Size = Vector3.new(0.020833373069763184, 0.824999988079071, 0.824999988079071)
+Part18.CFrame = CFrame.new(108.42497253417969, 3.424999713897705, 86.64999389648438, -1, 0, 0, 0, 1, 4.371138828673793e-08, 0, 4.371138828673793e-08, -1)
+Part18.Shape = Enum.PartType.Cylinder
+Part18.Parent = Pack
+
+local Attachment14 = Instance.new("Attachment")
+Attachment14.Name = "Attachment1"
+Attachment14.WorldSecondaryAxis = Vector3.new(-1, 0, 4.371138828673793e-08)
+Attachment14.WorldOrientation = Vector3.new(-0, -179.99998474121094, -90)
+Attachment14.CFrame = CFrame.new(0, -0.2916821837425232, -0.2916821837425232, 0, 1, 4.371138828673793e-08, -1, 1.910685465164705e-15, -4.371138828673793e-08, -4.371138828673793e-08, -4.371138828673793e-08, 1)
+Attachment14.WorldPosition = Vector3.new(108.42497253417969, 3.133317470550537, 86.9416732788086)
+Attachment14.Axis = Vector3.new(0, -1, -4.371138828673793e-08)
+Attachment14.Rotation = Vector3.new(0.000002504477834008867, 0.000002504477834008867, -90)
+Attachment14.WorldCFrame = CFrame.new(108.42497253417969, 3.133317470550537, 86.9416732788086, -0, -1, -4.371138828673793e-08, -1, 0, 0, 0, 4.371138828673793e-08, -1)
+Attachment14.SecondaryAxis = Vector3.new(1, 1.910685465164705e-15, -4.371138828673793e-08)
+Attachment14.Position = Vector3.new(0, -0.2916821837425232, -0.2916821837425232)
+Attachment14.Orientation = Vector3.new(0.000002504477834008867, 0.000002504477834008867, -90)
+Attachment14.WorldAxis = Vector3.new(-0, -1, 0)
+Attachment14.Parent = Part18
+
+local Part19 = Instance.new("Part")
+Part19.BottomSurface = Enum.SurfaceType.Smooth
+Part19.TopSurface = Enum.SurfaceType.Smooth
+Part19.Color = Color3.fromRGB(91, 93, 105)
+Part19.Material = Enum.Material.Metal
+Part19.Size = Vector3.new(0.020833373069763184, 0.824999988079071, 0.824999988079071)
+Part19.CFrame = CFrame.new(108.8249740600586, 3.424999713897705, 86.64999389648438, -1, 0, 0, 0, 1, 4.371138828673793e-08, 0, 4.371138828673793e-08, -1)
+Part19.Shape = Enum.PartType.Cylinder
+Part19.Parent = Pack
+
+local Attachment15 = Instance.new("Attachment")
+Attachment15.Name = "Attachment1"
+Attachment15.WorldSecondaryAxis = Vector3.new(-1, 0, 4.371138828673793e-08)
+Attachment15.WorldOrientation = Vector3.new(-0, -179.99998474121094, -90)
+Attachment15.CFrame = CFrame.new(0, -0.2916821837425232, -0.2916821837425232, 0, 1, 4.371138828673793e-08, -1, 1.910685465164705e-15, -4.371138828673793e-08, -4.371138828673793e-08, -4.371138828673793e-08, 1)
+Attachment15.WorldPosition = Vector3.new(108.8249740600586, 3.133317470550537, 86.9416732788086)
+Attachment15.Axis = Vector3.new(0, -1, -4.371138828673793e-08)
+Attachment15.Rotation = Vector3.new(0.000002504477834008867, 0.000002504477834008867, -90)
+Attachment15.WorldCFrame = CFrame.new(108.8249740600586, 3.133317470550537, 86.9416732788086, -0, -1, -4.371138828673793e-08, -1, 0, 0, 0, 4.371138828673793e-08, -1)
+Attachment15.SecondaryAxis = Vector3.new(1, 1.910685465164705e-15, -4.371138828673793e-08)
+Attachment15.Position = Vector3.new(0, -0.2916821837425232, -0.2916821837425232)
+Attachment15.Orientation = Vector3.new(0.000002504477834008867, 0.000002504477834008867, -90)
+Attachment15.WorldAxis = Vector3.new(-0, -1, 0)
+Attachment15.Parent = Part19
+
+local Part20 = Instance.new("Part")
+Part20.BottomSurface = Enum.SurfaceType.Smooth
+Part20.TopSurface = Enum.SurfaceType.Smooth
+Part20.Color = Color3.fromRGB(91, 93, 105)
+Part20.Material = Enum.Material.Metal
+Part20.Size = Vector3.new(0.020833387970924377, 0.824999988079071, 0.824999988079071)
+Part20.CFrame = CFrame.new(108.72496032714844, 3.424999713897705, 86.64999389648438, -1, 0, 0, 0, 1, 4.371138828673793e-08, 0, 4.371138828673793e-08, -1)
+Part20.Shape = Enum.PartType.Cylinder
+Part20.Parent = Pack
+
+local Attachment16 = Instance.new("Attachment")
+Attachment16.Name = "Attachment1"
+Attachment16.WorldSecondaryAxis = Vector3.new(-1, 0, 4.371138828673793e-08)
+Attachment16.WorldOrientation = Vector3.new(-0, -179.99998474121094, -90)
+Attachment16.CFrame = CFrame.new(0, -0.2916821837425232, -0.2916821837425232, 0, 1, 4.371138828673793e-08, -1, 1.910685465164705e-15, -4.371138828673793e-08, -4.371138828673793e-08, -4.371138828673793e-08, 1)
+Attachment16.WorldPosition = Vector3.new(108.72496032714844, 3.133317470550537, 86.9416732788086)
+Attachment16.Axis = Vector3.new(0, -1, -4.371138828673793e-08)
+Attachment16.Rotation = Vector3.new(0.000002504477834008867, 0.000002504477834008867, -90)
+Attachment16.WorldCFrame = CFrame.new(108.72496032714844, 3.133317470550537, 86.9416732788086, -0, -1, -4.371138828673793e-08, -1, 0, 0, 0, 4.371138828673793e-08, -1)
+Attachment16.SecondaryAxis = Vector3.new(1, 1.910685465164705e-15, -4.371138828673793e-08)
+Attachment16.Position = Vector3.new(0, -0.2916821837425232, -0.2916821837425232)
+Attachment16.Orientation = Vector3.new(0.000002504477834008867, 0.000002504477834008867, -90)
+Attachment16.WorldAxis = Vector3.new(-0, -1, 0)
+Attachment16.Parent = Part20
+
+local Part21 = Instance.new("Part")
+Part21.BottomSurface = Enum.SurfaceType.Smooth
+Part21.TopSurface = Enum.SurfaceType.Smooth
+Part21.Color = Color3.fromRGB(91, 93, 105)
+Part21.Material = Enum.Material.Metal
+Part21.Size = Vector3.new(0.020833387970924377, 0.824999988079071, 0.824999988079071)
+Part21.CFrame = CFrame.new(108.62496948242188, 3.424999713897705, 86.64999389648438, -1, 0, 0, 0, 1, 4.371138828673793e-08, 0, 4.371138828673793e-08, -1)
+Part21.Shape = Enum.PartType.Cylinder
+Part21.Parent = Pack
+
+local Attachment17 = Instance.new("Attachment")
+Attachment17.Name = "Attachment1"
+Attachment17.WorldSecondaryAxis = Vector3.new(-1, 0, 4.371138828673793e-08)
+Attachment17.WorldOrientation = Vector3.new(-0, -179.99998474121094, -90)
+Attachment17.CFrame = CFrame.new(0, -0.2916821837425232, -0.2916821837425232, 0, 1, 4.371138828673793e-08, -1, 1.910685465164705e-15, -4.371138828673793e-08, -4.371138828673793e-08, -4.371138828673793e-08, 1)
+Attachment17.WorldPosition = Vector3.new(108.62496948242188, 3.133317470550537, 86.9416732788086)
+Attachment17.Axis = Vector3.new(0, -1, -4.371138828673793e-08)
+Attachment17.Rotation = Vector3.new(0.000002504477834008867, 0.000002504477834008867, -90)
+Attachment17.WorldCFrame = CFrame.new(108.62496948242188, 3.133317470550537, 86.9416732788086, -0, -1, -4.371138828673793e-08, -1, 0, 0, 0, 4.371138828673793e-08, -1)
+Attachment17.SecondaryAxis = Vector3.new(1, 1.910685465164705e-15, -4.371138828673793e-08)
+Attachment17.Position = Vector3.new(0, -0.2916821837425232, -0.2916821837425232)
+Attachment17.Orientation = Vector3.new(0.000002504477834008867, 0.000002504477834008867, -90)
+Attachment17.WorldAxis = Vector3.new(-0, -1, 0)
+Attachment17.Parent = Part21
+
+local Part22 = Instance.new("Part")
+Part22.BottomSurface = Enum.SurfaceType.Smooth
+Part22.TopSurface = Enum.SurfaceType.Smooth
+Part22.Color = Color3.fromRGB(27, 42, 53)
+Part22.Material = Enum.Material.Fabric
+Part22.Size = Vector3.new(0.07639141380786896, 0.09444624185562134, 1.0527786016464233)
+Part22.CFrame = CFrame.new(109.27510070800781, 3.9499998092651367, 86.1290283203125, -1, 0, 0, 0, 1, 4.371138828673793e-08, 0, 4.371138828673793e-08, -1)
+Part22.Parent = Pack
+
+local Part23 = Instance.new("Part")
+Part23.BottomSurface = Enum.SurfaceType.Smooth
+Part23.TopSurface = Enum.SurfaceType.Smooth
+Part23.Color = Color3.fromRGB(27, 42, 53)
+Part23.Material = Enum.Material.Fabric
+Part23.Size = Vector3.new(1.2263914346694946, 0.09444624185562134, 0.02777864970266819)
+Part23.CFrame = CFrame.new(108.62487030029297, 3.9499998092651367, 85.61651611328125, -1, 0, 0, 0, 1, 4.371138828673793e-08, 0, 4.371138828673793e-08, -1)
+Part23.Parent = Pack
+
+local Part24 = Instance.new("Part")
+Part24.BottomSurface = Enum.SurfaceType.Smooth
+Part24.TopSurface = Enum.SurfaceType.Smooth
+Part24.Color = Color3.fromRGB(27, 42, 53)
+Part24.Material = Enum.Material.Fabric
+Part24.Size = Vector3.new(1.2263914346694946, 0.0194462388753891, 0.0777786523103714)
+Part24.CFrame = CFrame.new(108.62487030029297, 3.9124999046325684, 86.6165542602539, -1, 0, 0, 0, 1, 4.371138828673793e-08, 0, 4.371138828673793e-08, -1)
+Part24.Parent = Pack
+
+local Wedge1 = Instance.new("WedgePart")
+Wedge1.BottomSurface = Enum.SurfaceType.Smooth
+Wedge1.Color = Color3.fromRGB(159, 161, 172)
+Wedge1.Material = Enum.Material.Metal
+Wedge1.Size = Vector3.new(0.336111843585968, 0.12222247570753098, 0.07638901472091675)
+Wedge1.CFrame = CFrame.new(108.07499694824219, 3.424999475479126, 87.02429962158203, 0, -1, 0, -1, 0, 4.371138828673793e-08, -4.371138828673793e-08, 0, -1)
+Wedge1.Parent = Pack
+
+local Part25 = Instance.new("Part")
+Part25.BottomSurface = Enum.SurfaceType.Smooth
+Part25.TopSurface = Enum.SurfaceType.Smooth
+Part25.Color = Color3.fromRGB(91, 93, 105)
+Part25.Material = Enum.Material.Metal
+Part25.Size = Vector3.new(0.04583338648080826, 0.8250017762184143, 0.8250017762184143)
+Part25.CFrame = CFrame.new(108.02152252197266, 3.4250001907348633, 86.64999389648438, -1, 0, 0, 0, 1, 4.371138828673793e-08, 0, 4.371138828673793e-08, -1)
+Part25.Shape = Enum.PartType.Cylinder
+Part25.Parent = Pack
+
+local Part26 = Instance.new("Part")
+Part26.BottomSurface = Enum.SurfaceType.Smooth
+Part26.TopSurface = Enum.SurfaceType.Smooth
+Part26.Color = Color3.fromRGB(91, 93, 105)
+Part26.Material = Enum.Material.Metal
+Part26.Size = Vector3.new(0.04583338648080826, 0.8250017762184143, 0.41250088810920715)
+Part26.CFrame = CFrame.new(108.02152252197266, 3.4250004291534424, 86.44374084472656, -1, 0, 0, 0, 1, 4.371138828673793e-08, 0, 4.371138828673793e-08, -1)
+Part26.Parent = Pack
+
+local Part27 = Instance.new("Part")
+Part27.BottomSurface = Enum.SurfaceType.Smooth
+Part27.TopSurface = Enum.SurfaceType.Smooth
+Part27.Color = Color3.fromRGB(27, 42, 53)
+Part27.Material = Enum.Material.Fabric
+Part27.Size = Vector3.new(0.07639141380786896, 0.09444624185562134, 1.0527786016464233)
+Part27.CFrame = CFrame.new(107.97492218017578, 3.9499998092651367, 86.1290283203125, -1, 0, 0, 0, 1, 4.371138828673793e-08, 0, 4.371138828673793e-08, -1)
+Part27.Parent = Pack
+
+RopeConstraint.Attachment0 = Attachment0
+RopeConstraint.Attachment1 = Attachment1
+
+RopeConstraint1.Attachment0 = Attachment01
+RopeConstraint1.Attachment1 = Attachment1
+
+ForcefieldPack.PrimaryPart = Main
+
+local Forcefield = Instance.new("Part")
+Forcefield.Name = "Forcefield"
+Forcefield.BottomSurface = Enum.SurfaceType.Smooth
+Forcefield.CanCollide = false
+Forcefield.Transparency = 1
+Forcefield.TopSurface = Enum.SurfaceType.Smooth
+Forcefield.Color = Color3.fromRGB(245, 205, 48)
+Forcefield.Material = Enum.Material.ForceField
+Forcefield.Size = Vector3.new(7,7,7)
+Forcefield.CastShadow = false
+Forcefield.Shape = Enum.PartType.Ball
+
+local Block = Instance.new("Sound")
+Block.Name = "Block"
+Block.Volume = 4
+Block.SoundId = "rbxassetid://1841352043"
+Block.Parent = Forcefield
+
+local Weld = Instance.new("Weld")
+Weld.Part0 = owner.Character.Torso
+Weld.Part1 = Main
+
+owner.Character.Humanoid.HealthChanged:Connect(function(newhp)
+	if owner.Character.Humanoid.MaxHealth < newhp then return end
+	owner.Character.Humanoid.Health = owner.Character.Humanoid.MaxHealth
+	Forcefield.Parent = workspace
+	Forcefield.CFrame = owner.Character.Torso.CFrame
+	Block:Play()
+	game:GetService("TweenService"):Create(Forcefield,TweenInfo.new(0.5,Enum.EasingStyle.Sine,Enum.EasingDirection.InOut,0,true,0.2),{Transparency = 0.3}):Play()
+end)
