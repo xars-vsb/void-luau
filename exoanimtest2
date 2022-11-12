@@ -1,0 +1,1967 @@
+--local owner = game.Players:WaitForChild("TrapzFX")
+local accessoryfx = ""
+local currentcr = Color3.fromRGB(255,255,255)
+
+if not owner.Character then owner.CharacterAdded:Wait() end
+
+local require = function(module) --HTTPR LOADER
+	if typeof(module) == "Instance" then
+		return getfenv(0).require(module)
+	else
+		local HttpService = game:GetService("HttpService")
+		local success, err = pcall(HttpService.GetAsync, HttpService, "https://raw.githubusercontent.com/xars-vsb/void-luau/main/"..tostring(module))
+		if success then
+			return loadstring(err)()
+		else
+			return error(string.format("Failed to load module: %s", err))
+		end
+	end
+end
+
+local function ae1(a,afx)
+	spawn(function()
+		repeat
+			local prt = Instance.new("SpawnLocation")
+			local spc = Instance.new("SpecialMesh")
+			prt.Enabled = false
+			prt.Neutral = false
+			prt.TeamColor = BrickColor.new("Steel blue")
+			prt.Parent = a
+			prt.Position = a.WorldPosition
+			prt.Orientation = Vector3.new(math.random(-360,360),math.random(-360,360),math.random(-360,360))
+			prt.Size = Vector3.new(.5, .5, .5)
+			prt.Shape = "Ball"
+			prt.Material = "Neon"
+			prt.Color = currentcr
+			prt.Anchored = true
+			prt.CanCollide = false
+			spc.Parent = prt
+			spc.MeshType = Enum.MeshType.Sphere
+
+			game:GetService("TweenService"):Create(prt,TweenInfo.new(0.75,Enum.EasingStyle.Sine,Enum.EasingDirection.Out),{Size = Vector3.new(0.025,0.025,0.025),Transparency = 1,CFrame = prt.CFrame * CFrame.new(0,0,1)}):Play()
+			spawn(function()
+				task.wait(1)
+				prt:Destroy()
+			end)
+			task.wait(0.05)
+		until accessoryfx ~= afx
+	end)
+end
+
+local function ae2(a,afx)
+	spawn(function()
+		repeat
+			local prt = Instance.new("SpawnLocation")
+			local spc = Instance.new("SpecialMesh")
+			prt.Enabled = false
+			prt.Neutral = false
+			prt.TeamColor = BrickColor.new("Steel blue")
+			prt.Parent = a
+			prt.Position = a.WorldPosition
+			prt.Orientation = Vector3.new(math.random(-360,360),math.random(-360,360),math.random(-360,360))
+			prt.Size = Vector3.new(.5, .5, .5)
+			prt.Material = "Neon"
+			prt.Color = currentcr
+			prt.Anchored = true
+			prt.CanCollide = false
+			spc.Parent = prt
+			spc.MeshType = Enum.MeshType.Sphere
+
+			game:GetService("TweenService"):Create(prt,TweenInfo.new(0.75,Enum.EasingStyle.Sine,Enum.EasingDirection.Out),{Size = Vector3.new(0.025,0.025,1),Transparency = 1,CFrame = prt.CFrame * CFrame.new(0,0,1)}):Play()
+			spawn(function()
+				task.wait(1)
+				prt:Destroy()
+			end)
+			task.wait(0.05)
+		until accessoryfx ~= afx
+	end)
+end
+
+local function ae3(a,afx)
+	spawn(function()
+		repeat
+			local prt = Instance.new("SpawnLocation")
+			local spc = Instance.new("SpecialMesh")
+			prt.Enabled = false
+			prt.Neutral = false
+			prt.TeamColor = BrickColor.new("Steel blue")
+			prt.Parent = a
+			prt.Position = a.WorldPosition
+			prt.Orientation = Vector3.new(math.random(-360,360),math.random(-360,360),math.random(-360,360))
+			prt.Size = Vector3.new(.5, .5, .5)
+			prt.Material = "Neon"
+			prt.Color = currentcr
+			prt.Anchored = true
+			prt.CanCollide = false
+			spc.Parent = prt
+			spc.MeshType = Enum.MeshType.Sphere
+
+			game:GetService("TweenService"):Create(prt,TweenInfo.new(0.75,Enum.EasingStyle.Sine,Enum.EasingDirection.Out),{Size = Vector3.new(0.025,0.025,2),Transparency = 1}):Play()
+			spawn(function()
+				task.wait(1)
+				prt:Destroy()
+			end)
+			task.wait(0.05)
+		until accessoryfx ~= afx
+	end)
+end
+
+local swa = require("test") --TrapzFX's Sextuple Wing Animator
+
+--Converted with ttyyuu12345's model to script plugin v4
+
+
+
+local DuplicableWing = Instance.new("Model")
+Model1 = Instance.new("Model")
+WedgePart2 = Instance.new("WedgePart")
+WedgePart3 = Instance.new("WedgePart")
+WedgePart4 = Instance.new("WedgePart")
+WedgePart5 = Instance.new("WedgePart")
+WedgePart6 = Instance.new("WedgePart")
+WedgePart7 = Instance.new("WedgePart")
+WedgePart8 = Instance.new("WedgePart")
+WedgePart9 = Instance.new("WedgePart")
+WedgePart10 = Instance.new("WedgePart")
+WedgePart11 = Instance.new("WedgePart")
+WedgePart12 = Instance.new("WedgePart")
+WedgePart13 = Instance.new("WedgePart")
+Model14 = Instance.new("Model")
+WedgePart15 = Instance.new("WedgePart")
+WedgePart16 = Instance.new("WedgePart")
+WedgePart17 = Instance.new("WedgePart")
+WedgePart18 = Instance.new("WedgePart")
+Model19 = Instance.new("Model")
+WedgePart20 = Instance.new("WedgePart")
+WedgePart21 = Instance.new("WedgePart")
+WedgePart22 = Instance.new("WedgePart")
+WedgePart23 = Instance.new("WedgePart")
+WedgePart24 = Instance.new("WedgePart")
+WedgePart25 = Instance.new("WedgePart")
+WedgePart26 = Instance.new("WedgePart")
+WedgePart27 = Instance.new("WedgePart")
+WedgePart28 = Instance.new("WedgePart")
+WedgePart29 = Instance.new("WedgePart")
+WedgePart30 = Instance.new("WedgePart")
+WedgePart31 = Instance.new("WedgePart")
+WedgePart32 = Instance.new("WedgePart")
+WedgePart33 = Instance.new("WedgePart")
+WedgePart34 = Instance.new("WedgePart")
+WedgePart35 = Instance.new("WedgePart")
+WedgePart36 = Instance.new("WedgePart")
+WedgePart37 = Instance.new("WedgePart")
+WedgePart38 = Instance.new("WedgePart")
+WedgePart39 = Instance.new("WedgePart")
+WedgePart40 = Instance.new("WedgePart")
+WedgePart41 = Instance.new("WedgePart")
+Model42 = Instance.new("Model")
+WedgePart43 = Instance.new("WedgePart")
+WedgePart44 = Instance.new("WedgePart")
+WedgePart45 = Instance.new("WedgePart")
+WedgePart46 = Instance.new("WedgePart")
+WedgePart47 = Instance.new("WedgePart")
+WedgePart48 = Instance.new("WedgePart")
+WedgePart49 = Instance.new("WedgePart")
+WedgePart50 = Instance.new("WedgePart")
+Model51 = Instance.new("Model")
+WedgePart52 = Instance.new("WedgePart")
+WedgePart53 = Instance.new("WedgePart")
+WedgePart54 = Instance.new("WedgePart")
+WedgePart55 = Instance.new("WedgePart")
+WedgePart56 = Instance.new("WedgePart")
+WedgePart57 = Instance.new("WedgePart")
+WedgePart58 = Instance.new("WedgePart")
+WedgePart59 = Instance.new("WedgePart")
+WedgePart60 = Instance.new("WedgePart")
+WedgePart61 = Instance.new("WedgePart")
+WedgePart62 = Instance.new("WedgePart")
+WedgePart63 = Instance.new("WedgePart")
+WedgePart64 = Instance.new("WedgePart")
+WedgePart65 = Instance.new("WedgePart")
+WedgePart66 = Instance.new("WedgePart")
+WedgePart67 = Instance.new("WedgePart")
+WedgePart68 = Instance.new("WedgePart")
+WedgePart69 = Instance.new("WedgePart")
+WedgePart70 = Instance.new("WedgePart")
+WedgePart71 = Instance.new("WedgePart")
+WedgePart72 = Instance.new("WedgePart")
+WedgePart73 = Instance.new("WedgePart")
+Part74 = Instance.new("Part")
+Attachment75 = Instance.new("Attachment")
+Attachment76 = Instance.new("Attachment")
+Trail77 = Instance.new("Trail")
+Weld78 = Instance.new("Weld")
+Weld79 = Instance.new("Weld")
+Weld80 = Instance.new("Weld")
+Weld81 = Instance.new("Weld")
+Weld82 = Instance.new("Weld")
+Weld83 = Instance.new("Weld")
+Weld84 = Instance.new("Weld")
+Weld85 = Instance.new("Weld")
+Weld86 = Instance.new("Weld")
+Weld87 = Instance.new("Weld")
+Weld88 = Instance.new("Weld")
+Weld89 = Instance.new("Weld")
+Weld90 = Instance.new("Weld")
+Weld91 = Instance.new("Weld")
+Weld92 = Instance.new("Weld")
+Weld93 = Instance.new("Weld")
+Weld94 = Instance.new("Weld")
+Weld95 = Instance.new("Weld")
+Weld96 = Instance.new("Weld")
+Weld97 = Instance.new("Weld")
+Weld98 = Instance.new("Weld")
+Weld99 = Instance.new("Weld")
+Weld100 = Instance.new("Weld")
+Weld101 = Instance.new("Weld")
+Weld102 = Instance.new("Weld")
+Weld103 = Instance.new("Weld")
+Weld104 = Instance.new("Weld")
+Weld105 = Instance.new("Weld")
+Weld106 = Instance.new("Weld")
+Weld107 = Instance.new("Weld")
+Weld108 = Instance.new("Weld")
+Weld109 = Instance.new("Weld")
+Weld110 = Instance.new("Weld")
+Weld111 = Instance.new("Weld")
+Weld112 = Instance.new("Weld")
+Weld113 = Instance.new("Weld")
+Weld114 = Instance.new("Weld")
+Weld115 = Instance.new("Weld")
+Weld116 = Instance.new("Weld")
+Weld117 = Instance.new("Weld")
+Weld118 = Instance.new("Weld")
+Weld119 = Instance.new("Weld")
+Weld120 = Instance.new("Weld")
+Weld121 = Instance.new("Weld")
+Weld122 = Instance.new("Weld")
+Weld123 = Instance.new("Weld")
+Weld124 = Instance.new("Weld")
+Weld125 = Instance.new("Weld")
+Weld126 = Instance.new("Weld")
+Weld127 = Instance.new("Weld")
+Weld128 = Instance.new("Weld")
+Weld129 = Instance.new("Weld")
+Weld130 = Instance.new("Weld")
+Weld131 = Instance.new("Weld")
+Weld132 = Instance.new("Weld")
+Weld133 = Instance.new("Weld")
+Weld134 = Instance.new("Weld")
+Weld135 = Instance.new("Weld")
+Weld136 = Instance.new("Weld")
+Weld137 = Instance.new("Weld")
+Weld138 = Instance.new("Weld")
+Weld139 = Instance.new("Weld")
+Weld140 = Instance.new("Weld")
+Weld141 = Instance.new("Weld")
+Weld142 = Instance.new("Weld")
+Weld143 = Instance.new("Weld")
+Weld144 = Instance.new("Weld")
+Weld145 = Instance.new("Weld")
+DuplicableWing.Name = "wing"
+DuplicableWing.Parent = game:GetService("ServerStorage")
+DuplicableWing.PrimaryPart = Part74
+Model1.Name = "sc"
+Model1.Parent = DuplicableWing
+WedgePart2.Parent = Model1
+WedgePart2.CFrame = CFrame.new(30.5500031, 0.71250397, -9.11222649, 1, -4.37110366e-08, -8.74230395e-08, 4.37110899e-08, 1.00000215, -2.36769751e-13, 8.74229045e-08, 2.32948697e-13, 1.0000025)
+WedgePart2.Position = Vector3.new(30.550003051757812, 0.712503969669342, -9.112226486206055)
+WedgePart2.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+WedgePart2.Size = Vector3.new(0.02499995194375515, 0.12499997019767761, 1.6749999523162842)
+WedgePart2.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart2.BrickColor = BrickColor.new("Really black")
+WedgePart2.Material = Enum.Material.Neon
+WedgePart2.brickColor = BrickColor.new("Really black")
+WedgePart3.Parent = Model1
+WedgePart3.CFrame = CFrame.new(30.5500031, 0.712506056, -8.21246243, 1, -8.74233308e-08, 4.37118288e-08, 4.37118288e-08, -2.3676929e-13, -1, 8.74233308e-08, 1, -2.32948236e-13)
+WedgePart3.Orientation = Vector3.new(90, 0, 0)
+WedgePart3.Position = Vector3.new(30.550003051757812, 0.7125060558319092, -8.212462425231934)
+WedgePart3.Rotation = Vector3.new(90, 0, 0)
+WedgePart3.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+WedgePart3.Size = Vector3.new(0.02499995194375515, 0.12499997019767761, 0.12499985843896866)
+WedgePart3.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart3.BrickColor = BrickColor.new("Really black")
+WedgePart3.Material = Enum.Material.Neon
+WedgePart3.brickColor = BrickColor.new("Really black")
+WedgePart4.Parent = Model1
+WedgePart4.CFrame = CFrame.new(30.5500031, 0.587503612, -9.11248398, -1, 4.37118288e-08, -8.74233308e-08, -4.37118288e-08, -1, -2.36769019e-13, -8.74233308e-08, -2.32947992e-13, 1)
+WedgePart4.Orientation = Vector3.new(0, 0, -180)
+WedgePart4.Position = Vector3.new(30.550003051757812, 0.5875036120414734, -9.112483978271484)
+WedgePart4.Rotation = Vector3.new(0, 0, -180)
+WedgePart4.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+WedgePart4.Size = Vector3.new(0.02499995194375515, 0.12499997019767761, 1.6749999523162842)
+WedgePart4.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart4.BrickColor = BrickColor.new("Really black")
+WedgePart4.Material = Enum.Material.Neon
+WedgePart4.brickColor = BrickColor.new("Really black")
+WedgePart5.Parent = Model1
+WedgePart5.CFrame = CFrame.new(30.5500031, 0.58750385, -8.21250725, -1, -8.74234161e-08, -4.3711978e-08, -4.3711978e-08, -2.36768938e-13, 1, -8.74234161e-08, 1, 2.32948101e-13)
+WedgePart5.Orientation = Vector3.new(-90, 180, 0)
+WedgePart5.Position = Vector3.new(30.550003051757812, 0.5875038504600525, -8.212507247924805)
+WedgePart5.Rotation = Vector3.new(-90, 0, 180)
+WedgePart5.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+WedgePart5.Size = Vector3.new(0.02499995194375515, 0.12499997019767761, 0.12499985843896866)
+WedgePart5.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart5.BrickColor = BrickColor.new("Really black")
+WedgePart5.Material = Enum.Material.Neon
+WedgePart5.brickColor = BrickColor.new("Really black")
+WedgePart6.Parent = Model1
+WedgePart6.CFrame = CFrame.new(30.5505028, 1.08750224, -6.66250563, -1, 8.74234161e-08, 4.3711978e-08, -4.3711978e-08, 2.36768938e-13, -1, -8.74234161e-08, -1, -2.32948101e-13)
+WedgePart6.Orientation = Vector3.new(90, 180, 0)
+WedgePart6.Position = Vector3.new(30.55050277709961, 1.0875022411346436, -6.662505626678467)
+WedgePart6.Rotation = Vector3.new(90, 0, -180)
+WedgePart6.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+WedgePart6.Size = Vector3.new(0.02499995194375515, 0.2750000059604645, 0.42499998211860657)
+WedgePart6.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart6.BrickColor = BrickColor.new("Really black")
+WedgePart6.Material = Enum.Material.Neon
+WedgePart6.brickColor = BrickColor.new("Really black")
+WedgePart7.Parent = Model1
+WedgePart7.CFrame = CFrame.new(30.5505028, 0.225000173, -6.32499838, -1, -8.74234161e-08, -4.3711978e-08, -4.3711978e-08, -2.36768938e-13, 1, -8.74234161e-08, 1, 2.32948101e-13)
+WedgePart7.Orientation = Vector3.new(-90, 180, 0)
+WedgePart7.Position = Vector3.new(30.55050277709961, 0.22500017285346985, -6.324998378753662)
+WedgePart7.Rotation = Vector3.new(-90, 0, 180)
+WedgePart7.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+WedgePart7.Size = Vector3.new(0.02499995194375515, 0.4000000059604645, 0.44999998807907104)
+WedgePart7.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart7.BrickColor = BrickColor.new("Really black")
+WedgePart7.Material = Enum.Material.Neon
+WedgePart7.brickColor = BrickColor.new("Really black")
+WedgePart8.Parent = Model1
+WedgePart8.CFrame = CFrame.new(30.5505028, 0.375000924, -4.54998827, -1, -8.74234161e-08, -4.3711978e-08, -4.3711978e-08, -2.36768938e-13, 1, -8.74234161e-08, 1, 2.32948101e-13)
+WedgePart8.Orientation = Vector3.new(-90, 180, 0)
+WedgePart8.Position = Vector3.new(30.55050277709961, 0.375000923871994, -4.549988269805908)
+WedgePart8.Rotation = Vector3.new(-90, 0, 180)
+WedgePart8.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+WedgePart8.Size = Vector3.new(0.02499995194375515, 0.699999988079071, 0.1499999761581421)
+WedgePart8.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart8.BrickColor = BrickColor.new("Really black")
+WedgePart8.Material = Enum.Material.Neon
+WedgePart8.brickColor = BrickColor.new("Really black")
+WedgePart9.Parent = Model1
+WedgePart9.CFrame = CFrame.new(30.5505028, 0.937501431, -5.037498, -1, 8.74234161e-08, 4.3711978e-08, -4.3711978e-08, 2.36768938e-13, -1, -8.74234161e-08, -1, -2.32948101e-13)
+WedgePart9.Orientation = Vector3.new(90, 180, 0)
+WedgePart9.Position = Vector3.new(30.55050277709961, 0.9375014305114746, -5.0374979972839355)
+WedgePart9.Rotation = Vector3.new(90, 0, -180)
+WedgePart9.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+WedgePart9.Size = Vector3.new(0.02499995194375515, 0.2750000059604645, 0.125)
+WedgePart9.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart9.BrickColor = BrickColor.new("Really black")
+WedgePart9.Material = Enum.Material.Neon
+WedgePart9.brickColor = BrickColor.new("Really black")
+WedgePart10.Parent = Model1
+WedgePart10.CFrame = CFrame.new(30.5500031, 0.212502241, -6.66250563, 1, 8.74234161e-08, -4.3711978e-08, 4.3711978e-08, 2.36768938e-13, 1, 8.74234161e-08, -1, 2.32948101e-13)
+WedgePart10.Orientation = Vector3.new(-90, 0, 0)
+WedgePart10.Position = Vector3.new(30.550003051757812, 0.21250224113464355, -6.662505626678467)
+WedgePart10.Rotation = Vector3.new(-90, 0, 0)
+WedgePart10.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+WedgePart10.Size = Vector3.new(0.02499995194375515, 0.2750000059604645, 0.42499998211860657)
+WedgePart10.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart10.BrickColor = BrickColor.new("Really black")
+WedgePart10.Material = Enum.Material.Neon
+WedgePart10.brickColor = BrickColor.new("Really black")
+WedgePart11.Parent = Model1
+WedgePart11.CFrame = CFrame.new(30.5500031, 1.07500434, -6.32499838, 1, -8.74234161e-08, 4.3711978e-08, 4.3711978e-08, -2.36768938e-13, -1, 8.74234161e-08, 1, -2.32948101e-13)
+WedgePart11.Orientation = Vector3.new(90, 0, 0)
+WedgePart11.Position = Vector3.new(30.550003051757812, 1.0750043392181396, -6.324998378753662)
+WedgePart11.Rotation = Vector3.new(90, 0, 0)
+WedgePart11.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+WedgePart11.Size = Vector3.new(0.02499995194375515, 0.4000000059604645, 0.44999998807907104)
+WedgePart11.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart11.BrickColor = BrickColor.new("Really black")
+WedgePart11.Material = Enum.Material.Neon
+WedgePart11.brickColor = BrickColor.new("Really black")
+WedgePart12.Parent = Model1
+WedgePart12.CFrame = CFrame.new(30.5500031, 0.925003469, -4.54998827, 1, -8.74234161e-08, 4.3711978e-08, 4.3711978e-08, -2.36768938e-13, -1, 8.74234161e-08, 1, -2.32948101e-13)
+WedgePart12.Orientation = Vector3.new(90, 0, 0)
+WedgePart12.Position = Vector3.new(30.550003051757812, 0.9250034689903259, -4.549988269805908)
+WedgePart12.Rotation = Vector3.new(90, 0, 0)
+WedgePart12.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+WedgePart12.Size = Vector3.new(0.02499995194375515, 0.699999988079071, 0.1499999761581421)
+WedgePart12.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart12.BrickColor = BrickColor.new("Really black")
+WedgePart12.Material = Enum.Material.Neon
+WedgePart12.brickColor = BrickColor.new("Really black")
+WedgePart13.Parent = Model1
+WedgePart13.CFrame = CFrame.new(30.5500031, 0.362502962, -5.037498, 1, 8.74234161e-08, -4.3711978e-08, 4.3711978e-08, 2.36768938e-13, 1, 8.74234161e-08, -1, 2.32948101e-13)
+WedgePart13.Orientation = Vector3.new(-90, 0, 0)
+WedgePart13.Position = Vector3.new(30.550003051757812, 0.36250296235084534, -5.0374979972839355)
+WedgePart13.Rotation = Vector3.new(-90, 0, 0)
+WedgePart13.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+WedgePart13.Size = Vector3.new(0.02499995194375515, 0.2750000059604645, 0.125)
+WedgePart13.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart13.BrickColor = BrickColor.new("Really black")
+WedgePart13.Material = Enum.Material.Neon
+WedgePart13.brickColor = BrickColor.new("Really black")
+Model14.Name = "bc"
+Model14.Parent = DuplicableWing
+WedgePart15.Parent = Model14
+WedgePart15.CFrame = CFrame.new(30.5500031, 0.599991322, -8.89999962, -1, 4.3711978e-08, -8.74234161e-08, -4.3711978e-08, -1, -2.36768884e-13, -8.74234161e-08, -2.32948047e-13, 1)
+WedgePart15.Orientation = Vector3.new(0, 0, -180)
+WedgePart15.Position = Vector3.new(30.550003051757812, 0.5999913215637207, -8.899999618530273)
+WedgePart15.Rotation = Vector3.new(0, 0, -180)
+WedgePart15.Size = Vector3.new(0.04999995231628418, 0.09999997168779373, 1.5)
+WedgePart15.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart15.Material = Enum.Material.Neon
+WedgePart16.Parent = Model14
+WedgePart16.CFrame = CFrame.new(30.5500031, 0.700003564, -8.90000916, 1, -4.3711978e-08, -8.74234161e-08, 4.3711978e-08, 1, -2.36768884e-13, 8.74234161e-08, 2.32948047e-13, 1)
+WedgePart16.Position = Vector3.new(30.550003051757812, 0.7000035643577576, -8.900009155273438)
+WedgePart16.Size = Vector3.new(0.04999995231628418, 0.09999997168779373, 1.5)
+WedgePart16.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart16.Material = Enum.Material.Neon
+WedgePart17.Parent = Model14
+WedgePart17.CFrame = CFrame.new(30.5500031, 0.700003564, -8.05003166, -1, -4.3711978e-08, 8.74234161e-08, -4.3711978e-08, 1, 2.36768884e-13, -8.74234161e-08, 2.32948047e-13, -1)
+WedgePart17.Orientation = Vector3.new(0, 180, 0)
+WedgePart17.Position = Vector3.new(30.550003051757812, 0.7000035643577576, -8.050031661987305)
+WedgePart17.Rotation = Vector3.new(-180, 0, 180)
+WedgePart17.Size = Vector3.new(0.04999995231628418, 0.09999997913837433, 0.19999998807907104)
+WedgePart17.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart17.Material = Enum.Material.Neon
+WedgePart18.Parent = Model14
+WedgePart18.CFrame = CFrame.new(30.5500031, 0.599991322, -8.05002213, 1, 4.3711978e-08, 8.74234161e-08, 4.3711978e-08, -1, 2.36768884e-13, 8.74234161e-08, -2.32948047e-13, -1)
+WedgePart18.Orientation = Vector3.new(0, 180, 180)
+WedgePart18.Position = Vector3.new(30.550003051757812, 0.5999913215637207, -8.05002212524414)
+WedgePart18.Rotation = Vector3.new(-180, 0, 0)
+WedgePart18.Size = Vector3.new(0.04999995231628418, 0.09999997168779373, 0.19999998807907104)
+WedgePart18.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart18.Material = Enum.Material.Neon
+Model19.Name = "midc"
+Model19.Parent = DuplicableWing
+WedgePart20.Parent = Model19
+WedgePart20.CFrame = CFrame.new(30.5500031, 0.574997306, -6.99999952, -1, 4.3711978e-08, -8.74234161e-08, -4.3711978e-08, -1, -2.36768884e-13, -8.74234161e-08, -2.32948047e-13, 1)
+WedgePart20.Orientation = Vector3.new(0, 0, -180)
+WedgePart20.Position = Vector3.new(30.550003051757812, 0.5749973058700562, -6.999999523162842)
+WedgePart20.Rotation = Vector3.new(0, 0, -180)
+WedgePart20.Size = Vector3.new(0.04999995231628418, 0.14999999105930328, 0.15000000596046448)
+WedgePart20.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart20.Material = Enum.Material.Neon
+WedgePart21.Parent = Model19
+WedgePart21.CFrame = CFrame.new(30.5500031, 0.574994445, -6.46250582, 1, -5.31459854e-08, 8.74234161e-08, -5.31459854e-08, -1, 2.36768884e-13, 8.74234161e-08, -2.41415693e-13, -1)
+WedgePart21.Orientation = Vector3.new(0, 180, -180)
+WedgePart21.Position = Vector3.new(30.550003051757812, 0.5749944448471069, -6.46250581741333)
+WedgePart21.Rotation = Vector3.new(-180, 0, 0)
+WedgePart21.Size = Vector3.new(0.04999995231628418, 0.14999999105930328, 0.925000011920929)
+WedgePart21.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart21.Material = Enum.Material.Neon
+WedgePart22.Parent = Model19
+WedgePart22.CFrame = CFrame.new(30.5500031, 0.725000441, -6.4625001, -1, -4.3711978e-08, 8.74234161e-08, -4.3711978e-08, 1, 2.36768884e-13, -8.74234161e-08, 2.32948047e-13, -1)
+WedgePart22.Orientation = Vector3.new(0, 180, 0)
+WedgePart22.Position = Vector3.new(30.550003051757812, 0.7250004410743713, -6.462500095367432)
+WedgePart22.Rotation = Vector3.new(-180, 0, 180)
+WedgePart22.Size = Vector3.new(0.04999995231628418, 0.14999999105930328, 0.925000011920929)
+WedgePart22.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart22.Material = Enum.Material.Neon
+WedgePart23.Parent = Model19
+WedgePart23.CFrame = CFrame.new(30.5500031, 0.725003302, -7.02500296, 1, -1.50003956e-07, 8.74234161e-08, -1.50003928e-07, -1, 2.36768884e-13, 8.74234161e-08, -2.49883339e-13, -1)
+WedgePart23.Orientation = Vector3.new(0, 180, -180)
+WedgePart23.Position = Vector3.new(30.550003051757812, 0.7250033020973206, -7.025002956390381)
+WedgePart23.Rotation = Vector3.new(-180, 0, 0)
+WedgePart23.Size = Vector3.new(0.04999995231628418, 0.14999999105930328, 0.15000000596046448)
+WedgePart23.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart23.Material = Enum.Material.Neon
+WedgePart24.Parent = Model19
+WedgePart24.CFrame = CFrame.new(30.5500031, 0.737504125, -7.16251135, -1, 4.3711978e-08, -8.74234161e-08, -4.3711978e-08, -1, -2.36768884e-13, -8.74234161e-08, -2.32948047e-13, 1)
+WedgePart24.Orientation = Vector3.new(0, 0, -180)
+WedgePart24.Position = Vector3.new(30.550003051757812, 0.7375041246414185, -7.162511348724365)
+WedgePart24.Rotation = Vector3.new(0, 0, -180)
+WedgePart24.Size = Vector3.new(0.04999995231628418, 0.12499997764825821, 0.125)
+WedgePart24.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart24.Material = Enum.Material.Neon
+WedgePart25.Parent = Model19
+WedgePart25.CFrame = CFrame.new(30.5500031, 0.825004578, -7.18751383, -1, -4.3711978e-08, 8.74234161e-08, -4.3711978e-08, 1, 2.36768884e-13, -8.74234161e-08, 2.32948047e-13, -1)
+WedgePart25.Orientation = Vector3.new(0, 180, 0)
+WedgePart25.Position = Vector3.new(30.550003051757812, 0.8250045776367188, -7.187513828277588)
+WedgePart25.Rotation = Vector3.new(-180, 0, 180)
+WedgePart25.Size = Vector3.new(0.04999995231628418, 0.04999998211860657, 0.4749999940395355)
+WedgePart25.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart25.Material = Enum.Material.Neon
+WedgePart26.Parent = Model19
+WedgePart26.CFrame = CFrame.new(30.5500031, 0.562500775, -7.16251135, 1, -4.3711978e-08, -8.74234161e-08, 4.3711978e-08, 1, -2.36768884e-13, 8.74234161e-08, 2.32948047e-13, 1)
+WedgePart26.Position = Vector3.new(30.550003051757812, 0.5625007748603821, -7.162511348724365)
+WedgePart26.Size = Vector3.new(0.04999995231628418, 0.12499997764825821, 0.125)
+WedgePart26.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart26.Material = Enum.Material.Neon
+WedgePart27.Parent = Model19
+WedgePart27.CFrame = CFrame.new(30.5500031, 0.574996352, -7.02499723, -1, -2.13601403e-08, 8.74234161e-08, -2.13601403e-08, 1, 2.36768884e-13, -8.74234161e-08, 2.34902104e-13, -1)
+WedgePart27.Orientation = Vector3.new(0, 180, 0)
+WedgePart27.Position = Vector3.new(30.550003051757812, 0.5749963521957397, -7.024997234344482)
+WedgePart27.Rotation = Vector3.new(-180, 0, 180)
+WedgePart27.Size = Vector3.new(0.04999995231628418, 0.14999999105930328, 0.15000000596046448)
+WedgePart27.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart27.Material = Enum.Material.Neon
+WedgePart28.Parent = Model19
+WedgePart28.CFrame = CFrame.new(30.5500031, 0.475003183, -7.18751383, 1, 4.3711978e-08, 8.74234161e-08, 4.3711978e-08, -1, 2.36768884e-13, 8.74234161e-08, -2.32948047e-13, -1)
+WedgePart28.Orientation = Vector3.new(0, 180, 180)
+WedgePart28.Position = Vector3.new(30.550003051757812, 0.475003182888031, -7.187513828277588)
+WedgePart28.Rotation = Vector3.new(-180, 0, 0)
+WedgePart28.Size = Vector3.new(0.04999995231628418, 0.04999998211860657, 0.4749999940395355)
+WedgePart28.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart28.Material = Enum.Material.Neon
+WedgePart29.Parent = Model19
+WedgePart29.CFrame = CFrame.new(30.5500031, 0.562500298, -7.36251402, -1, -4.3711978e-08, 8.74234161e-08, -4.3711978e-08, 1, 2.36768884e-13, -8.74234161e-08, 2.32948047e-13, -1)
+WedgePart29.Orientation = Vector3.new(0, 180, 0)
+WedgePart29.Position = Vector3.new(30.550003051757812, 0.5625002980232239, -7.362514019012451)
+WedgePart29.Rotation = Vector3.new(-180, 0, 180)
+WedgePart29.Size = Vector3.new(0.04999995231628418, 0.12499997764825821, 0.125)
+WedgePart29.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart29.Material = Enum.Material.Neon
+WedgePart30.Parent = Model19
+WedgePart30.CFrame = CFrame.new(30.5500031, 0.549990892, -7.66250944, -1, 4.3711978e-08, -8.74234161e-08, -4.3711978e-08, -1, -2.36768884e-13, -8.74234161e-08, -2.32948047e-13, 1)
+WedgePart30.Orientation = Vector3.new(0, 0, -180)
+WedgePart30.Position = Vector3.new(30.550003051757812, 0.5499908924102783, -7.662509441375732)
+WedgePart30.Rotation = Vector3.new(0, 0, -180)
+WedgePart30.Size = Vector3.new(0.04999995231628418, 0.19999997317790985, 0.4749999940395355)
+WedgePart30.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart30.Material = Enum.Material.Neon
+WedgePart31.Parent = Model19
+WedgePart31.CFrame = CFrame.new(30.5500031, 0.750003517, -7.66251707, 1, -4.3711978e-08, -8.74234161e-08, 4.3711978e-08, 1, -2.36768884e-13, 8.74234161e-08, 2.32948047e-13, 1)
+WedgePart31.Position = Vector3.new(30.550003051757812, 0.7500035166740417, -7.662517070770264)
+WedgePart31.Size = Vector3.new(0.04999995231628418, 0.19999997317790985, 0.4749999940395355)
+WedgePart31.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart31.Material = Enum.Material.Neon
+WedgePart32.Parent = Model19
+WedgePart32.CFrame = CFrame.new(30.5500031, 0.737503648, -7.36251402, 1, 4.3711978e-08, 8.74234161e-08, 4.3711978e-08, -1, 2.36768884e-13, 8.74234161e-08, -2.32948047e-13, -1)
+WedgePart32.Orientation = Vector3.new(0, 180, 180)
+WedgePart32.Position = Vector3.new(30.550003051757812, 0.7375036478042603, -7.362514019012451)
+WedgePart32.Rotation = Vector3.new(-180, 0, 0)
+WedgePart32.Size = Vector3.new(0.04999995231628418, 0.12499997764825821, 0.125)
+WedgePart32.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart32.Material = Enum.Material.Neon
+WedgePart33.Parent = Model19
+WedgePart33.CFrame = CFrame.new(30.5500031, 0.575000167, -7.80001783, -1, -4.3711978e-08, 8.74234161e-08, -4.3711978e-08, 1, 2.36768884e-13, -8.74234161e-08, 2.32948047e-13, -1)
+WedgePart33.Orientation = Vector3.new(0, 180, 0)
+WedgePart33.Position = Vector3.new(30.550003051757812, 0.5750001668930054, -7.800017833709717)
+WedgePart33.Rotation = Vector3.new(-180, 0, 180)
+WedgePart33.Size = Vector3.new(0.04999995231628418, 0.09999997168779373, 0.25)
+WedgePart33.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart33.Material = Enum.Material.Neon
+WedgePart34.Parent = Model19
+WedgePart34.CFrame = CFrame.new(30.5500031, 0.500002861, -7.80001783, 1, 4.3711978e-08, 8.74234161e-08, 4.3711978e-08, -1, 2.36768884e-13, 8.74234161e-08, -2.32948047e-13, -1)
+WedgePart34.Orientation = Vector3.new(0, 180, 180)
+WedgePart34.Position = Vector3.new(30.550003051757812, 0.5000028610229492, -7.800017833709717)
+WedgePart34.Rotation = Vector3.new(-180, 0, 0)
+WedgePart34.Size = Vector3.new(0.04999995231628418, 0.049999967217445374, 0.25)
+WedgePart34.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart34.Material = Enum.Material.Neon
+WedgePart35.Parent = Model19
+WedgePart35.CFrame = CFrame.new(30.5500031, 0.499993831, -8.02501678, -1, 4.3711978e-08, -8.74234161e-08, -4.3711978e-08, -1, -2.36768884e-13, -8.74234161e-08, -2.32948047e-13, 1)
+WedgePart35.Orientation = Vector3.new(0, 0, -180)
+WedgePart35.Position = Vector3.new(30.550003051757812, 0.49999383091926575, -8.025016784667969)
+WedgePart35.Rotation = Vector3.new(0, 0, -180)
+WedgePart35.Size = Vector3.new(0.04999995231628418, 0.049999967217445374, 0.19999998807907104)
+WedgePart35.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart35.Material = Enum.Material.Neon
+WedgePart36.Parent = Model19
+WedgePart36.CFrame = CFrame.new(30.5500031, 0.575000167, -8.02501678, 1, -4.3711978e-08, -8.74234161e-08, 4.3711978e-08, 1, -2.36768884e-13, 8.74234161e-08, 2.32948047e-13, 1)
+WedgePart36.Position = Vector3.new(30.550003051757812, 0.5750001668930054, -8.025016784667969)
+WedgePart36.Size = Vector3.new(0.04999995231628418, 0.09999997168779373, 0.19999998807907104)
+WedgePart36.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart36.Material = Enum.Material.Neon
+WedgePart37.Parent = Model19
+WedgePart37.CFrame = CFrame.new(30.5500031, 0.800010622, -8.02501297, 1, -4.3711978e-08, -8.74234161e-08, 4.3711978e-08, 1, -2.36768884e-13, 8.74234161e-08, 2.32948047e-13, 1)
+WedgePart37.Position = Vector3.new(30.550003051757812, 0.800010621547699, -8.025012969970703)
+WedgePart37.Size = Vector3.new(0.04999995231628418, 0.049999967217445374, 0.19999998807907104)
+WedgePart37.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart37.Material = Enum.Material.Neon
+WedgePart38.Parent = Model19
+WedgePart38.CFrame = CFrame.new(30.5500031, 0.725004256, -8.02501297, -1, 4.3711978e-08, -8.74234161e-08, -4.3711978e-08, -1, -2.36768884e-13, -8.74234161e-08, -2.32948047e-13, 1)
+WedgePart38.Orientation = Vector3.new(0, 0, -180)
+WedgePart38.Position = Vector3.new(30.550003051757812, 0.725004255771637, -8.025012969970703)
+WedgePart38.Rotation = Vector3.new(0, 0, -180)
+WedgePart38.Size = Vector3.new(0.04999995231628418, 0.09999997168779373, 0.19999998807907104)
+WedgePart38.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart38.Material = Enum.Material.Neon
+WedgePart39.Parent = Model19
+WedgePart39.CFrame = CFrame.new(30.5500031, 0.725004256, -7.80001402, 1, 4.3711978e-08, 8.74234161e-08, 4.3711978e-08, -1, 2.36768884e-13, 8.74234161e-08, -2.32948047e-13, -1)
+WedgePart39.Orientation = Vector3.new(0, 180, 180)
+WedgePart39.Position = Vector3.new(30.550003051757812, 0.725004255771637, -7.800014019012451)
+WedgePart39.Rotation = Vector3.new(-180, 0, 0)
+WedgePart39.Size = Vector3.new(0.04999995231628418, 0.09999997168779373, 0.25)
+WedgePart39.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart39.Material = Enum.Material.Neon
+WedgePart40.Parent = Model19
+WedgePart40.CFrame = CFrame.new(30.5500031, 0.800001562, -7.80001402, -1, -4.3711978e-08, 8.74234161e-08, -4.3711978e-08, 1, 2.36768884e-13, -8.74234161e-08, 2.32948047e-13, -1)
+WedgePart40.Orientation = Vector3.new(0, 180, 0)
+WedgePart40.Position = Vector3.new(30.550003051757812, 0.8000015616416931, -7.800014019012451)
+WedgePart40.Rotation = Vector3.new(-180, 0, 180)
+WedgePart40.Size = Vector3.new(0.04999995231628418, 0.049999967217445374, 0.25)
+WedgePart40.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart40.Material = Enum.Material.Neon
+WedgePart41.Parent = Model19
+WedgePart41.CFrame = CFrame.new(30.5500031, 0.725003302, -7.00000525, 1, 5.31459854e-08, -8.74234161e-08, -5.31459854e-08, 1, -2.36768884e-13, 8.74234161e-08, 2.41415693e-13, 1)
+WedgePart41.Position = Vector3.new(30.550003051757812, 0.7250033020973206, -7.00000524520874)
+WedgePart41.Size = Vector3.new(0.04999995231628418, 0.14999999105930328, 0.15000000596046448)
+WedgePart41.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart41.Material = Enum.Material.Neon
+Model42.Name = "sidec"
+Model42.Parent = DuplicableWing
+WedgePart43.Parent = Model42
+WedgePart43.CFrame = CFrame.new(30.5500031, 0.274998695, -6.67500257, 1, 8.74234161e-08, -4.3711978e-08, 4.3711978e-08, 2.36768938e-13, 1, 8.74234161e-08, -1, 2.32948101e-13)
+WedgePart43.Orientation = Vector3.new(-90, 0, 0)
+WedgePart43.Position = Vector3.new(30.550003051757812, 0.2749986946582794, -6.675002574920654)
+WedgePart43.Rotation = Vector3.new(-90, 0, 0)
+WedgePart43.Size = Vector3.new(0.04999995231628418, 0.30000001192092896, 0.3499999940395355)
+WedgePart43.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart43.Material = Enum.Material.Neon
+WedgePart44.Parent = Model42
+WedgePart44.CFrame = CFrame.new(30.5500031, 0.487492532, -5.96250153, 1, -8.74234161e-08, 4.3711978e-08, 4.3711978e-08, -2.36768938e-13, -1, 8.74234161e-08, 1, -2.32948101e-13)
+WedgePart44.Orientation = Vector3.new(90, 0, 0)
+WedgePart44.Position = Vector3.new(30.550003051757812, 0.48749253153800964, -5.962501525878906)
+WedgePart44.Rotation = Vector3.new(90, 0, 0)
+WedgePart44.Size = Vector3.new(0.04999995231628418, 0.07499998062849045, 0.07499998807907104)
+WedgePart44.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart44.Material = Enum.Material.Neon
+WedgePart45.Parent = Model42
+WedgePart45.CFrame = CFrame.new(30.5500031, 0.487501115, -6.41250038, 1, -4.3711978e-08, -8.74234161e-08, 4.3711978e-08, 1, -2.36768884e-13, 8.74234161e-08, 2.32948047e-13, 1)
+WedgePart45.Position = Vector3.new(30.550003051757812, 0.4875011146068573, -6.412500381469727)
+WedgePart45.Size = Vector3.new(0.04999995231628418, 0.07499998062849045, 0.824999988079071)
+WedgePart45.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart45.Material = Enum.Material.Neon
+WedgePart46.Parent = Model42
+WedgePart46.CFrame = CFrame.new(30.5500031, 0.274998695, -6.2249999, -1, -8.74234161e-08, -4.3711978e-08, -4.3711978e-08, -2.36768938e-13, 1, -8.74234161e-08, 1, 2.32948101e-13)
+WedgePart46.Orientation = Vector3.new(-90, 180, 0)
+WedgePart46.Position = Vector3.new(30.550003051757812, 0.2749986946582794, -6.224999904632568)
+WedgePart46.Rotation = Vector3.new(-90, 0, 180)
+WedgePart46.Size = Vector3.new(0.04999995231628418, 0.6000000238418579, 0.3499999940395355)
+WedgePart46.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart46.Material = Enum.Material.Neon
+WedgePart47.Parent = Model42
+WedgePart47.CFrame = CFrame.new(30.5500031, 1.02500224, -6.67501354, -1, 8.74235013e-08, 4.37121237e-08, -4.37121237e-08, 2.36768856e-13, -1, -8.74235013e-08, -1, -2.32948209e-13)
+WedgePart47.Orientation = Vector3.new(90, 180, 0)
+WedgePart47.Position = Vector3.new(30.550003051757812, 1.0250022411346436, -6.675013542175293)
+WedgePart47.Rotation = Vector3.new(90, 0, -180)
+WedgePart47.Size = Vector3.new(0.04999995231628418, 0.30000001192092896, 0.3499999940395355)
+WedgePart47.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart47.Material = Enum.Material.Neon
+WedgePart48.Parent = Model42
+WedgePart48.CFrame = CFrame.new(30.5500031, 1.02500224, -6.2250104, 1, -8.74235013e-08, 4.37121237e-08, 4.37121237e-08, -2.36769236e-13, -1, 8.74235013e-08, 1, -2.32947803e-13)
+WedgePart48.Orientation = Vector3.new(90, 0, 0)
+WedgePart48.Position = Vector3.new(30.550003051757812, 1.0250022411346436, -6.225010395050049)
+WedgePart48.Rotation = Vector3.new(90, 0, 0)
+WedgePart48.Size = Vector3.new(0.04999995231628418, 0.6000000238418579, 0.3499999940395355)
+WedgePart48.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart48.Material = Enum.Material.Neon
+WedgePart49.Parent = Model42
+WedgePart49.CFrame = CFrame.new(30.5500031, 0.812501371, -6.41252279, -1, 4.37122729e-08, -8.74235866e-08, -4.37122729e-08, -1, -2.36768775e-13, -8.74235866e-08, -2.32948209e-13, 1)
+WedgePart49.Orientation = Vector3.new(0, 0, -180)
+WedgePart49.Position = Vector3.new(30.550003051757812, 0.8125013709068298, -6.412522792816162)
+WedgePart49.Rotation = Vector3.new(0, 0, -180)
+WedgePart49.Size = Vector3.new(0.04999995231628418, 0.07499998062849045, 0.824999988079071)
+WedgePart49.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart49.Material = Enum.Material.Neon
+WedgePart50.Parent = Model42
+WedgePart50.CFrame = CFrame.new(30.5500031, 0.812509954, -5.96252394, -1, -8.74235866e-08, -4.37122729e-08, -4.37122729e-08, -2.36768829e-13, 1, -8.74235866e-08, 1, 2.32948264e-13)
+WedgePart50.Orientation = Vector3.new(-90, 180, 0)
+WedgePart50.Position = Vector3.new(30.550003051757812, 0.8125099539756775, -5.962523937225342)
+WedgePart50.Rotation = Vector3.new(-90, 0, 180)
+WedgePart50.Size = Vector3.new(0.04999995231628418, 0.07499998062849045, 0.07499998807907104)
+WedgePart50.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart50.Material = Enum.Material.Neon
+Model51.Name = "tc"
+Model51.Parent = DuplicableWing
+WedgePart52.Parent = Model51
+WedgePart52.CFrame = CFrame.new(30.5500031, 0.500000954, -4.50001526, -1, -4.37122729e-08, 8.74235866e-08, -4.37122729e-08, 1, 2.36768775e-13, -8.74235866e-08, 2.32948209e-13, -1)
+WedgePart52.Orientation = Vector3.new(0, 180, 0)
+WedgePart52.Position = Vector3.new(30.550003051757812, 0.5000009536743164, -4.5000152587890625)
+WedgePart52.Rotation = Vector3.new(-180, 0, 180)
+WedgePart52.Size = Vector3.new(0.04999995231628418, 0.049999985843896866, 1)
+WedgePart52.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart52.Material = Enum.Material.Neon
+WedgePart53.Parent = Model51
+WedgePart53.CFrame = CFrame.new(30.5500031, 0.424994677, -4.50002861, 1, 4.37122729e-08, 8.74235866e-08, 4.37122729e-08, -1, 2.36768775e-13, 8.74235866e-08, -2.32948209e-13, -1)
+WedgePart53.Orientation = Vector3.new(0, 180, 180)
+WedgePart53.Position = Vector3.new(30.550003051757812, 0.42499467730522156, -4.500028610229492)
+WedgePart53.Rotation = Vector3.new(-180, 0, 0)
+WedgePart53.Size = Vector3.new(0.04999995231628418, 0.09999998658895493, 1)
+WedgePart53.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart53.Material = Enum.Material.Neon
+WedgePart54.Parent = Model51
+WedgePart54.CFrame = CFrame.new(30.5500031, 0.525001228, -5.17500019, 1, -4.37122729e-08, -8.74235866e-08, 4.37122729e-08, 1, -2.36768775e-13, 8.74235866e-08, 2.32948209e-13, 1)
+WedgePart54.Position = Vector3.new(30.550003051757812, 0.5250012278556824, -5.175000190734863)
+WedgePart54.Size = Vector3.new(0.04999995231628418, 0.09999998658895493, 0.3499999940395355)
+WedgePart54.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart54.Material = Enum.Material.Neon
+WedgePart55.Parent = Model51
+WedgePart55.CFrame = CFrame.new(30.5500031, 0.525001228, -4.9500103, -1, -4.37122729e-08, 8.74235866e-08, -4.37122729e-08, 1, 2.36768775e-13, -8.74235866e-08, 2.32948209e-13, -1)
+WedgePart55.Orientation = Vector3.new(0, 180, 0)
+WedgePart55.Position = Vector3.new(30.550003051757812, 0.5250012278556824, -4.950010299682617)
+WedgePart55.Rotation = Vector3.new(-180, 0, 180)
+WedgePart55.Size = Vector3.new(0.04999995231628418, 0.09999998658895493, 0.09999999403953552)
+WedgePart55.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart55.Material = Enum.Material.Neon
+WedgePart56.Parent = Model51
+WedgePart56.CFrame = CFrame.new(30.5500031, 0.700000226, -4.53750992, 1, -1.40570251e-07, -8.74235866e-08, 1.40570251e-07, 1, -2.36768775e-13, 8.74235866e-08, 2.2448055e-13, 1)
+WedgePart56.Position = Vector3.new(30.550003051757812, 0.7000002264976501, -4.537509918212891)
+WedgePart56.Size = Vector3.new(0.04999995231628418, 0.09999998658895493, 1.125)
+WedgePart56.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart56.Material = Enum.Material.Neon
+WedgePart57.Parent = Model51
+WedgePart57.CFrame = CFrame.new(30.5500031, 0.699997365, -3.92501926, -1, -4.37122729e-08, 8.74235866e-08, -4.37122729e-08, 1, 2.36768775e-13, -8.74235866e-08, 2.32948209e-13, -1)
+WedgePart57.Orientation = Vector3.new(0, 180, 0)
+WedgePart57.Position = Vector3.new(30.550003051757812, 0.6999973654747009, -3.9250192642211914)
+WedgePart57.Rotation = Vector3.new(-180, 0, 180)
+WedgePart57.Size = Vector3.new(0.04999995231628418, 0.09999998658895493, 0.10000000149011612)
+WedgePart57.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart57.Material = Enum.Material.Neon
+WedgePart58.Parent = Model51
+WedgePart58.CFrame = CFrame.new(30.5500031, 0.599991798, -3.92501163, 1, 1.40570251e-07, 8.74235866e-08, 1.40570251e-07, -1, 2.36768775e-13, 8.74235866e-08, -2.2448055e-13, -1)
+WedgePart58.Orientation = Vector3.new(0, 180, 180)
+WedgePart58.Position = Vector3.new(30.550003051757812, 0.5999917984008789, -3.92501163482666)
+WedgePart58.Rotation = Vector3.new(-180, 0, 0)
+WedgePart58.Size = Vector3.new(0.04999995231628418, 0.09999998658895493, 0.10000000149011612)
+WedgePart58.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart58.Material = Enum.Material.Neon
+WedgePart59.Parent = Model51
+WedgePart59.CFrame = CFrame.new(30.5500031, 0.599994659, -4.53751755, -1, 4.37122729e-08, -8.74235866e-08, -4.37122729e-08, -1, -2.36768775e-13, -8.74235866e-08, -2.32948209e-13, 1)
+WedgePart59.Orientation = Vector3.new(0, 0, -180)
+WedgePart59.Position = Vector3.new(30.550003051757812, 0.5999946594238281, -4.537517547607422)
+WedgePart59.Rotation = Vector3.new(0, 0, -180)
+WedgePart59.Size = Vector3.new(0.04999995231628418, 0.09999998658895493, 1.125)
+WedgePart59.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart59.Material = Enum.Material.Neon
+WedgePart60.Parent = Model51
+WedgePart60.CFrame = CFrame.new(30.5500031, 0.799997747, -4.50001717, 1, 4.37122729e-08, 8.74235866e-08, 4.37122729e-08, -1, 2.36768775e-13, 8.74235866e-08, -2.32948209e-13, -1)
+WedgePart60.Orientation = Vector3.new(0, 180, 180)
+WedgePart60.Position = Vector3.new(30.550003051757812, 0.7999977469444275, -4.500017166137695)
+WedgePart60.Rotation = Vector3.new(-180, 0, 0)
+WedgePart60.Size = Vector3.new(0.04999995231628418, 0.049999985843896866, 1)
+WedgePart60.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart60.Material = Enum.Material.Neon
+WedgePart61.Parent = Model51
+WedgePart61.CFrame = CFrame.new(30.5500031, 0.875004053, -4.50003052, -1, -4.37122729e-08, 8.74235866e-08, -4.37122729e-08, 1, 2.36768775e-13, -8.74235866e-08, 2.32948209e-13, -1)
+WedgePart61.Orientation = Vector3.new(0, 180, 0)
+WedgePart61.Position = Vector3.new(30.550003051757812, 0.8750040531158447, -4.500030517578125)
+WedgePart61.Rotation = Vector3.new(-180, 0, 180)
+WedgePart61.Size = Vector3.new(0.04999995231628418, 0.09999998658895493, 1)
+WedgePart61.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart61.Material = Enum.Material.Neon
+WedgePart62.Parent = Model51
+WedgePart62.CFrame = CFrame.new(30.5500031, 0.774997473, -5.1750021, -1, 4.37122729e-08, -8.74235866e-08, -4.37122729e-08, -1, -2.36768775e-13, -8.74235866e-08, -2.32948209e-13, 1)
+WedgePart62.Orientation = Vector3.new(0, 0, -180)
+WedgePart62.Position = Vector3.new(30.550003051757812, 0.7749974727630615, -5.175002098083496)
+WedgePart62.Rotation = Vector3.new(0, 0, -180)
+WedgePart62.Size = Vector3.new(0.04999995231628418, 0.09999998658895493, 0.3499999940395355)
+WedgePart62.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart62.Material = Enum.Material.Neon
+WedgePart63.Parent = Model51
+WedgePart63.CFrame = CFrame.new(30.5500031, 0.875004053, -5.17501545, 1, -4.37122729e-08, -8.74235866e-08, 4.37122729e-08, 1, -2.36768775e-13, 8.74235866e-08, 2.32948209e-13, 1)
+WedgePart63.Position = Vector3.new(30.550003051757812, 0.8750040531158447, -5.175015449523926)
+WedgePart63.Size = Vector3.new(0.04999995231628418, 0.09999998658895493, 0.3499999940395355)
+WedgePart63.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart63.Material = Enum.Material.Neon
+WedgePart64.Parent = Model51
+WedgePart64.CFrame = CFrame.new(30.5500031, 0.774997473, -4.95001221, 1, 4.37122729e-08, 8.74235866e-08, 4.37122729e-08, -1, 2.36768775e-13, 8.74235866e-08, -2.32948209e-13, -1)
+WedgePart64.Orientation = Vector3.new(0, 180, 180)
+WedgePart64.Position = Vector3.new(30.550003051757812, 0.7749974727630615, -4.95001220703125)
+WedgePart64.Rotation = Vector3.new(-180, 0, 0)
+WedgePart64.Size = Vector3.new(0.04999995231628418, 0.09999998658895493, 0.09999999403953552)
+WedgePart64.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart64.Material = Enum.Material.Neon
+WedgePart65.Parent = Model51
+WedgePart65.CFrame = CFrame.new(30.5500031, 0.800001085, -5.43751812, -1, -4.37122729e-08, 8.74235866e-08, -4.37122729e-08, 1, 2.36768775e-13, -8.74235866e-08, 2.32948209e-13, -1)
+WedgePart65.Orientation = Vector3.new(0, 180, 0)
+WedgePart65.Position = Vector3.new(30.550003051757812, 0.8000010848045349, -5.437518119812012)
+WedgePart65.Rotation = Vector3.new(-180, 0, 180)
+WedgePart65.Size = Vector3.new(0.04999995231628418, 0.19999998807907104, 0.675000011920929)
+WedgePart65.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart65.Material = Enum.Material.Neon
+WedgePart66.Parent = Model51
+WedgePart66.CFrame = CFrame.new(30.5500031, 0.675000489, -5.57501936, -1, 4.37122729e-08, -8.74235866e-08, -4.37122729e-08, -1, -2.36768775e-13, -8.74235866e-08, -2.32948209e-13, 1)
+WedgePart66.Orientation = Vector3.new(0, 0, -180)
+WedgePart66.Position = Vector3.new(30.550003051757812, 0.6750004887580872, -5.575019359588623)
+WedgePart66.Rotation = Vector3.new(0, 0, -180)
+WedgePart66.Size = Vector3.new(0.04999995231628418, 0.049999989569187164, 0.8499999642372131)
+WedgePart66.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart66.Material = Enum.Material.Neon
+WedgePart67.Parent = Model51
+WedgePart67.CFrame = CFrame.new(30.5500031, 0.800001085, -5.88751888, 1, -4.37122729e-08, -8.74235866e-08, 4.37122729e-08, 1, -2.36768775e-13, 8.74235866e-08, 2.32948209e-13, 1)
+WedgePart67.Position = Vector3.new(30.550003051757812, 0.8000010848045349, -5.887518882751465)
+WedgePart67.Size = Vector3.new(0.04999995231628418, 0.19999998807907104, 0.2250000238418579)
+WedgePart67.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart67.Material = Enum.Material.Neon
+WedgePart68.Parent = Model51
+WedgePart68.CFrame = CFrame.new(30.5500031, 0.499999523, -5.88751888, -1, 4.37122729e-08, -8.74235866e-08, -4.37122729e-08, -1, -2.36768775e-13, -8.74235866e-08, -2.32948209e-13, 1)
+WedgePart68.Orientation = Vector3.new(0, 0, -180)
+WedgePart68.Position = Vector3.new(30.550003051757812, 0.4999995231628418, -5.887518882751465)
+WedgePart68.Rotation = Vector3.new(0, 0, -180)
+WedgePart68.Size = Vector3.new(0.04999995231628418, 0.19999998807907104, 0.2250000238418579)
+WedgePart68.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart68.Material = Enum.Material.Neon
+WedgePart69.Parent = Model51
+WedgePart69.CFrame = CFrame.new(30.5500031, 0.500002861, -5.43752575, 1, 4.37122729e-08, 8.74235866e-08, 4.37122729e-08, -1, 2.36768775e-13, 8.74235866e-08, -2.32948209e-13, -1)
+WedgePart69.Orientation = Vector3.new(0, 180, 180)
+WedgePart69.Position = Vector3.new(30.550003051757812, 0.5000028610229492, -5.437525749206543)
+WedgePart69.Rotation = Vector3.new(-180, 0, 0)
+WedgePart69.Size = Vector3.new(0.04999995231628418, 0.19999998807907104, 0.675000011920929)
+WedgePart69.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart69.Material = Enum.Material.Neon
+WedgePart70.Parent = Model51
+WedgePart70.CFrame = CFrame.new(30.5500031, 0.625003457, -5.5750289, 1, -7.35147268e-08, -8.74235866e-08, 7.35147268e-08, 1, -2.36768775e-13, 8.74235866e-08, 2.30342763e-13, 1)
+WedgePart70.Position = Vector3.new(30.550003051757812, 0.625003457069397, -5.575028896331787)
+WedgePart70.Size = Vector3.new(0.04999995231628418, 0.049999989569187164, 0.8499999642372131)
+WedgePart70.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart70.Material = Enum.Material.Neon
+WedgePart71.Parent = Model51
+WedgePart71.CFrame = CFrame.new(30.5500031, 0.625003457, -5.12502575, 1, -8.74235866e-08, 7.35147268e-08, 7.35147268e-08, -2.36768829e-13, -1, 8.74235866e-08, 1, -2.30342817e-13)
+WedgePart71.Orientation = Vector3.new(90, 0, 0)
+WedgePart71.Position = Vector3.new(30.550003051757812, 0.625003457069397, -5.125025749206543)
+WedgePart71.Rotation = Vector3.new(90, 0, 0)
+WedgePart71.Size = Vector3.new(0.04999995231628418, 0.049999989569187164, 0.04999995231628418)
+WedgePart71.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart71.Material = Enum.Material.Neon
+WedgePart72.Parent = Model51
+WedgePart72.CFrame = CFrame.new(30.5500031, 0.675003827, -5.12502575, 1, 7.35147268e-08, 8.74235866e-08, 7.35147268e-08, -1, 2.36768775e-13, 8.74235866e-08, -2.30342763e-13, -1)
+WedgePart72.Orientation = Vector3.new(0, 180, 180)
+WedgePart72.Position = Vector3.new(30.550003051757812, 0.6750038266181946, -5.125025749206543)
+WedgePart72.Rotation = Vector3.new(-180, 0, 0)
+WedgePart72.Size = Vector3.new(0.04999995231628418, 0.049999989569187164, 0.04999995231628418)
+WedgePart72.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart72.Material = Enum.Material.Neon
+WedgePart73.Parent = Model51
+WedgePart73.CFrame = CFrame.new(30.5500031, 0.424994677, -5.17501354, -1, 4.37122729e-08, -8.74235866e-08, -4.37122729e-08, -1, -2.36768775e-13, -8.74235866e-08, -2.32948209e-13, 1)
+WedgePart73.Orientation = Vector3.new(0, 0, -180)
+WedgePart73.Position = Vector3.new(30.550003051757812, 0.42499467730522156, -5.175013542175293)
+WedgePart73.Rotation = Vector3.new(0, 0, -180)
+WedgePart73.Size = Vector3.new(0.04999995231628418, 0.09999998658895493, 0.3499999940395355)
+WedgePart73.BottomSurface = Enum.SurfaceType.Smooth
+WedgePart73.Material = Enum.Material.Neon
+Part74.Name = "m1"
+Part74.Parent = DuplicableWing
+Part74.CFrame = CFrame.new(30.550005, 0.65000087, -3.98772049, 8.52651147e-14, -1.49213975e-13, 1, 2.16840434e-19, -1, -1.49213975e-13, 1, -1.8973538e-19, -8.52651418e-14)
+Part74.Orientation = Vector3.new(0, 90, 180)
+Part74.Position = Vector3.new(30.550004959106445, 0.6500008702278137, -3.987720489501953)
+Part74.Rotation = Vector3.new(180, 90, 0)
+Part74.Color = Color3.new(0.0666667, 0.0666667, 0.0666667)
+Part74.Size = Vector3.new(0.02500000037252903, 0.02500000037252903, 0.02500000037252903)
+Part74.BottomSurface = Enum.SurfaceType.Smooth
+Part74.BrickColor = BrickColor.new("Really black")
+Part74.TopSurface = Enum.SurfaceType.Smooth
+Part74.brickColor = BrickColor.new("Really black")
+Attachment75.Parent = Part74
+Attachment75.Axis = Vector3.new(-1, 1.1655177490122235e-18, -7.386958341022709e-13)
+Attachment75.Orientation = Vector3.new(90, 180, 0)
+Attachment75.Position = Vector3.new(-5.725061416625977, -0.0000286102294921875, -0.0000019073486328125)
+Attachment76.Name = "Attachment1"
+Attachment76.Parent = Part74
+Attachment76.Axis = Vector3.new(-1, 1.1655177490122235e-18, -7.386958341022709e-13)
+Attachment76.Orientation = Vector3.new(90, 180, 0)
+Attachment76.Position = Vector3.new(-2.0249576568603516, -0.000026702880859375, -0.0000019073486328125)
+Trail77.Parent = Part74
+Trail77.Attachment0 = Attachment75
+Trail77.Attachment1 = Attachment76
+Trail77.LightEmission = 1
+Trail77.LightInfluence = 1
+Trail77.Texture = "rbxassetid://2108945559"
+Trail77.Transparency = NumberSequence.new(0,1)
+Trail77.Lifetime = 0.6000000238418579
+Weld78.Name = "Wedge"
+Weld78.Parent = Part74
+Weld78.C0 = CFrame.new(-5.124506, -0.0625030994, -1.90734863e-06, 8.74229897e-08, 2.32948507e-13, 1.0000025, -4.37112391e-08, -1.00000215, 2.36769968e-13, 1, -4.37111858e-08, -8.74231247e-08)
+Weld78.Part0 = Part74
+Weld78.Part1 = WedgePart2
+Weld78.part1 = WedgePart2
+Weld79.Name = "Wedge"
+Weld79.Parent = Part74
+Weld79.C0 = CFrame.new(-4.22474194, -0.0625051856, -1.90734863e-06, 8.74234161e-08, 1, -2.32948047e-13, -4.3711978e-08, 2.36769507e-13, 1, 1, -8.74234161e-08, 4.3711978e-08)
+Weld79.Part0 = Part74
+Weld79.Part1 = WedgePart3
+Weld79.part1 = WedgePart3
+Weld80.Name = "Wedge"
+Weld80.Parent = Part74
+Weld80.C0 = CFrame.new(-5.12476349, 0.0624972582, -1.90734863e-06, -8.74234161e-08, -2.32947803e-13, 1, 4.3711978e-08, 1, 2.36769236e-13, -1, 4.3711978e-08, -8.74234161e-08)
+Weld80.Part0 = Part74
+Weld80.Part1 = WedgePart4
+Weld80.part1 = WedgePart4
+Weld81.Name = "Wedge"
+Weld81.Parent = Part74
+Weld81.C0 = CFrame.new(-4.22478676, 0.0624970198, -1.90734863e-06, -8.74235013e-08, 1, 2.32947911e-13, 4.37121273e-08, 2.36769155e-13, -1, -1, -8.74235013e-08, -4.37121273e-08)
+Weld81.Part0 = Part74
+Weld81.Part1 = WedgePart5
+Weld81.part1 = WedgePart5
+Weld82.Name = "Wedge"
+Weld82.Parent = Part74
+Weld82.C0 = CFrame.new(-2.67478514, -0.437501371, 0.000497817993, -8.74235013e-08, -1, -2.32947911e-13, 4.37121273e-08, -2.36769155e-13, 1, -1, 8.74235013e-08, 4.37121273e-08)
+Weld82.Part0 = Part74
+Weld82.Part1 = WedgePart6
+Weld82.part1 = WedgePart6
+Weld83.Name = "Wedge"
+Weld83.Parent = Part74
+Weld83.C0 = CFrame.new(-2.33727789, 0.425000697, 0.000497817993, -8.74235013e-08, 1, 2.32947911e-13, 4.37121273e-08, 2.36769155e-13, -1, -1, -8.74235013e-08, -4.37121273e-08)
+Weld83.Part0 = Part74
+Weld83.Part1 = WedgePart7
+Weld83.part1 = WedgePart7
+Weld84.Name = "Wedge"
+Weld84.Parent = Part74
+Weld84.C0 = CFrame.new(-0.56226778, 0.274999946, 0.000497817993, -8.74235013e-08, 1, 2.32947911e-13, 4.37121273e-08, 2.36769155e-13, -1, -1, -8.74235013e-08, -4.37121273e-08)
+Weld84.Part0 = Part74
+Weld84.Part1 = WedgePart8
+Weld84.part1 = WedgePart8
+Weld85.Name = "Wedge"
+Weld85.Parent = Part74
+Weld85.C0 = CFrame.new(-1.04977751, -0.28750056, 0.000497817993, -8.74235013e-08, -1, -2.32947911e-13, 4.37121273e-08, -2.36769155e-13, 1, -1, 8.74235013e-08, 4.37121273e-08)
+Weld85.Part0 = Part74
+Weld85.Part1 = WedgePart9
+Weld85.part1 = WedgePart9
+Weld86.Name = "Wedge"
+Weld86.Parent = Part74
+Weld86.C0 = CFrame.new(-2.67478514, 0.437498629, -1.90734863e-06, 8.74235013e-08, -1, 2.32947911e-13, -4.37121273e-08, -2.36769155e-13, -1, 1, 8.74235013e-08, -4.37121273e-08)
+Weld86.Part0 = Part74
+Weld86.Part1 = WedgePart10
+Weld86.part1 = WedgePart10
+Weld87.Name = "Wedge"
+Weld87.Parent = Part74
+Weld87.C0 = CFrame.new(-2.33727789, -0.425003469, -1.90734863e-06, 8.74235013e-08, 1, -2.32947911e-13, -4.37121273e-08, 2.36769155e-13, 1, 1, -8.74235013e-08, 4.37121273e-08)
+Weld87.Part0 = Part74
+Weld87.Part1 = WedgePart11
+Weld87.part1 = WedgePart11
+Weld88.Name = "Wedge"
+Weld88.Parent = Part74
+Weld88.C0 = CFrame.new(-0.56226778, -0.275002599, -1.90734863e-06, 8.74235013e-08, 1, -2.32947911e-13, -4.37121273e-08, 2.36769155e-13, 1, 1, -8.74235013e-08, 4.37121273e-08)
+Weld88.Part0 = Part74
+Weld88.Part1 = WedgePart12
+Weld88.part1 = WedgePart12
+Weld89.Name = "Wedge"
+Weld89.Parent = Part74
+Weld89.C0 = CFrame.new(-1.04977751, 0.287497908, -1.90734863e-06, 8.74235013e-08, -1, 2.32947911e-13, -4.37121273e-08, -2.36769155e-13, -1, 1, 8.74235013e-08, -4.37121273e-08)
+Weld89.Part0 = Part74
+Weld89.Part1 = WedgePart13
+Weld89.part1 = WedgePart13
+Weld90.Name = "Wedge"
+Weld90.Parent = Part74
+Weld90.C0 = CFrame.new(-4.91227913, 0.0500095487, -1.90734863e-06, -8.74235013e-08, -2.32947857e-13, 1, 4.37121273e-08, 1, 2.367691e-13, -1, 4.37121273e-08, -8.74235013e-08)
+Weld90.Part0 = Part74
+Weld90.Part1 = WedgePart15
+Weld90.part1 = WedgePart15
+Weld91.Name = "Wedge"
+Weld91.Parent = Part74
+Weld91.C0 = CFrame.new(-4.91228867, -0.0500026941, -1.90734863e-06, 8.74235013e-08, 2.32947857e-13, 1, -4.37121273e-08, -1, 2.367691e-13, 1, -4.37121273e-08, -8.74235013e-08)
+Weld91.Part0 = Part74
+Weld91.Part1 = WedgePart16
+Weld91.part1 = WedgePart16
+Weld92.Name = "Wedge"
+Weld92.Parent = Part74
+Weld92.C0 = CFrame.new(-4.06231117, -0.0500026941, -1.90734863e-06, -8.74235013e-08, 2.32947857e-13, -1, 4.37121273e-08, -1, -2.367691e-13, -1, -4.37121273e-08, 8.74235013e-08)
+Weld92.Part0 = Part74
+Weld92.Part1 = WedgePart17
+Weld92.part1 = WedgePart17
+Weld93.Name = "Wedge"
+Weld93.Parent = Part74
+Weld93.C0 = CFrame.new(-4.06230164, 0.0500095487, -1.90734863e-06, 8.74235013e-08, -2.32947857e-13, -1, -4.37121273e-08, 1, -2.367691e-13, 1, 4.37121273e-08, 8.74235013e-08)
+Weld93.Part0 = Part74
+Weld93.Part1 = WedgePart18
+Weld93.part1 = WedgePart18
+Weld94.Name = "Wedge"
+Weld94.Parent = Part74
+Weld94.C0 = CFrame.new(-3.01227903, 0.0750035644, -1.90734863e-06, -8.74235013e-08, -2.32947857e-13, 1, 4.37121273e-08, 1, 2.367691e-13, -1, 4.37121273e-08, -8.74235013e-08)
+Weld94.Part0 = Part74
+Weld94.Part1 = WedgePart20
+Weld94.part1 = WedgePart20
+Weld95.Name = "Wedge"
+Weld95.Parent = Part74
+Weld95.C0 = CFrame.new(-2.47478533, 0.0750064254, -1.90734863e-06, 8.74235013e-08, -2.41415503e-13, -1, 5.31458362e-08, 1, -2.367691e-13, 1, -5.31458362e-08, 8.74235013e-08)
+Weld95.Part0 = Part74
+Weld95.Part1 = WedgePart21
+Weld95.part1 = WedgePart21
+Weld96.Name = "Wedge"
+Weld96.Parent = Part74
+Weld96.C0 = CFrame.new(-2.47477961, -0.0749995708, -1.90734863e-06, -8.74235013e-08, 2.32947857e-13, -1, 4.37121273e-08, -1, -2.367691e-13, -1, -4.37121273e-08, 8.74235013e-08)
+Weld96.Part0 = Part74
+Weld96.Part1 = WedgePart22
+Weld96.part1 = WedgePart22
+Weld97.Name = "Wedge"
+Weld97.Parent = Part74
+Weld97.C0 = CFrame.new(-3.03728247, -0.0750024319, -1.90734863e-06, 8.74235013e-08, -2.49883149e-13, -1, 1.50003785e-07, 1, -2.367691e-13, 1, -1.500038e-07, 8.74235013e-08)
+Weld97.Part0 = Part74
+Weld97.Part1 = WedgePart23
+Weld97.part1 = WedgePart23
+Weld98.Name = "Wedge"
+Weld98.Parent = Part74
+Weld98.C0 = CFrame.new(-3.17479086, -0.0875032544, -1.90734863e-06, -8.74235013e-08, -2.32947857e-13, 1, 4.37121273e-08, 1, 2.367691e-13, -1, 4.37121273e-08, -8.74235013e-08)
+Weld98.Part0 = Part74
+Weld98.Part1 = WedgePart24
+Weld98.part1 = WedgePart24
+Weld99.Name = "Wedge"
+Weld99.Parent = Part74
+Weld99.C0 = CFrame.new(-3.19979334, -0.175003707, -1.90734863e-06, -8.74235013e-08, 2.32947857e-13, -1, 4.37121273e-08, -1, -2.367691e-13, -1, -4.37121273e-08, 8.74235013e-08)
+Weld99.Part0 = Part74
+Weld99.Part1 = WedgePart25
+Weld99.part1 = WedgePart25
+Weld100.Name = "Wedge"
+Weld100.Parent = Part74
+Weld100.C0 = CFrame.new(-3.17479086, 0.0875000954, -1.90734863e-06, 8.74235013e-08, 2.32947857e-13, 1, -4.37121273e-08, -1, 2.367691e-13, 1, -4.37121273e-08, -8.74235013e-08)
+Weld100.Part0 = Part74
+Weld100.Part1 = WedgePart26
+Weld100.part1 = WedgePart26
+Weld101.Name = "Wedge"
+Weld101.Parent = Part74
+Weld101.C0 = CFrame.new(-3.03727674, 0.075004518, -1.90734863e-06, -8.74235013e-08, 2.34901915e-13, -1, 2.13602895e-08, -1, -2.367691e-13, -1, -2.13602895e-08, 8.74235013e-08)
+Weld101.Part0 = Part74
+Weld101.Part1 = WedgePart27
+Weld101.part1 = WedgePart27
+Weld102.Name = "Wedge"
+Weld102.Parent = Part74
+Weld102.C0 = CFrame.new(-3.19979334, 0.174997687, -1.90734863e-06, 8.74235013e-08, -2.32947857e-13, -1, -4.37121273e-08, 1, -2.367691e-13, 1, 4.37121273e-08, 8.74235013e-08)
+Weld102.Part0 = Part74
+Weld102.Part1 = WedgePart28
+Weld102.part1 = WedgePart28
+Weld103.Name = "Wedge"
+Weld103.Parent = Part74
+Weld103.C0 = CFrame.new(-3.37479353, 0.0875005722, -1.90734863e-06, -8.74235013e-08, 2.32947857e-13, -1, 4.37121273e-08, -1, -2.367691e-13, -1, -4.37121273e-08, 8.74235013e-08)
+Weld103.Part0 = Part74
+Weld103.Part1 = WedgePart29
+Weld103.part1 = WedgePart29
+Weld104.Name = "Wedge"
+Weld104.Parent = Part74
+Weld104.C0 = CFrame.new(-3.67478895, 0.100009978, -1.90734863e-06, -8.74235013e-08, -2.32947857e-13, 1, 4.37121273e-08, 1, 2.367691e-13, -1, 4.37121273e-08, -8.74235013e-08)
+Weld104.Part0 = Part74
+Weld104.Part1 = WedgePart30
+Weld104.part1 = WedgePart30
+Weld105.Name = "Wedge"
+Weld105.Parent = Part74
+Weld105.C0 = CFrame.new(-3.67479658, -0.100002646, -1.90734863e-06, 8.74235013e-08, 2.32947857e-13, 1, -4.37121273e-08, -1, 2.367691e-13, 1, -4.37121273e-08, -8.74235013e-08)
+Weld105.Part0 = Part74
+Weld105.Part1 = WedgePart31
+Weld105.part1 = WedgePart31
+Weld106.Name = "Wedge"
+Weld106.Parent = Part74
+Weld106.C0 = CFrame.new(-3.37479353, -0.0875027776, -1.90734863e-06, 8.74235013e-08, -2.32947857e-13, -1, -4.37121273e-08, 1, -2.367691e-13, 1, 4.37121273e-08, 8.74235013e-08)
+Weld106.Part0 = Part74
+Weld106.Part1 = WedgePart32
+Weld106.part1 = WedgePart32
+Weld107.Name = "Wedge"
+Weld107.Parent = Part74
+Weld107.C0 = CFrame.new(-3.81229734, 0.0750007033, -1.90734863e-06, -8.74235013e-08, 2.32947857e-13, -1, 4.37121273e-08, -1, -2.367691e-13, -1, -4.37121273e-08, 8.74235013e-08)
+Weld107.Part0 = Part74
+Weld107.Part1 = WedgePart33
+Weld107.part1 = WedgePart33
+Weld108.Name = "Wedge"
+Weld108.Parent = Part74
+Weld108.C0 = CFrame.new(-3.81229734, 0.149998009, -1.90734863e-06, 8.74235013e-08, -2.32947857e-13, -1, -4.37121273e-08, 1, -2.367691e-13, 1, 4.37121273e-08, 8.74235013e-08)
+Weld108.Part0 = Part74
+Weld108.Part1 = WedgePart34
+Weld108.part1 = WedgePart34
+Weld109.Name = "Wedge"
+Weld109.Parent = Part74
+Weld109.C0 = CFrame.new(-4.0372963, 0.150007039, -1.90734863e-06, -8.74235013e-08, -2.32947857e-13, 1, 4.37121273e-08, 1, 2.367691e-13, -1, 4.37121273e-08, -8.74235013e-08)
+Weld109.Part0 = Part74
+Weld109.Part1 = WedgePart35
+Weld109.part1 = WedgePart35
+Weld110.Name = "Wedge"
+Weld110.Parent = Part74
+Weld110.C0 = CFrame.new(-4.0372963, 0.0750007033, -1.90734863e-06, 8.74235013e-08, 2.32947857e-13, 1, -4.37121273e-08, -1, 2.367691e-13, 1, -4.37121273e-08, -8.74235013e-08)
+Weld110.Part0 = Part74
+Weld110.Part1 = WedgePart36
+Weld110.part1 = WedgePart36
+Weld111.Name = "Wedge"
+Weld111.Parent = Part74
+Weld111.C0 = CFrame.new(-4.03729248, -0.150009751, -1.90734863e-06, 8.74235013e-08, 2.32947857e-13, 1, -4.37121273e-08, -1, 2.367691e-13, 1, -4.37121273e-08, -8.74235013e-08)
+Weld111.Part0 = Part74
+Weld111.Part1 = WedgePart37
+Weld111.part1 = WedgePart37
+Weld112.Name = "Wedge"
+Weld112.Parent = Part74
+Weld112.C0 = CFrame.new(-4.03729248, -0.0750033855, -1.90734863e-06, -8.74235013e-08, -2.32947857e-13, 1, 4.37121273e-08, 1, 2.367691e-13, -1, 4.37121273e-08, -8.74235013e-08)
+Weld112.Part0 = Part74
+Weld112.Part1 = WedgePart38
+Weld112.part1 = WedgePart38
+Weld113.Name = "Wedge"
+Weld113.Parent = Part74
+Weld113.C0 = CFrame.new(-3.81229353, -0.0750033855, -1.90734863e-06, 8.74235013e-08, -2.32947857e-13, -1, -4.37121273e-08, 1, -2.367691e-13, 1, 4.37121273e-08, 8.74235013e-08)
+Weld113.Part0 = Part74
+Weld113.Part1 = WedgePart39
+Weld113.part1 = WedgePart39
+Weld114.Name = "Wedge"
+Weld114.Parent = Part74
+Weld114.C0 = CFrame.new(-3.81229353, -0.150000691, -1.90734863e-06, -8.74235013e-08, 2.32947857e-13, -1, 4.37121273e-08, -1, -2.367691e-13, -1, -4.37121273e-08, 8.74235013e-08)
+Weld114.Part0 = Part74
+Weld114.Part1 = WedgePart40
+Weld114.part1 = WedgePart40
+Weld115.Name = "Wedge"
+Weld115.Parent = Part74
+Weld115.C0 = CFrame.new(-3.01228476, -0.0750024319, -1.90734863e-06, 8.74235013e-08, 2.41415503e-13, 1, 5.31458362e-08, -1, 2.367691e-13, 1, 5.31458362e-08, -8.74235013e-08)
+Weld115.Part0 = Part74
+Weld115.Part1 = WedgePart41
+Weld115.part1 = WedgePart41
+Weld116.Name = "Wedge"
+Weld116.Parent = Part74
+Weld116.C0 = CFrame.new(-2.68728209, 0.375002176, -1.90734863e-06, 8.74235013e-08, -1, 2.32947911e-13, -4.37121273e-08, -2.36769155e-13, -1, 1, 8.74235013e-08, -4.37121273e-08)
+Weld116.Part0 = Part74
+Weld116.Part1 = WedgePart43
+Weld116.part1 = WedgePart43
+Weld117.Name = "Wedge"
+Weld117.Parent = Part74
+Weld117.C0 = CFrame.new(-1.97478104, 0.162508339, -1.90734863e-06, 8.74235013e-08, 1, -2.32947911e-13, -4.37121273e-08, 2.36769155e-13, 1, 1, -8.74235013e-08, 4.37121273e-08)
+Weld117.Part0 = Part74
+Weld117.Part1 = WedgePart44
+Weld117.part1 = WedgePart44
+Weld118.Name = "Wedge"
+Weld118.Parent = Part74
+Weld118.C0 = CFrame.new(-2.42477989, 0.162499756, -1.90734863e-06, 8.74235013e-08, 2.32947857e-13, 1, -4.37121273e-08, -1, 2.367691e-13, 1, -4.37121273e-08, -8.74235013e-08)
+Weld118.Part0 = Part74
+Weld118.Part1 = WedgePart45
+Weld118.part1 = WedgePart45
+Weld119.Name = "Wedge"
+Weld119.Parent = Part74
+Weld119.C0 = CFrame.new(-2.23727942, 0.375002176, -1.90734863e-06, -8.74235013e-08, 1, 2.32947911e-13, 4.37121273e-08, 2.36769155e-13, -1, -1, -8.74235013e-08, -4.37121273e-08)
+Weld119.Part0 = Part74
+Weld119.Part1 = WedgePart46
+Weld119.part1 = WedgePart46
+Weld120.Name = "Wedge"
+Weld120.Parent = Part74
+Weld120.C0 = CFrame.new(-2.68729305, -0.375001371, -1.90734863e-06, -8.74235866e-08, -1, -2.3294802e-13, 4.37122729e-08, -2.36769073e-13, 1, -1, 8.74235866e-08, 4.37122729e-08)
+Weld120.Part0 = Part74
+Weld120.Part1 = WedgePart47
+Weld120.part1 = WedgePart47
+Weld121.Name = "Wedge"
+Weld121.Parent = Part74
+Weld121.C0 = CFrame.new(-2.23728991, -0.375001371, -1.90734863e-06, 8.74235866e-08, 1, -2.32947992e-13, -4.37122729e-08, 2.367691e-13, 1, 1, -8.74235866e-08, 4.37122729e-08)
+Weld121.Part0 = Part74
+Weld121.Part1 = WedgePart48
+Weld121.part1 = WedgePart48
+Weld122.Name = "Wedge"
+Weld122.Parent = Part74
+Weld122.C0 = CFrame.new(-2.4248023, -0.162500501, -1.90734863e-06, -8.74236719e-08, -2.3294802e-13, 1, 4.37124221e-08, 1, 2.36768992e-13, -1, 4.37124221e-08, -8.74236719e-08)
+Weld122.Part0 = Part74
+Weld122.Part1 = WedgePart49
+Weld122.part1 = WedgePart49
+Weld123.Name = "Wedge"
+Weld123.Parent = Part74
+Weld123.C0 = CFrame.new(-1.97480345, -0.162509084, -1.90734863e-06, -8.74236719e-08, 1, 2.32948074e-13, 4.37124221e-08, 2.36769046e-13, -1, -1, -8.74236719e-08, -4.37124221e-08)
+Weld123.Part0 = Part74
+Weld123.Part1 = WedgePart50
+Weld123.part1 = WedgePart50
+Weld124.Name = "Wedge"
+Weld124.Parent = Part74
+Weld124.C0 = CFrame.new(-0.512294769, 0.149999917, -1.90734863e-06, -8.74236719e-08, 2.3294802e-13, -1, 4.37124221e-08, -1, -2.36768992e-13, -1, -4.37124221e-08, 8.74236719e-08)
+Weld124.Part0 = Part74
+Weld124.Part1 = WedgePart52
+Weld124.part1 = WedgePart52
+Weld125.Name = "Wedge"
+Weld125.Parent = Part74
+Weld125.C0 = CFrame.new(-0.512308121, 0.225006193, -1.90734863e-06, 8.74236719e-08, -2.3294802e-13, -1, -4.37124221e-08, 1, -2.36768992e-13, 1, 4.37124221e-08, 8.74236719e-08)
+Weld125.Part0 = Part74
+Weld125.Part1 = WedgePart53
+Weld125.part1 = WedgePart53
+Weld126.Name = "Wedge"
+Weld126.Parent = Part74
+Weld126.C0 = CFrame.new(-1.1872797, 0.124999642, -1.90734863e-06, 8.74236719e-08, 2.3294802e-13, 1, -4.37124221e-08, -1, 2.36768992e-13, 1, -4.37124221e-08, -8.74236719e-08)
+Weld126.Part0 = Part74
+Weld126.Part1 = WedgePart54
+Weld126.part1 = WedgePart54
+Weld127.Name = "Wedge"
+Weld127.Parent = Part74
+Weld127.C0 = CFrame.new(-0.96228981, 0.124999642, -1.90734863e-06, -8.74236719e-08, 2.3294802e-13, -1, 4.37124221e-08, -1, -2.36768992e-13, -1, -4.37124221e-08, 8.74236719e-08)
+Weld127.Part0 = Part74
+Weld127.Part1 = WedgePart55
+Weld127.part1 = WedgePart55
+Weld128.Name = "Wedge"
+Weld128.Parent = Part74
+Weld128.C0 = CFrame.new(-0.549789429, -0.0499993563, -1.90734863e-06, 8.74236719e-08, 2.24480346e-13, 1, -1.40570393e-07, -1, 2.36768992e-13, 1, -1.40570393e-07, -8.74236719e-08)
+Weld128.Part0 = Part74
+Weld128.Part1 = WedgePart56
+Weld128.part1 = WedgePart56
+Weld129.Name = "Wedge"
+Weld129.Parent = Part74
+Weld129.C0 = CFrame.new(0.0627012253, -0.0499964952, -1.90734863e-06, -8.74236719e-08, 2.3294802e-13, -1, 4.37124221e-08, -1, -2.36768992e-13, -1, -4.37124221e-08, 8.74236719e-08)
+Weld129.Part0 = Part74
+Weld129.Part1 = WedgePart57
+Weld129.part1 = WedgePart57
+Weld130.Name = "Wedge"
+Weld130.Parent = Part74
+Weld130.C0 = CFrame.new(0.0627088547, 0.0500090718, -1.90734863e-06, 8.74236719e-08, -2.24480346e-13, -1, -1.40570393e-07, 1, -2.36768992e-13, 1, 1.40570393e-07, 8.74236719e-08)
+Weld130.Part0 = Part74
+Weld130.Part1 = WedgePart58
+Weld130.part1 = WedgePart58
+Weld131.Name = "Wedge"
+Weld131.Parent = Part74
+Weld131.C0 = CFrame.new(-0.549797058, 0.0500062108, -1.90734863e-06, -8.74236719e-08, -2.3294802e-13, 1, 4.37124221e-08, 1, 2.36768992e-13, -1, 4.37124221e-08, -8.74236719e-08)
+Weld131.Part0 = Part74
+Weld131.Part1 = WedgePart59
+Weld131.part1 = WedgePart59
+Weld132.Name = "Wedge"
+Weld132.Parent = Part74
+Weld132.C0 = CFrame.new(-0.512296677, -0.149996877, -1.90734863e-06, 8.74236719e-08, -2.3294802e-13, -1, -4.37124221e-08, 1, -2.36768992e-13, 1, 4.37124221e-08, 8.74236719e-08)
+Weld132.Part0 = Part74
+Weld132.Part1 = WedgePart60
+Weld132.part1 = WedgePart60
+Weld133.Name = "Wedge"
+Weld133.Parent = Part74
+Weld133.C0 = CFrame.new(-0.512310028, -0.225003183, -1.90734863e-06, -8.74236719e-08, 2.3294802e-13, -1, 4.37124221e-08, -1, -2.36768992e-13, -1, -4.37124221e-08, 8.74236719e-08)
+Weld133.Part0 = Part74
+Weld133.Part1 = WedgePart61
+Weld133.part1 = WedgePart61
+Weld134.Name = "Wedge"
+Weld134.Parent = Part74
+Weld134.C0 = CFrame.new(-1.18728161, -0.124996603, -1.90734863e-06, -8.74236719e-08, -2.3294802e-13, 1, 4.37124221e-08, 1, 2.36768992e-13, -1, 4.37124221e-08, -8.74236719e-08)
+Weld134.Part0 = Part74
+Weld134.Part1 = WedgePart62
+Weld134.part1 = WedgePart62
+Weld135.Name = "Wedge"
+Weld135.Parent = Part74
+Weld135.C0 = CFrame.new(-1.18729496, -0.225003183, -1.90734863e-06, 8.74236719e-08, 2.3294802e-13, 1, -4.37124221e-08, -1, 2.36768992e-13, 1, -4.37124221e-08, -8.74236719e-08)
+Weld135.Part0 = Part74
+Weld135.Part1 = WedgePart63
+Weld135.part1 = WedgePart63
+Weld136.Name = "Wedge"
+Weld136.Parent = Part74
+Weld136.C0 = CFrame.new(-0.962291718, -0.124996603, -1.90734863e-06, 8.74236719e-08, -2.3294802e-13, -1, -4.37124221e-08, 1, -2.36768992e-13, 1, 4.37124221e-08, 8.74236719e-08)
+Weld136.Part0 = Part74
+Weld136.Part1 = WedgePart64
+Weld136.part1 = WedgePart64
+Weld137.Name = "Wedge"
+Weld137.Parent = Part74
+Weld137.C0 = CFrame.new(-1.44979763, -0.150000215, -1.90734863e-06, -8.74236719e-08, 2.3294802e-13, -1, 4.37124221e-08, -1, -2.36768992e-13, -1, -4.37124221e-08, 8.74236719e-08)
+Weld137.Part0 = Part74
+Weld137.Part1 = WedgePart65
+Weld137.part1 = WedgePart65
+Weld138.Name = "Wedge"
+Weld138.Parent = Part74
+Weld138.C0 = CFrame.new(-1.58729887, -0.0249996185, -1.90734863e-06, -8.74236719e-08, -2.3294802e-13, 1, 4.37124221e-08, 1, 2.36768992e-13, -1, 4.37124221e-08, -8.74236719e-08)
+Weld138.Part0 = Part74
+Weld138.Part1 = WedgePart66
+Weld138.part1 = WedgePart66
+Weld139.Name = "Wedge"
+Weld139.Parent = Part74
+Weld139.C0 = CFrame.new(-1.89979839, -0.150000215, -1.90734863e-06, 8.74236719e-08, 2.3294802e-13, 1, -4.37124221e-08, -1, 2.36768992e-13, 1, -4.37124221e-08, -8.74236719e-08)
+Weld139.Part0 = Part74
+Weld139.Part1 = WedgePart67
+Weld139.part1 = WedgePart67
+Weld140.Name = "Wedge"
+Weld140.Parent = Part74
+Weld140.C0 = CFrame.new(-1.89979839, 0.150001347, -1.90734863e-06, -8.74236719e-08, -2.3294802e-13, 1, 4.37124221e-08, 1, 2.36768992e-13, -1, 4.37124221e-08, -8.74236719e-08)
+Weld140.Part0 = Part74
+Weld140.Part1 = WedgePart68
+Weld140.part1 = WedgePart68
+Weld141.Name = "Wedge"
+Weld141.Parent = Part74
+Weld141.C0 = CFrame.new(-1.44980526, 0.149998009, -1.90734863e-06, 8.74236719e-08, -2.3294802e-13, -1, -4.37124221e-08, 1, -2.36768992e-13, 1, 4.37124221e-08, 8.74236719e-08)
+Weld141.Part0 = Part74
+Weld141.Part1 = WedgePart69
+Weld141.part1 = WedgePart69
+Weld142.Name = "Wedge"
+Weld142.Parent = Part74
+Weld142.C0 = CFrame.new(-1.58730841, 0.0249974132, -1.90734863e-06, 8.74236719e-08, 2.30342573e-13, 1, -7.3514876e-08, -1, 2.36768992e-13, 1, -7.3514876e-08, -8.74236719e-08)
+Weld142.Part0 = Part74
+Weld142.Part1 = WedgePart70
+Weld142.part1 = WedgePart70
+Weld143.Name = "Wedge"
+Weld143.Parent = Part74
+Weld143.C0 = CFrame.new(-1.13730526, 0.0249974132, -1.90734863e-06, 8.74236719e-08, 1, -2.30342628e-13, -7.3514876e-08, 2.36769046e-13, 1, 1, -8.74236719e-08, 7.3514876e-08)
+Weld143.Part0 = Part74
+Weld143.Part1 = WedgePart71
+Weld143.part1 = WedgePart71
+Weld144.Name = "Wedge"
+Weld144.Parent = Part74
+Weld144.C0 = CFrame.new(-1.13730526, -0.0250029564, -1.90734863e-06, 8.74236719e-08, -2.30342573e-13, -1, -7.3514876e-08, 1, -2.36768992e-13, 1, 7.3514876e-08, 8.74236719e-08)
+Weld144.Part0 = Part74
+Weld144.Part1 = WedgePart72
+Weld144.part1 = WedgePart72
+Weld145.Name = "Wedge"
+Weld145.Parent = Part74
+Weld145.C0 = CFrame.new(-1.18729305, 0.225006193, -1.90734863e-06, -8.74236719e-08, -2.3294802e-13, 1, 4.37124221e-08, 1, 2.36768992e-13, -1, 4.37124221e-08, -8.74236719e-08)
+Weld145.Part0 = Part74
+Weld145.Part1 = WedgePart73
+Weld145.part1 = WedgePart73
+
+--wingset
+
+local wsm = Instance.new("Model")
+Part1 = Instance.new("Part")
+Weld2 = Instance.new("Weld")
+Weld3 = Instance.new("Weld")
+Weld4 = Instance.new("Weld")
+WeldConstraint5 = Instance.new("WeldConstraint")
+WeldConstraint6 = Instance.new("WeldConstraint")
+Part7 = Instance.new("Part")
+Weld8 = Instance.new("Weld")
+Model9 = Instance.new("Model")
+Part10 = Instance.new("Part")
+Weld11 = Instance.new("Weld")
+Weld12 = Instance.new("Weld")
+Part13 = Instance.new("Part")
+Part14 = Instance.new("Part")
+Model15 = Instance.new("Model")
+Part16 = Instance.new("Part")
+Weld17 = Instance.new("Weld")
+Weld18 = Instance.new("Weld")
+Part19 = Instance.new("Part")
+Part20 = Instance.new("Part")
+Model21 = Instance.new("Model")
+Part22 = Instance.new("Part")
+Weld23 = Instance.new("Weld")
+Weld24 = Instance.new("Weld")
+Part25 = Instance.new("Part")
+Part26 = Instance.new("Part")
+
+welder3 = Part22
+welder2 = Part16
+welder1 = Part10
+welder = Part1
+torso = Part7
+
+local parts = {
+	Part_1 = Part25,
+	Part_2 = Part19,
+	Part_3 = Part13,
+	Part_4 = Part14,
+	Part_5 = Part20,
+	Part_6 = Part26
+}
+
+local function setup_wing(wingtype)
+	if wingtype == "1" then
+		swa:setWingAnim(wsm,1,welder3.Part1,welder2.Part2,welder1.Part3,welder1.Part4,welder2.Part5,welder3.Part6,torso.Part,welder.mover1,welder.mover2,welder.mover3)
+	end
+	if wingtype == "2" then
+		swa:setWingAnim(wsm,2,welder3.Part1,welder2.Part2,welder1.Part3,welder1.Part4,welder2.Part5,welder3.Part6,torso.Part,welder.mover1,welder.mover2,welder.mover3)
+	end
+	if wingtype == "3" then
+		swa:setWingAnim(wsm,3,welder3.Part1,welder2.Part2,welder1.Part3,welder1.Part4,welder2.Part5,welder3.Part6,torso.Part,welder.mover1,welder.mover2,welder.mover3)
+	end
+	if wingtype == "4" then
+		swa:setWingAnim(wsm,4,welder3.Part1,welder2.Part2,welder1.Part3,welder1.Part4,welder2.Part5,welder3.Part6,torso.Part,welder.mover1,welder.mover2,welder.mover3)
+	end
+end
+
+wsm.Name = "Wings"
+wsm.Parent = owner.Character
+wsm.PrimaryPart = Part7
+Part1.Parent = wsm
+Part1.CFrame = CFrame.new(16.8643265, 1.62576914, -7.59785128, 1.00000238, -5.66244125e-07, 0, -4.76837158e-07, 1.00000024, 0, 0, 0, 1.00000286)
+Part1.Position = Vector3.new(16.86432647705078, 1.6257691383361816, -7.597851276397705)
+Part1.Transparency = 1
+Part1.Velocity = Vector3.new(0, 0.000019548288037185557, 0)
+Part1.Size = Vector3.new(0.14053790271282196, 0.1405380219221115, 0.14053797721862793)
+Part1.BottomSurface = Enum.SurfaceType.Smooth
+Part1.CanCollide = false
+Part1.Material = Enum.Material.Neon
+Part1.TopSurface = Enum.SurfaceType.Smooth
+Weld2.Name = "mover3"
+Weld2.Parent = Part1
+Weld2.C0 = CFrame.new(-1.90734863e-05, 1.90734863e-06, 0.952581406, -0.499959469, 0.866048813, 0, 0.866048813, 0.499959469, 0, 0, 0, -1)
+Weld2.C1 = CFrame.new(-1.83450538e-07, 1.64338235e-06, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld2.Part0 = Part1
+Weld2.Part1 = Part22
+Weld2.part1 = Part22
+Weld3.Name = "mover2"
+Weld3.Parent = Part1
+Weld3.C0 = CFrame.new(-3.81469727e-05, 0, 0.952583313, -0.866007447, 0.500031412, 0, 0.500031412, 0.866007268, 0, 0, 0, -1.00000024)
+Weld3.C1 = CFrame.new(3.51388007e-06, 7.21956894e-08, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld3.Part0 = Part1
+Weld3.Part1 = Part16
+Weld3.part1 = Part16
+Weld4.Name = "mover1"
+Weld4.Parent = Part1
+Weld4.C0 = CFrame.new(-2.67028809e-05, -3.81469727e-06, 0.952583313, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+Weld4.C1 = CFrame.new(0, 8.32828846e-08, -7.15255737e-07, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld4.Part0 = Part1
+Weld4.Part1 = Part10
+Weld4.part1 = Part10
+WeldConstraint5.Parent = Part1
+WeldConstraint5.Part0 = Part1
+WeldConstraint5.Part1 = Part7
+WeldConstraint6.Parent = Part1
+WeldConstraint6.Part0 = Part1
+WeldConstraint6.Part1 = Part7
+Part7.Name = "torso"
+Part7.Parent = wsm
+Part7.CFrame = CFrame.new(16.8643379, 1.62577486, -7.94920111, 1.00000238, -5.66244125e-07, 0, -4.76837158e-07, 1.00000024, 0, 0, 0, 1.00000286)
+Part7.Position = Vector3.new(16.864337921142578, 1.62577486038208, -7.9492011070251465)
+Part7.Transparency = 1
+Part7.Velocity = Vector3.new(0, 0.000019548288037185557, 0)
+Part7.Size = Vector3.new(0.0026901960372924805, 0.005380392074584961, 0.005380392074584961)
+Part7.BottomSurface = Enum.SurfaceType.Smooth
+Part7.CanCollide = false
+Part7.Material = Enum.Material.Neon
+Part7.TopSurface = Enum.SurfaceType.Smooth
+Weld8.Name = "Part"
+Weld8.Parent = Part7
+Weld8.C0 = CFrame.new(-1.14440918e-05, -5.7220459e-06, 0.351348877, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Weld8.Part0 = Part7
+Weld8.Part1 = Part1
+Weld8.part1 = Part1
+Model9.Name = "SET1"
+Model9.Parent = wsm
+Part10.Name = "mover1"
+Part10.Parent = Model9
+Part10.CFrame = CFrame.new(16.8642998, 1.6257652, -6.64526606, -1.00000238, -5.66244125e-07, 0, 4.76837158e-07, 1.00000024, 0, 0, 0, -1.00000286)
+Part10.Orientation = Vector3.new(0, 180, 0)
+Part10.Position = Vector3.new(16.864299774169922, 1.6257652044296265, -6.645266056060791)
+Part10.Rotation = Vector3.new(-180, 0, 180)
+Part10.Transparency = 1
+Part10.Velocity = Vector3.new(0, 0.000019548288037185557, 0)
+Part10.Size = Vector3.new(0.14053790271282196, 0.1405380219221115, 0.14053797721862793)
+Part10.BottomSurface = Enum.SurfaceType.Smooth
+Part10.CanCollide = false
+Part10.Material = Enum.Material.Neon
+Part10.TopSurface = Enum.SurfaceType.Smooth
+Weld11.Name = "Part3"
+Weld11.Parent = Part10
+Weld11.C0 = CFrame.new(1.48236084, -0.843229294, 1.49011612e-08, -0.866007328, 0.500031412, 0, 0.500031412, 0.866007328, 0, 0, 0, -1)
+Weld11.Part0 = Part10
+Weld11.Part1 = Part13
+Weld11.part1 = Part13
+Weld12.Name = "Part4"
+Weld12.Parent = Part10
+Weld12.C0 = CFrame.new(-1.48234177, 0.843211174, 4.17232513e-07, 0.866007268, 0.500031412, 0, -0.500031412, 0.866007268, 0, -0, 0, 1)
+Weld12.Part0 = Part10
+Weld12.Part1 = Part14
+Weld12.part1 = Part14
+Part13.Name = "Part3"
+Part13.Parent = Model9
+Part13.CFrame = CFrame.new(15.3819361, 0.782536447, -6.64526606, 0.866009116, -0.500033081, -0, 0.500031114, 0.866007745, 0, 0, 0, 1.00000286)
+Part13.Orientation = Vector3.new(0, 0, 30)
+Part13.Position = Vector3.new(15.381936073303223, 0.7825364470481873, -6.645266056060791)
+Part13.Rotation = Vector3.new(0, 0, 30)
+Part13.Transparency = 1
+Part13.Velocity = Vector3.new(0, 0.000019548288037185557, 0)
+Part13.Size = Vector3.new(2.810760974884033, 0.1405380219221115, 0.14053797721862793)
+Part13.BottomSurface = Enum.SurfaceType.Smooth
+Part13.CanCollide = false
+Part13.Material = Enum.Material.Neon
+Part13.TopSurface = Enum.SurfaceType.Smooth
+Part14.Name = "Part4"
+Part14.Parent = Model9
+Part14.CFrame = CFrame.new(18.3466454, 2.46897578, -6.64526653, -0.866009057, -0.500033081, 0, -0.500031114, 0.866007686, 0, 0, 0, -1.00000286)
+Part14.Orientation = Vector3.new(0, 180, -30)
+Part14.Position = Vector3.new(18.34664535522461, 2.468975782394409, -6.645266532897949)
+Part14.Rotation = Vector3.new(-180, 0, 150)
+Part14.Transparency = 1
+Part14.Velocity = Vector3.new(0, 0.000019548288037185557, 0)
+Part14.Size = Vector3.new(2.810760974884033, 0.1405380219221115, 0.14053797721862793)
+Part14.BottomSurface = Enum.SurfaceType.Smooth
+Part14.CanCollide = false
+Part14.Material = Enum.Material.Neon
+Part14.TopSurface = Enum.SurfaceType.Smooth
+Model15.Name = "SET2"
+Model15.Parent = wsm
+Part16.Name = "mover2"
+Part16.Parent = Model15
+Part16.CFrame = CFrame.new(16.8642921, 1.62576735, -6.6452651, -0.866009831, 0.500032127, 0, 0.500031948, 0.866007209, 0, 0, 0, -1.0000031)
+Part16.Orientation = Vector3.new(0, 180, 30)
+Part16.Position = Vector3.new(16.86429214477539, 1.6257673501968384, -6.645265102386475)
+Part16.Rotation = Vector3.new(-180, 0, -150)
+Part16.Transparency = 1
+Part16.Velocity = Vector3.new(0, 0.000019548288037185557, 0)
+Part16.Size = Vector3.new(0.14053790271282196, 0.1405380219221115, 0.14053797721862793)
+Part16.BottomSurface = Enum.SurfaceType.Smooth
+Part16.CanCollide = false
+Part16.Material = Enum.Material.Neon
+Part16.TopSurface = Enum.SurfaceType.Smooth
+Weld17.Name = "Part2"
+Weld17.Parent = Part16
+Weld17.C0 = CFrame.new(1.482337, -0.843212128, 6.55651093e-07, -0.866007686, 0.500031412, 0, 0.50003165, 0.866007268, 0, 0, 0, -1.00000095)
+Weld17.Part0 = Part16
+Weld17.Part1 = Part19
+Weld17.part1 = Part19
+Weld18.Name = "Part5"
+Weld18.Parent = Part16
+Weld18.C0 = CFrame.new(-1.48233986, 0.843212128, 1.78813934e-07, 0.866007566, 0.500031471, 0, -0.500031471, 0.866007209, 0, 0, 0, 1.00000048)
+Weld18.Part0 = Part16
+Weld18.Part1 = Part20
+Weld18.part1 = Part20
+Part19.Name = "Part2"
+Part19.Parent = Model15
+Part19.CFrame = CFrame.new(15.1589403, 1.63675547, -6.64526558, 1.0000031, -6.55651093e-07, 0, -4.76837158e-07, 1.00000024, 0, 0, 0, 1.00000405)
+Part19.Position = Vector3.new(15.158940315246582, 1.6367554664611816, -6.645265579223633)
+Part19.Transparency = 1
+Part19.Velocity = Vector3.new(0, 0.000019548288037185557, 0)
+Part19.Size = Vector3.new(2.810760974884033, 0.1405380219221115, 0.14053797721862793)
+Part19.BottomSurface = Enum.SurfaceType.Smooth
+Part19.CanCollide = false
+Part19.Material = Enum.Material.Neon
+Part19.TopSurface = Enum.SurfaceType.Smooth
+Part20.Name = "Part5"
+Part20.Parent = Model15
+Part20.CFrame = CFrame.new(18.5696468, 1.6147778, -6.6452651, -1.00000286, -7.4505806e-07, 0, 5.66244125e-07, 1.00000024, 0, 0, 0, -1.00000358)
+Part20.Orientation = Vector3.new(0, 180, 0)
+Part20.Position = Vector3.new(18.56964683532715, 1.6147778034210205, -6.645265102386475)
+Part20.Rotation = Vector3.new(-180, 0, 180)
+Part20.Transparency = 1
+Part20.Velocity = Vector3.new(0, 0.000019548288037185557, 0)
+Part20.Size = Vector3.new(2.810760974884033, 0.1405380219221115, 0.14053797721862793)
+Part20.BottomSurface = Enum.SurfaceType.Smooth
+Part20.CanCollide = false
+Part20.Material = Enum.Material.Neon
+Part20.TopSurface = Enum.SurfaceType.Smooth
+Model21.Name = "SET3"
+Model21.Parent = wsm
+Part22.Name = "mover3"
+Part22.Parent = Model21
+Part22.CFrame = CFrame.new(16.8643055, 1.62577033, -6.64526701, -0.499961138, 0.866050601, 0, 0.86604929, 0.499959171, 0, 0, 0, -1.00000286)
+Part22.Orientation = Vector3.new(0, 180, 60)
+Part22.Position = Vector3.new(16.86430549621582, 1.6257703304290771, -6.645267009735107)
+Part22.Rotation = Vector3.new(-180, 0, -120)
+Part22.Transparency = 1
+Part22.Velocity = Vector3.new(0, 0.000019548288037185557, 0)
+Part22.Size = Vector3.new(0.14053790271282196, 0.1405380219221115, 0.14053797721862793)
+Part22.BottomSurface = Enum.SurfaceType.Smooth
+Part22.CanCollide = false
+Part22.Material = Enum.Material.Neon
+Part22.TopSurface = Enum.SurfaceType.Smooth
+Weld23.Name = "Part1"
+Weld23.Parent = Part22
+Weld23.C0 = CFrame.new(1.48233604, -0.843219757, 6.85453415e-07, -0.866007924, 0.500031173, 0, 0.500032306, 0.866007447, 0, 0, 0, -1.00000143)
+Weld23.Part0 = Part22
+Weld23.Part1 = Part25
+Weld23.part1 = Part25
+Weld24.Name = "Part6"
+Weld24.Parent = Part22
+Weld24.C0 = CFrame.new(-1.48234367, 0.843208313, 4.61935997e-07, 0.866008043, 0.500031233, 0, -0.500032365, 0.866007566, 0, 0, 0, 1.00000143)
+Weld24.Part0 = Part22
+Weld24.Part1 = Part26
+Weld24.part1 = Part26
+Part25.Name = "Part1"
+Part25.Parent = Model21
+Part25.CFrame = CFrame.new(15.3929243, 2.48797083, -6.64526749, 0.8660236, 0.500010133, 0, -0.500009775, 0.866020024, 0, 0, 0, 1.00000429)
+Part25.Orientation = Vector3.new(0, 0, -30)
+Part25.Position = Vector3.new(15.392924308776855, 2.4879708290100098, -6.645267486572266)
+Part25.Rotation = Vector3.new(0, 0, -30)
+Part25.Transparency = 1
+Part25.Velocity = Vector3.new(0, 0.000019548288037185557, 0)
+Part25.Size = Vector3.new(2.810760974884033, 0.1405380219221115, 0.14053797721862793)
+Part25.BottomSurface = Enum.SurfaceType.Smooth
+Part25.CanCollide = false
+Part25.Material = Enum.Material.Neon
+Part25.TopSurface = Enum.SurfaceType.Smooth
+Part26.Name = "Part6"
+Part26.Parent = Model21
+Part26.CFrame = CFrame.new(18.33568, 0.763557434, -6.64526749, -0.866021335, 0.500009418, 0, 0.500009358, 0.866020203, 0, 0, 0, -1.00000143)
+Part26.Orientation = Vector3.new(0, 180, 30)
+Part26.Position = Vector3.new(18.33568000793457, 0.7635574340820312, -6.645267486572266)
+Part26.Rotation = Vector3.new(-180, 0, -150)
+Part26.Transparency = 1
+Part26.Velocity = Vector3.new(0, 0.000019548288037185557, 0)
+Part26.Size = Vector3.new(2.810760974884033, 0.1405380219221115, 0.14053797721862793)
+Part26.BottomSurface = Enum.SurfaceType.Smooth
+Part26.CanCollide = false
+Part26.Material = Enum.Material.Neon
+Part26.TopSurface = Enum.SurfaceType.Smooth
+
+torso.CFrame = owner.Character["Torso"].CFrame
+local wld = Instance.new("Weld")
+wld.Parent = owner.Character["Torso"]
+wld.Part0 = owner.Character["Torso"]
+wld.Part1 = torso
+wld.C0 = owner.Character["Torso"].CFrame:ToObjectSpace(torso.CFrame)
+
+-- Gui to Lua
+
+local EXOSPHERIC = Instance.new("ScreenGui")
+local mainframe = Instance.new("Frame")
+local n = Instance.new("TextLabel")
+local n2 = Instance.new("TextLabel")
+local UIGradient = Instance.new("UIGradient")
+local _1 = Instance.new("Frame")
+local _2 = Instance.new("Frame")
+local holswe = Instance.new("Frame")
+local UIGridLayout = Instance.new("UIGridLayout")
+local btn = Instance.new("Frame")
+local AAA = Instance.new("TextButton")
+local UICorner = Instance.new("UICorner")
+local ImageButton = Instance.new("ImageButton")
+local UICorner_2 = Instance.new("UICorner")
+local UIStroke = Instance.new("UIStroke")
+local UIStroke_2 = Instance.new("UIStroke")
+
+EXOSPHERIC.Name = "EXOSPHERIC"
+EXOSPHERIC.Parent = owner.PlayerGui
+EXOSPHERIC.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+EXOSPHERIC.Enabled = false
+
+mainframe.Name = "mainframe"
+mainframe.Parent = EXOSPHERIC
+mainframe.BackgroundColor3 = Color3.fromRGB(31, 31, 31)
+mainframe.BorderSizePixel = 0
+mainframe.Position = UDim2.new(0.175351545, 0, 0.0623529293, 0)
+mainframe.Size = UDim2.new(0.29445824, 0, 0.257647067, 0)
+mainframe.Draggable = true
+mainframe.Selectable = true
+mainframe.Active = true
+
+UIStroke.Parent = mainframe
+UIStroke.Color = Color3.fromRGB(255, 255, 255)
+
+UIStroke_2.Parent = btn
+UIStroke_2.Color = Color3.fromRGB(255, 255, 255)
+
+n.Name = "n"
+n.Parent = mainframe
+n.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+n.BackgroundTransparency = 1.000
+n.Position = UDim2.new(0.078651689, 0, 0, 0)
+n.Size = UDim2.new(0.839887619, 0, 0.12328767, 0)
+n.Font = Enum.Font.GothamBlack
+n.Text = "EXOSPHERIC"
+n.TextColor3 = Color3.fromRGB(0, 0, 0)
+n.TextScaled = true
+n.TextSize = 13.000
+n.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+n.TextWrapped = true
+
+n2.Name = "n2"
+n2.Parent = mainframe
+n2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+n2.BackgroundTransparency = 1.000
+n2.Position = UDim2.new(0.078651689, 0, 0, 0)
+n2.Size = UDim2.new(0.839887619, 0, 0.12328767, 0)
+n2.ZIndex = 0
+n2.Font = Enum.Font.GothamBlack
+n2.Text = "EXOSPHERIC"
+n2.TextColor3 = Color3.fromRGB(255, 255, 255)
+n2.TextScaled = true
+n2.TextSize = 13.000
+n2.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+n2.TextStrokeTransparency = 0.000
+n2.TextWrapped = true
+
+UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 255, 255)), ColorSequenceKeypoint.new(0.50, Color3.fromRGB(0, 0, 0)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 255, 255))}
+UIGradient.Rotation = 30
+UIGradient.Parent = n2
+
+_1.Name = "1"
+_1.Parent = mainframe
+_1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+_1.BackgroundTransparency = 0.700
+_1.BorderSizePixel = 0
+_1.Position = UDim2.new(0.0252808984, 0, 0.12328767, 0)
+_1.Size = UDim2.new(0.949438214, 0, 0.00456620986, 0)
+
+_2.Name = "2"
+_2.Parent = mainframe
+_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+_2.BackgroundTransparency = 0.700
+_2.BorderSizePixel = 0
+_2.Position = UDim2.new(0.0224719103, 0, 0.525114179, 0)
+_2.Size = UDim2.new(0.949438214, 0, 0.00456620986, 0)
+
+holswe.Name = "holswe"
+holswe.Parent = mainframe
+holswe.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+holswe.BackgroundTransparency = 1.000
+holswe.BorderSizePixel = 0
+holswe.Position = UDim2.new(0.0252808984, 0, 0.155251145, 0)
+holswe.Size = UDim2.new(0.949438214, 0, 0.337899536, 0)
+
+UIGridLayout.Parent = holswe
+UIGridLayout.SortOrder = Enum.SortOrder.LayoutOrder
+UIGridLayout.CellPadding = UDim2.new(0.0500000007, 0, 0.0149999997, 0)
+UIGridLayout.CellSize = UDim2.new(0.300000012, 0, 0.5, 0)
+
+btn.Name = "btn"
+btn.Parent = holswe
+btn.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+btn.BackgroundTransparency = 1.000
+btn.Size = UDim2.new(0.300000012, 0, 0.5, 0)
+
+AAA.Name = "AAA"
+AAA.Parent = btn
+AAA.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+AAA.BackgroundTransparency = 1.000
+AAA.Position = UDim2.new(-1.50481156e-07, 0, 0, 0)
+AAA.Size = UDim2.new(1, 0, 1, 0)
+AAA.Font = Enum.Font.SourceSansLight
+AAA.Text = "AccessoryEffect1"
+AAA.TextColor3 = Color3.fromRGB(255, 255, 255)
+AAA.TextScaled = true
+AAA.TextSize = 14.000
+AAA.TextWrapped = true
+
+UICorner.Parent = btn
+
+ImageButton.Parent = mainframe
+ImageButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageButton.BackgroundTransparency = 1.000
+ImageButton.Position = UDim2.new(0.918539345, 0, 0, 0)
+ImageButton.Size = UDim2.new(0.0814606771, 0, 0.132420093, 0)
+ImageButton.Image = "rbxassetid://7743878857"
+
+UICorner_2.Parent = mainframe
+
+local btn2 = btn:Clone()
+local btn3 = btn:Clone()
+btn2.Parent = holswe
+btn2.AAA.Text = "AccessoryEffect2"
+btn3.Parent = holswe
+btn3.AAA.Text = "AccessoryEffect3"
+
+local efxatt = Instance.new("Attachment")
+efxatt.Parent = owner.Character:WaitForChild("Right Arm")
+efxatt.Position = Vector3.new(0,-1,0)
+
+btn.AAA.MouseButton1Click:Connect(function()
+	if accessoryfx == "" then
+		accessoryfx = "ae1"
+		ae1(efxatt,"ae1")
+	elseif accessoryfx == "ae1" then
+		accessoryfx = ""
+	end
+end)
+
+btn2.AAA.MouseButton1Click:Connect(function()
+	if accessoryfx == "" then
+		accessoryfx = "ae2"
+		ae2(efxatt,"ae2")
+	elseif accessoryfx == "ae2" then
+		accessoryfx = ""
+	end
+end)
+
+btn3.AAA.MouseButton1Click:Connect(function()
+	if accessoryfx == "" then
+		accessoryfx = "ae3"
+		ae3(efxatt,"ae3")
+	elseif accessoryfx == "ae3" then
+		accessoryfx = ""
+	end
+end)
+
+ImageButton.MouseButton1Click:Connect(function()
+	EXOSPHERIC.Enabled = false
+end)
+
+--tag
+
+
+local tag = Instance.new("BillboardGui")
+TextLabel1 = Instance.new("TextLabel")
+UIAspectRatioConstraint2 = Instance.new("UIAspectRatioConstraint")
+TextLabel3 = Instance.new("TextLabel")
+UIAspectRatioConstraint4 = Instance.new("UIAspectRatioConstraint")
+TextLabel5 = Instance.new("TextLabel")
+UIAspectRatioConstraint6 = Instance.new("UIAspectRatioConstraint")
+TextLabel7 = Instance.new("TextLabel")
+UIAspectRatioConstraint8 = Instance.new("UIAspectRatioConstraint")
+Frame9 = Instance.new("Frame")
+UIAspectRatioConstraint10 = Instance.new("UIAspectRatioConstraint")
+UIGradient1 = Instance.new("UIGradient")
+UIGradient2 = Instance.new("UIGradient")
+UIGradient3 = Instance.new("UIGradient")
+UIGradient3.Parent = Frame9
+UIGradient3.Transparency = NumberSequence.new{
+	NumberSequenceKeypoint.new(0,1),
+	NumberSequenceKeypoint.new(0.2,0),
+	NumberSequenceKeypoint.new(0.5,0),
+	NumberSequenceKeypoint.new(0.8,0),
+	NumberSequenceKeypoint.new(1,1),
+}
+UIGradient1.Parent = TextLabel7
+UIGradient1.Rotation = 70
+UIGradient1.Color = ColorSequence.new{
+	ColorSequenceKeypoint.new(0,Color3.fromRGB(255,255,255)),
+	ColorSequenceKeypoint.new(0.2,Color3.fromRGB(255,255,255)),
+	ColorSequenceKeypoint.new(0.5,Color3.fromRGB(75, 75, 75)),
+	ColorSequenceKeypoint.new(0.8,Color3.fromRGB(255,255,255)),
+	ColorSequenceKeypoint.new(1,Color3.fromRGB(255,255,255)),
+}
+UIGradient2.Parent = TextLabel3
+UIGradient2.Rotation = 70
+UIGradient2.Color = ColorSequence.new{
+	ColorSequenceKeypoint.new(0,Color3.fromRGB(255,255,255)),
+	ColorSequenceKeypoint.new(0.2,Color3.fromRGB(255,255,255)),
+	ColorSequenceKeypoint.new(0.5,Color3.fromRGB(75, 75, 75)),
+	ColorSequenceKeypoint.new(0.8,Color3.fromRGB(255,255,255)),
+	ColorSequenceKeypoint.new(1,Color3.fromRGB(255,255,255)),
+}
+tag.Name = "bg"
+tag.Parent = owner.Character.Head
+tag.Size = UDim2.new(5, 0, 2, 0)
+tag.Active = true
+tag.ClipsDescendants = true
+tag.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+tag.StudsOffset = Vector3.new(0,2,0)
+TextLabel1.Name = "n"
+TextLabel1.Parent = tag
+TextLabel1.Position = UDim2.new(0, 0, 0.699999988, 0)
+TextLabel1.Size = UDim2.new(1, 0, 0.300000012, 0)
+TextLabel1.BackgroundColor = BrickColor.new("Institutional white")
+TextLabel1.BackgroundColor3 = Color3.new(1, 1, 1)
+TextLabel1.BackgroundTransparency = 1
+TextLabel1.Font = Enum.Font.SourceSans
+TextLabel1.FontSize = Enum.FontSize.Size14
+TextLabel1.Text = "〈 EXOSPHERIC 〉"
+TextLabel1.TextColor = BrickColor.new("Institutional white")
+TextLabel1.TextColor3 = Color3.new(1, 1, 1)
+TextLabel1.TextScaled = true
+TextLabel1.TextSize = 14
+TextLabel1.TextWrap = true
+TextLabel1.TextWrapped = true
+UIAspectRatioConstraint2.Parent = TextLabel1
+UIAspectRatioConstraint2.AspectRatio = 8.390804290771484
+TextLabel3.Name = "n2"
+TextLabel3.Parent = tag
+TextLabel3.Position = UDim2.new(0, 0, 0.699999988, 0)
+TextLabel3.Size = UDim2.new(1, 0, 0.300000012, 0)
+TextLabel3.BackgroundColor = BrickColor.new("Institutional white")
+TextLabel3.BackgroundColor3 = Color3.new(1, 1, 1)
+TextLabel3.BackgroundTransparency = 1
+TextLabel3.ZIndex = 0
+TextLabel3.Font = Enum.Font.SourceSans
+TextLabel3.FontSize = Enum.FontSize.Size14
+TextLabel3.Text = "〈 EXOSPHERIC 〉"
+TextLabel3.TextColor = BrickColor.new("Institutional white")
+TextLabel3.TextColor3 = Color3.new(1, 1, 1)
+TextLabel3.TextScaled = true
+TextLabel3.TextSize = 14
+TextLabel3.TextStrokeColor3 = Color3.new(1, 1, 1)
+TextLabel3.TextStrokeTransparency = 0
+TextLabel3.TextWrap = true
+TextLabel3.TextWrapped = true
+UIAspectRatioConstraint4.Parent = TextLabel3
+UIAspectRatioConstraint4.AspectRatio = 8.390804290771484
+TextLabel5.Name = "tn"
+TextLabel5.Parent = tag
+TextLabel5.Size = UDim2.new(1, 0, 0.699999988, 0)
+TextLabel5.BackgroundColor = BrickColor.new("Institutional white")
+TextLabel5.BackgroundColor3 = Color3.new(1, 1, 1)
+TextLabel5.BackgroundTransparency = 1
+TextLabel5.Font = Enum.Font.GothamBold
+TextLabel5.FontSize = Enum.FontSize.Size14
+TextLabel5.Text = "BASE MODE"
+TextLabel5.TextColor = BrickColor.new("Institutional white")
+TextLabel5.TextColor3 = Color3.new(1, 1, 1)
+TextLabel5.TextScaled = true
+TextLabel5.TextSize = 14
+TextLabel5.TextWrap = true
+TextLabel5.TextWrapped = true
+UIAspectRatioConstraint6.Parent = TextLabel5
+UIAspectRatioConstraint6.AspectRatio = 3.5960593223571777
+TextLabel7.Name = "tn2"
+TextLabel7.Parent = tag
+TextLabel7.Size = UDim2.new(1, 0, 0.699999988, 0)
+TextLabel7.BackgroundColor = BrickColor.new("Institutional white")
+TextLabel7.BackgroundColor3 = Color3.new(1, 1, 1)
+TextLabel7.BackgroundTransparency = 1
+TextLabel7.ZIndex = 0
+TextLabel7.Font = Enum.Font.GothamBold
+TextLabel7.FontSize = Enum.FontSize.Size14
+TextLabel7.Text = "BASE MODE"
+TextLabel7.TextColor = BrickColor.new("Institutional white")
+TextLabel7.TextColor3 = Color3.new(1, 1, 1)
+TextLabel7.TextScaled = true
+TextLabel7.TextSize = 14
+TextLabel7.TextStrokeColor3 = Color3.new(1, 1, 1)
+TextLabel7.TextStrokeTransparency = 0
+TextLabel7.TextWrap = true
+TextLabel7.TextWrapped = true
+UIAspectRatioConstraint8.Parent = TextLabel7
+UIAspectRatioConstraint8.AspectRatio = 3.5960593223571777
+Frame9.Parent = tag
+Frame9.Position = UDim2.new(0, 0, 0.0250000004, 0)
+Frame9.Size = UDim2.new(1, 0, 0.949999988, 0)
+Frame9.BackgroundColor = BrickColor.new("Institutional white")
+Frame9.BackgroundColor3 = Color3.new(1, 1, 1)
+Frame9.BackgroundTransparency = 0.699999988079071
+Frame9.BorderColor3 = Color3.new(0.207843, 0.207843, 0.207843)
+Frame9.BorderSizePixel = 4
+UIAspectRatioConstraint10.Parent = Frame9
+UIAspectRatioConstraint10.AspectRatio = 2.6497278213500977
+
+--other
+
+for i,v in pairs(DuplicableWing:GetDescendants()) do
+	if v:IsA("BasePart") then
+		v.Anchored = false
+		v.CanCollide = false
+		v.Massless = true
+	end
+end
+
+for i,v in pairs(wsm:GetDescendants()) do
+	if v:IsA("BasePart") then
+		v.Anchored = false
+		v.CanCollide = false
+		v.Massless = true
+	end
+end
+
+function setclr(m)
+	for i,v in pairs(wsm:GetDescendants()) do
+		if v.Name == "wing" and v:IsA("Model") then
+			for i,v in pairs(v.midc:GetChildren()) do
+				if v:IsA("BasePart") then
+					v.Color = Color3.fromRGB(string.split(m, ":")[3],string.split(m, ":")[4],string.split(m, ":")[5])
+				end
+			end
+			for i,v in pairs(v.bc:GetChildren()) do
+				if v:IsA("BasePart") then
+					v.Color = Color3.fromRGB(string.split(m, ":")[3],string.split(m, ":")[4],string.split(m, ":")[5])
+				end
+			end
+			for i,v in pairs(v.sidec:GetChildren()) do
+				if v:IsA("BasePart") then
+					v.Color = Color3.fromRGB(string.split(m, ":")[3],string.split(m, ":")[4],string.split(m, ":")[5])
+				end
+			end
+			for i,v in pairs(v.tc:GetChildren()) do
+				if v:IsA("BasePart") then
+					v.Color = Color3.fromRGB(string.split(m, ":")[3],string.split(m, ":")[4],string.split(m, ":")[5])
+				end
+			end
+			v.m1.Trail.Color = ColorSequence.new(Color3.fromRGB(string.split(m, ":")[3],string.split(m, ":")[4],string.split(m, ":")[5]))
+			currentcr = Color3.fromRGB(string.split(m, ":")[3],string.split(m, ":")[4],string.split(m, ":")[5])
+		end
+	end
+end
+
+spawn(function()
+	while true do
+		task.wait()
+		for i,v in pairs(tag:GetChildren()) do
+			if v:IsA("Frame") then
+				v.BackgroundColor3 = currentcr
+			end
+			if v:IsA("TextLabel") then
+				v.TextColor3 = currentcr
+			end
+		end
+	end
+end)
+
+print("cmds")
+
+owner.Chatted:Connect(function(m)
+	print("sent")
+	local split = string.split(m,":")
+	if split[1]:lower() == "/wt" then
+		print("cmd detected")
+		if split[2]:lower() == "color" then
+			print("cmds")
+			setclr(m)
+		end
+		pcall(function()
+			if typeof(tonumber(split[2])) == "number" then
+				print("cmds")
+				setup_wing(split[2])
+			end
+		end)
+		if split[2]:lower() == "accessoryui" then
+			print("cmds")
+			EXOSPHERIC.Enabled = true
+		end
+	end 
+end)
+
+
+for i = 1,6 do
+	if i <= 3 then
+		local c = DuplicableWing:Clone()
+		c.m1.CFrame = parts["Part_"..i].CFrame --* CFrame.Angles(0,100,0)
+		local w = Instance.new("Weld")
+		c.Parent = parts["Part_"..i]
+		w.Parent = parts["Part_"..i]
+		w.Part0 = parts["Part_"..i]
+		w.Part1 = c.m1
+	else
+		local c = DuplicableWing:Clone()
+		c.m1.CFrame = parts["Part_"..i].CFrame
+		local w = Instance.new("Weld")
+		c.Parent = parts["Part_"..i]
+		w.Parent = parts["Part_"..i]
+		w.Part0 = parts["Part_"..i]
+		w.Part1 = c.m1
+	end
+
+end
+
+swa:setupWingAnim(welder3.Part1,welder2.Part2,welder1.Part3,welder1.Part4,welder2.Part5,welder3.Part6,torso.Part,welder.mover1,welder.mover2,welder.mover3)
